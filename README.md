@@ -1,68 +1,130 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **_Welcome to First Cake! app._**
 
-## Available Scripts
+> So, you’ve finally done it. You’ve made a genuine connection with another person, you’ve established a mutual interest, you’ve followed each other on Instagram and accidentally liked each other’s selfies from 2013. What comes next is the tricky part: going on an actual date.
 
-In the project directory, you can run:
+> Now the hard part begins, every idea you will have is rife with potential disaster. Dinner and a movie? The movie could be terrible. A hike? Too sweaty. A picnic? Be serious. What if a hawk swoops down and steals all the food, and then there’s the possibility of a tornado? I rest my case.
 
-### `npm start`
+> Instead, keep it casual and use my app to find your next date spot at the click of a button. All I need from you is to ask your new date what they like for dessert! Awesome! Once you have their response, enter the answer by keyword search and my app will do all the heavy lifting for you... Lets be honest you've already done the hard part, use this revolutionary tool to help you find your "First Cake" spot.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 1.  Search our database using a keyword search allowing you to find the perfect "First Cake" spot
+- 2.  Use the awesome "Save that Cake" feature to keep track of your favorite spots. add comments or as I like to call them "First Cake Notes" to write your thoughts about the spot.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## **_Getting Started_**
 
-### `npm test`
+> **_"These instructions will get you a copy of the project up and running on your local machine"_**
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+###**_Installing_**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+First, you'll need to clone down the repo into a directory. Open your terminal and enter
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+git clone git@github.com:stephensenft21c35-React-Capstone-First-Cake-.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+After that, open up your editor. You're going to need to do the following: You need to be in the main part of the app by entering in:
 
-### `npm run eject`
+```
+cd c35-React-Capstone-First-Cake-
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Next you will need to install node-modules. Run:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Since we will be using some pre-populated data at the time, database.json has been set up for you, go to your terminal, enter the command
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+cd api
+```
 
-## Learn More
+You will need to run the local json-server, run the command
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+json-server -p 5002 -w database.json
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Before we run the application, you must run the command for the React app. In the terminal, run the following command to go back to the main directory
 
-### Code Splitting
+```
+cd ../
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Afterwords enter the following command into the terminal to start using the application
 
-### Analyzing the Bundle Size
+```
+npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+**_ERD_**
 
-### Making a Progressive Web App
+[<img src="./img/clickME-gif-README.md.png" style="padding:10px; margin-left:20%; border-radius: 15px 50px; border:solid; color:Tomato; background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);background-color: rgba(555, 0, 0, 0.3); width: 150px; box-shadow: 0 10px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" height="120">](C:/Users/Stephen/Downloads/Untitled.pdf)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+---
 
-### Advanced Configuration
+##_*Technologies Used*_
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+<!-- <p style="border-style: outset; border-radius:150%;width:24%;" >-clickable links-</p>  -->
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<!-- <img src="./img\arrow-logo-README.me.png" style="height:5%; margin-left: 6.5%;  margin-bottom: 2%"> -->
+
+<div style="border:solid;color:tomato; border-radius:225%; background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);background-color: rgba(555, 0, 0, 0.3); width: 150px; box-shadow: 0 10px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  ">
+
+[<img src="./img/react-library-logo-README.png" style=" border-radius:230%; border: solid; color: tomato; hover:text-decoration: underline; padding:10px; opacity: 0.5; filter: alpha(opacity=50); " height="50">](https://reactjs.org/)
+
+[<img src="../c-35-REACT-Capstone/img/reactstrap-logo-README.md.png" style=" border-radius:200%; border: solid; color: tomato;padding: 10px;" height="50"> ](https://www.npmjs.com/package/reactstrap)
+[<img src="./img/bootstrap-logo-README.jpg" height="100" style="border: solid; color: tomato;border-radius:545%;padding:10px">](https://getbootstrap.com/)
+[<img src="./img/figma-logo-README.png" height="50" style="border: solid; color: tomato;border-radius:545%;padding:10px">](https://www.figma.com)
+[<img src="./img/css3-logo-README.svg" height="50" style="border: solid; color: tomato;border-radius:545%;padding:10px">](https://www.w3schools.com/html/html_css.asp)
+[<img src="./img/json-logo-ReadME..jpg" height="50"  style="border: solid; color: tomato;border-radius:545%;padding:10px;" >](https://www.json.org)
+[<img src="./img/dbDiagram-logos-README.md.jpg" style="border: solid; color: tomato;border-radius:545%;padding:10px" height="40">](https://dbdiagram.io/home)
+[<img src="./img/fireBase-logo-README.md.png" width="55%" style=" border-radius:545%;padding: 10Px; border: solid; color:tomato;"> ](https://firebase.google.com/)
+[<img src="./img/zomato-logo-README.md.png" style="border: solid; color: tomato;border-radius:545%;padding:5%; margin-left:20%; ">](https://developers.zomato.com/api)
+
+## </div>
+
+---
+
+###**_Acknowledgments_**
+[<img src="./img/purpleBooth-logo-README.md.png" height="50">](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) - README Template Design
+
+- [Brenda Long](https://github.com/brendalong) -  Teaching me so many wonderful things about UI UX
+- [Mo Silvera]() -
+- [Madi Pepper]() -
+---
+
+
+### **_Authors_**
+
+[- **_Stephen Senft_**]() - Initial work - FirstCake (_IMPORTANT_!!) **"insert logo here"**
+
+#### **_Contact Info_**
+<!-- - **_CellPhone:_** **_(615)-456-8619_** -->
+ **_Email:_** **_stephensenft21@gmail.com_**
+ [<img src="./img/github-Logo-README.md.jpg" style=" height:56px; padding:3%;">](https://github.com/stephensenft21)[<img src="./img/facebook-logo-README.md.png" style="border-radius:50%; margin-bottom: 15px; height:60px;">](https://www.facebook.com/stephen.senft.3)[<img src="./img/instagram-logo-README.md.jpg" style="margin-bottom:15px;border-radius:50%; height:60px;">](https://www.instagram.com/)[<img src="./img/twitter-logo-README.md.jpg" style="margin-bottom:14px;border-radius:50%; height:60px;">](https://twitter.com/home)
+
+</div>
+
+---
+#### User Stories
+
+- ###### The Problem
+
+_*A guy asks a girl out and suggests they go somewhere for dessert and coffee.*_
+
+\*_She mentions that she loves chocolate cake.
+He puts in a google search for places that serve chocolate cake.. He can't find any reliable results without a lot of research. It takes a decent bit of time and he still can't find a good place to go. Since He is a student of Nashville Software School the guy has learned to be a problem solver and navigate google. Once of his search results ends up being a local favorite and he decides to go there. He picks up some TO-GO dessert. They have a great time and the rest is history...._\*\*
+
+- ##### The Solution
+
+_*The next day He thinks to himself. I wish I had an app to find local dessert spots in the surrounding area that gave the user description, location, and user rating.*_
+
+_*He would like to save these spots for future use and add comments ie notes on how the experience was*_
