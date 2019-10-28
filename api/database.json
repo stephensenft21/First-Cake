@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "VarChar",
+      "email": "VarChar",
+      "password": "VarChar"
+    },
+    {
+      "id": 2,
+      "username": "VarChar",
+      "email": "VarChar",
+      "password": "VarChar"
+    },
+    {
+      "id": 3,
+      "username": "VarChar",
+      "email": "VarChar",
+      "password": "VarChar"
+    },
+    {
+      "id": 4,
+      "username": "",
+      "email": "VarChar",
+      "password": "VarChar"
+    },
+    {
+      "email": "",
+      "password": "1234",
+      "id": 5
+    },
+    {
+      "email": "stephensenft21@gmail.com",
+      "password": "1234",
+      "id": 6
+    },
+    {
+      "username": "stephen",
+      "email": "stephensenft21@gmail.com",
+      "password": "1234",
+      "id": 7
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "zomatoResponseId": 1,
+      "text": "hello",
+      "date": "varChar"
+    }
+  ],
+  "favoriteCakes": [
+    {
+      "id": 1,
+      "userId": 1,
+      "zomatoResponseId": 1
+    }
+  ]
+}
