@@ -61,8 +61,8 @@ let APIManager = {
             body: JSON.stringify(newUser)
         }).then(data => data.json())
     },
-    searchUsername(email) {
-        return fetch(`${remoteURL}/users?email=${email}`)
+    searchUsername(username) {
+        return fetch(`${remoteURL}/users?username=${username}`)
             .then(e => e.json())
     },
 }

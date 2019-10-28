@@ -20,7 +20,7 @@
     },
     {
       "id": 4,
-      "username": "VarChar",
+      "username": "",
       "email": "VarChar",
       "password": "VarChar"
     },
@@ -33,6 +33,12 @@
       "email": "stephensenft21@gmail.com",
       "password": "1234",
       "id": 6
+    },
+    {
+      "username": "stephen",
+      "email": "stephensenft21@gmail.com",
+      "password": "1234",
+      "id": 7
     }
   ],
   "comments": [

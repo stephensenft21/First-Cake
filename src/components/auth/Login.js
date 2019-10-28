@@ -5,7 +5,7 @@ import { Col, Form, FormGroup, Button, Input } from 'reactstrap';
 class Login extends Component {
   // Set initial state
   state = {
-    email: "",
+    username: "",
     password: ""
   }
 
@@ -23,25 +23,17 @@ class Login extends Component {
         the customer enters into local storage.
     */
     let credentials = { 
-      email: this.state.email, 
+      username: this.state.username, 
       password: this.state.password }
    
-    APIManager.searchUsername(this.state.email)
+    APIManager.searchUsername(this.state.username)
       .then(result => {
         console.log("what is the result of search", result)
         if (result.length > 0) {
           //this returns an array - we only need object
           this.props.setUser(result[0]);
           this.props.history.push("/");
-        } else {
-          APIManager.addUser(credentials)
-            .then(result => {
-              //this returns an object
-              console.log("result is", result);
-              this.props.setUser(result);
-            })
-          this.props.history.push("/");
-        }
+        } 
       })
   }
 
@@ -53,7 +45,7 @@ class Login extends Component {
         <div>Sign In</div>
       <FormGroup row>
         <Col sm={10}>
-          <Input  onChange={this.handleFieldChange} type="email" name="email" id="email" placeholder="Email" bsSize="lg" />
+          <Input  onChange={this.handleFieldChange} type="username" name="username" id="username" placeholder="Username" bsSize="lg" />
         </Col>
       </FormGroup>
       <FormGroup row>
@@ -73,25 +65,3 @@ class Login extends Component {
 }
 
 export default withRouter(Login);
-
- // <form onSubmit={this.handleLogin}>
-      //   <fieldset>
-      //     <h3>Please sign in</h3>
-      //     <div className="formgrid">
-      //       <input onChange={this.handleFieldChange} type="email"
-      //         id="email"
-      //         placeholder="Email address"
-      //         required="" autoFocus="" />
-      //       <label htmlFor="inputEmail">Email address</label>
-
-      //       <input onChange={this.handleFieldChange} type="password"
-      //         id="password"
-      //         placeholder="Password"
-      //         required="" />
-      //       <label htmlFor="inputPassword">Password</label>
-      //     </div>
-      //     <button type="submit">
-      //       Sign in
-      //       </button>
-      //   </fieldset>
-      // </form>

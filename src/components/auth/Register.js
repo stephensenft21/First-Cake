@@ -24,12 +24,12 @@ class Register extends Component {
             the customer enters into local storage.
         */
         let credentials = {
-            email: this.state.email,
             username: this.state.username,
+            email: this.state.email,
             password: this.state.password
         }
 
-        APIManager.searchUsername(this.state.email)
+        APIManager.searchUsername(this.state.username)
             .then(result => {
                 console.log("what is the result of search", result)
                 if (result.length > 0) {
@@ -51,7 +51,7 @@ class Register extends Component {
     render() {
         return (
             <>
-                <div> <Image>Logo goes Here</Image> </div>
+                {/* <div>    </div> */}
                 <Form onSubmit={this.handleLogin}>
                     <div>Sign up</div>
                     <FormGroup row>
