@@ -45,9 +45,16 @@
     {
       "id": 1,
       "userId": 1,
-      "zomatoResponseId": 1,
-      "text": "hello",
-      "date": "varChar"
+      "favoriteCakeId": 1,
+      "editTimeStamp": "2019-10-28T23:19:58.073Z",
+      "text": "Lets try this again",
+      "date": "2019-10-29T00:09:47.977Z"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "editTimeStamp": "2019-10-29T00:11:11.658Z",
+      "text": "Fucks with me"
     }
   ],
   "favoriteCakes": [

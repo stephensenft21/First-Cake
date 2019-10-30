@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom"
 import APIManager from "../../modules/APIManager";
-import { Col, Form, FormGroup, Button, Input, Image } from 'reactstrap';
+import { Col, Form, FormGroup, Button, Input} from 'reactstrap';
 class Register extends Component {
     // Set initial state
     state = {
