@@ -5,8 +5,8 @@ import { Col, Form, FormGroup, Button, Input } from 'reactstrap';
 class Login extends Component {
   // Set initial state
   state = {
-    username: "",
-    password: ""
+    usernames: "",
+    passwords: ""
   }
 
   // Update state whenever an input field is edited
@@ -22,9 +22,9 @@ class Login extends Component {
         For now, just store the email and password that
         the customer enters into local storage.
     */
-    let credentials = { 
-      username: this.state.username, 
-      password: this.state.password }
+    // let credentials = { 
+    //   username: this.state.username, 
+    //   password: this.state.password }
    
     APIManager.searchUsername(this.state.username)
       .then(result => {
@@ -45,13 +45,13 @@ class Login extends Component {
         <div>Sign In</div>
       <FormGroup row>
         <Col sm={10}>
-          <Input  onChange={this.handleFieldChange} type="username" name="username" id="username" placeholder="Username" bsSize="lg" />
+          <Input  onChange={this.handleFieldChange} type="username" name="username" id="usernames" placeholder="Username" bsSize="lg" />
         </Col>
       </FormGroup>
       <FormGroup row>
        
         <Col sm={10}>
-          <Input onChange={this.handleFieldChange}type="password" name="password" id="password" placeholder="Password" />
+          <Input onChange={this.handleFieldChange}type="password" name="password" id="passwords" placeholder="Password" />
         </Col>
         <Button type="submit">
             Sign in

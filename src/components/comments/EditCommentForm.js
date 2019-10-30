@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import { Button, Form, FormGroup, Input, Collapse, Col } from "reactstrap";
+import { Button, Form, FormGroup, Input,Col } from "reactstrap";
 import API from "../../modules/APIManager";
-
+import moment from 'moment';
 class CommentEditForm extends Component {
     //set the initial state
     state = {
@@ -26,23 +26,25 @@ class CommentEditForm extends Component {
         const editedComment = {
             id: this.props.match.params.commentId,
             userId: this.state.userId,
-            zomatoResponseId: this.state.zomatoResponseId,
+            favoriteCakeId: this.state.favoriteCakeId,
+            editTimeStamp: moment(new Date()),
             text: this.state.text,
-            date: this.state.date,
+            date: this.props.date,
         };
         // push edited task
-        API.update("comments", editedComment)
+        API.update(editedComment,"comments")
             .then(() => this.props.history.push("/favorites"))
     }
 
     componentDidMount() {
-        API.get("comments", this.props.match.params.commentId)
+        API.get( this.props.match.params.commentId,"comments")
             .then(comment => {
                 this.setState({
                     userId: comment.userId,
-                    zomatoResponseId: comment.zomatoResponseId,
-                    text: comment.text,
-                    date: comment.date,
+                    favoriteCakeId: comment.favoriteCakeId,
+                    text: this.state.text,
+                    date: this.state.date,
+                    loadingStatus: false
 
                 });
             });
@@ -54,18 +56,18 @@ class CommentEditForm extends Component {
     render() {
         return (
             <>
-                <Collapse toggle={this.toggle}>
-                    <Form onSubmit={this.constructNewMessage}>
+                {/* <Collapse toggle={this.toggle}> */}
+                    <Form onSubmit={this.updateExistingComment}>
                         <div>Comment</div>
                         <FormGroup row>
                             <Col sm={10}>
-                                <Input onChange={this.handleFieldChange} type="textarea" name="comment" id="text" placeholder="Write a comment..." bsSize="lg" />
+                                <Input onChange={this.handleFieldChange} type="textarea" name="comment" id="text" placeholder="Make changes..." bsSize="lg" />
                             </Col>
                             <Button type="submit">
-                                Edi</Button>
+                                Edit</Button>
                         </FormGroup>
                     </Form>
-                </Collapse>
+                {/* </Collapse> */}
             </>
         );
     }

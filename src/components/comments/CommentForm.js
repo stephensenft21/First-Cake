@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { Col, Form, FormGroup, Button, Input, Image, Collapse } from 'reactstrap';
+import { Col, Form, FormGroup, Button, Input, Collapse } from 'reactstrap';
 import API from '../../modules/APIManager'
+import Moment from 'moment';
 
 
 class CommentForm extends Component {
 
     state = {
-        zomatoResponseId: "",
+        favoriteCakeId: "",
         userId: null,
         collapse: false,
         text: "",
@@ -25,24 +26,29 @@ class CommentForm extends Component {
 
     constructNewMessage = event => {
         event.preventDefault()
-        const newComment = {
-            userId: this.state.userId,
-            text: this.state.text,
-            date: this.state.date,
+        if (this.state.text === '') {
+            window.alert('Please add comment');
+        } else {
+            let userId = parseInt(sessionStorage.getItem('credentials'));
+            const newComment = {
+                userId: userId,
+                text: this.state.text,
+                editTimeStamp: '',
+                date: Moment(new Date()),
+            }
+            API.post(newComment,"comments")
+                .then(() => this.props.history.push("/favorites"));
         }
-        API.post("comments", newComment)
-            .then(() => this.props.history.push("/favorites"));
     }
-
 
     render() {
         return (
             <>
-                <div> <Image>Logo goes Here</Image> </div>
+            
                 <div>Collapse Form was put here</div>
-                <Collapse ds>
+                <Collapse key={this.toggle}>
                     <Form onSubmit={this.constructNewMessage}>
-                        <div>Comment</div>
+                        <div>Add comment</div>
                         <FormGroup row>
                             <Col sm={10}>
                                 <Input onChange={this.handleFieldChange} type="textarea" name="comment" id="text" placeholder="Write a comment..." bsSize="lg" />
