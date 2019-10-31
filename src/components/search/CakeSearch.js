@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import {Col, Form, FormGroup, Button, Input} from 'reactstrap';
+import {Form, FormGroup, Button, Input} from 'reactstrap';
 import APIManager from '../../modules/APIManager'
 import AuthButtons from '../auth/AuthButtons'
-
+import '../search/CakeSearch.css'
 
 class CakeSearch extends Component {
 
@@ -59,19 +59,19 @@ class CakeSearch extends Component {
 
             return (
 <>
-           <div><><AuthButtons/></></div>
+          
            
            
-            <div>
-                
-                <Form onSubmit={this.search}>
-                  <div>Your First Date Awaits...</div>
-                    <FormGroup>
-                        <Col sm={10}>
-                            <Input onChange={(event)=> {this.setState({term: event.target.value})}} type="search" name="Search for First Cake " id="term" placeholder="Search for First Cake " bsSize="lg"></Input>
-                        </Col>
-                    </FormGroup>
-                    <div><Button  type="submit" color="secondary">Search</Button>{' '}</div>
+            <div className="mainContainer">
+            <div><><AuthButtons/></></div>  
+                <Form className="SearchForm" onSubmit={this.search}>
+                  <div className="firstDateText">Your First Date Awaits...</div>
+                    <div className="SearchFormGroup ">
+                       
+                           <div className="searchInput"><Input onChange={(event)=> {this.setState({term: event.target.value})}} type="search" name="Search for First Cake " id="term" placeholder="Search for First Cake " bsSize="lg"></Input></div>
+                      
+                    </div>
+                    <div><Button className="searchButton" type="submit" color="secondary">Search</Button>{' '}</div>
                 </Form>
 
             </div>

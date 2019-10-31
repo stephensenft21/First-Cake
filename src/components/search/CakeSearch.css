@@ -1,0 +1,117 @@
+.mainContainer  {
+    position: relative;
+width: 413px;
+height: 736px;
+background: #E9B5B5;
+backdrop-filter: blur(4px);
+
+}
+
+
+/* .authButtons{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    position: absolute;
+    left: 2.91%;
+    right: 2.91%;
+    top: 0.54%;
+    bottom: 95.11%;
+    
+
+
+} */
+
+.SearchForm {
+    position: absolute;
+left: 4.84%;
+right: 4.84%;
+top: 41.03%;
+bottom: 23.37%;
+
+background: #F2F2F2;
+border-radius: 29px;    
+}
+
+.SearchFormGroup {
+position: absolute;
+width: 260px;
+height: 211px;
+left: 77px;
+top: 325px;
+
+}
+.firstDateText{
+position: absolute;
+left: 19.37%;
+right: 57.38%;
+top: 44.16%;
+bottom: 42.39%;
+font-family: Goudy Bookletter 1911;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 33px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: rgba(0, 0, 0, 0.75);
+}
+
+.searchButton{
+    
+position: absolute;
+left: 37.05%;
+right: 38.5%;
+top: 68.61%;
+bottom: 27.17%;
+width: 101px;
+height: 32px;
+
+background: #000000;
+border-radius: 10px;
+
+
+position: absolute;
+left: 45.04%;
+right: 46%;
+top: 69.43%;
+bottom: 27.85%;
+
+font-family: Goudy Bookletter 1911;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+    
+}
+
+.searchInput{
+    /* position: absolute;
+    left: 19.37%;
+    right: 19.45%;
+    top: 58.97%;
+    bottom: 35.19%;
+    
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px; */
+
+
+font-family: Goudy Bookletter 1911;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 140.62%;
+/* or 25px */
+
+
+color: rgba(0, 0, 0, 0.5);
+}

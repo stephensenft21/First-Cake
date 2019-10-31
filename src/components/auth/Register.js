@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom"
-import APIManager from "../../modules/APIManager";
+import '../auth/Register.css'
+import APIManager from '../../modules/APIManager'
 import { Col, Form, FormGroup, Button, Input} from 'reactstrap';
 class Register extends Component {
     // Set initial state
@@ -51,8 +52,8 @@ class Register extends Component {
     render() {
         return (
             <>
-                {/* <div>    </div> */}
-                <Form onSubmit={this.handleLogin}>
+               <div className="mainContainer">
+                <Form className="registerForm" onSubmit={this.handleLogin}>
                     <div>Sign up</div>
                     <FormGroup row>
                         <Col sm={10}>
@@ -74,7 +75,7 @@ class Register extends Component {
           </Button>
                     </FormGroup>
                 </Form>
-
+                </div>
             </>
         )
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom"
-
-import {Col,Button} from 'reactstrap';
+import '../auth/AuthButtons.css'
+import {Button} from 'reactstrap';
 
 
 
@@ -12,15 +12,15 @@ class AuthButtons extends Component {
        
             return (
                 
-                <Col sm={10}>
+               <>
                 <div>
-                    <Link to={`/register`} ><Button>Sign Up</Button></Link>
-                </div>
-                <div>
-                    <Link to={`/login`} ><Button>Sign In</Button></Link>
+                    <Link to={`/login`} ><Button className='authButtonsLeft'>Sign In</Button></Link>
                     
                 </div>
-                </Col>
+                <div>
+                    <Link to={`/register`} ><Button className='authButtonRight'>Sign Up</Button></Link>
+                </div>
+              </>       
 
             )
 

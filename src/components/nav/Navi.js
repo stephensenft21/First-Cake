@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-const Navi = (props) => {
+export default function Navi(props) {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => setCollapsed(!collapsed);
@@ -26,5 +26,3 @@ const Navi = (props) => {
     </div>
   );
 }
-
-export default Navi;
