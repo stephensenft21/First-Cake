@@ -5,7 +5,7 @@ import { Col, Form, FormGroup, Button, Input } from 'reactstrap';
 class Login extends Component {
   // Set initial state
   state = {
-    usernames: "",
+    email: "",
     passwords: ""
   }
 
@@ -26,7 +26,7 @@ class Login extends Component {
     //   username: this.state.username, 
     //   password: this.state.password }
    
-    APIManager.searchUsername(this.state.username)
+    APIManager.searchUsername(this.state.email)
       .then(result => {
         console.log("what is the result of search", result)
         if (result.length > 0) {
@@ -45,7 +45,7 @@ class Login extends Component {
         <div>Sign In</div>
       <FormGroup row>
         <Col sm={10}>
-          <Input  onChange={this.handleFieldChange} type="username" name="username" id="usernames" placeholder="Username" bsSize="lg" />
+          <Input  onChange={this.handleFieldChange} type="email" name="email" id="email" placeholder="Username" bsSize="lg" />
         </Col>
       </FormGroup>
       <FormGroup row>

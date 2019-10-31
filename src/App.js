@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
 import ApplicationViews from './components/ApplicationViews';
+
 // import Nav from './components/nav/Nav';
-import Login from './components/auth/Login'
-import Register from './components/auth/Register'
 import './App.css';
+
 
 class App extends Component {
   state = {
@@ -39,12 +39,13 @@ class App extends Component {
        
           
             {/* <Nav /> */}
-            <ApplicationViews userId={this.state.userId} /> 
-           
-          <Login setUser={this.setUser} />
-          <Register setUser={this.setUser} />
+          {/* <AuthButtons/>   */}
+            <ApplicationViews
+            isAuthenticated={this.isAuthenticated} 
+            setUser={this.setUser}
+            userId={this.state.userId} /> 
           
-        
+         
         
         
       </>

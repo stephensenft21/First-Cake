@@ -1,20 +1,11 @@
-import React, {Component} from 'react'
-import { Col, Form, FormGroup, Button, Input, Collapse } from 'reactstrap';
-import APIManager from '../../modules/APIManager'
-import ApplicationViews from '../ApplicationViews';
+import React, { Component } from 'react';
+import { Link } from "react-router-dom"
+
+import Logo from '../logo/Logo'
 
 class HomeView extends Component {
 
-state = {
-    restaurants: []
-}
-
-
-handleFieldChange = (evt) => {
-    const stateToChange = {}
-    stateToChange[evt.target.id] = evt.target.value
-    this.setState(stateToChange)
-}
+    
 
 
 
@@ -22,32 +13,16 @@ handleFieldChange = (evt) => {
 
 
 
-search = (term) => {
-    APIManager.searchZomato(term).then(allResults => {
-
-        allResults.forEach(restaurant => {
-            APIManager.get(restaurant.id,"favoriteCakes")
-        })
-    })
-
-}
 
 
 
-render() {
-    return(
-   <React.Fragment>
+    render() {
 
 
-
-
-
-
-   </React.Fragment>
-    )
-
-
-}
+        return(
+         <Link to={`/`}><Logo></Logo></Link>
+        )
+    }
 
 
 
@@ -59,4 +34,5 @@ render() {
 
 
 
-} export default HomeView
+
+} export default HomeView 

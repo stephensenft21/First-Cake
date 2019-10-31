@@ -3,7 +3,10 @@ import { Route } from 'react-router-dom';
 import CommentList from './comments/CommentList';
 import CommentForm from './comments/CommentForm'
 import EditCommentForm from './comments/EditCommentForm'
-import HomeView from './views/HomeView'
+import CakeSearch from './/search/CakeSearch'
+import Login from './auth/Login'
+import Register from './auth/Register'
+
 // import Login from ''
 
 class ApplicationViews extends Component {
@@ -12,7 +15,7 @@ class ApplicationViews extends Component {
         return (
             <>
                  <Route exact path="/" render={(props) => {
-          return <HomeView />
+          return <CakeSearch />
         }} />
                 {/* Comment Routes */}
                 <Route exact path="/comments" render={props => {
@@ -22,8 +25,32 @@ class ApplicationViews extends Component {
                     return <CommentForm {...props} />
                 }} />
                 <Route path="/comments/:commentId(\d+)/edit" render={props => {
-          return <EditCommentForm {...props} />
+                   return <EditCommentForm {...props} />
+                }} />
+                  <Route exact path="/register" render={(props) => {
+          return   <Register 
+          setUser={this.props.setUser}
+           />       
         }} />
+          <Route exact path="/login" render={(props) => {
+          return<Login 
+          setUser={this.props.setUser}
+           />
+        }} />
+
+
+            
+        
+            
+            
+           
+     
+         
+
+
+
+
+
             </>
         )
     }

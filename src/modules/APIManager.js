@@ -61,17 +61,17 @@ let APIManager = {
             body: JSON.stringify(newUser)
         }).then(data => data.json())
     },
-    searchUsername(username) {
-        return fetch(`${remoteURL}/users?username=${username}`)
+    searchUsername(email) {
+        return fetch(`${remoteURL}/users?email=${email}`)
             .then(e => e.json())
     },
     searchZomato(searchTerm) {
-		return fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&q=${searchTerm}&apikey=6e72e09f0a9e5501ab2d5645e8fac52d`)
+		return fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&cuisines=${searchTerm}&count=5&apikey=6e72e09f0a9e5501ab2d5645e8fac52d`)
 			.then(result => result.json())
-			.then(parsedResult => {
-				console.log(parsedResult.restaurants);
-				return parsedResult.restaurants;
-			});
+			// .then(parsedResult => {
+			// 	console.log(parsedResult.restaurants);
+			// 	return parsedResult.restaurants;
+			// });
 	}
 }
 
