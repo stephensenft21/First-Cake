@@ -18,7 +18,7 @@ class AuthButtons extends Component {
                     
                 </div>
                 <div>
-                    <Link to={`/register`} ><Button className='authButtonRight'>Sign Up</Button></Link>
+                    <Link to={`/register`} ><Button className='authButtonsRight'>Sign Up</Button></Link>
                 </div>
               </>       
 

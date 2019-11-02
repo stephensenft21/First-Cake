@@ -14,7 +14,58 @@ left: 0%;
 right: 0%;
 top: 35.87%;
 bottom: 12.36%;
+width: 413px;
+height: 381px;
+left: 0px;
+top: 264px;
 
 background: #F2F2F2;
 border-radius: 26px;
+}
+
+.registerEmailForm{
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: absolute;
+left: 15.94%;
+right: 22.88%;
+top: 53.53%;
+bottom: 40.62%;
+width: 252.68px;
+height: 43px;
+}
+
+
+.registerUserNameForm{
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: absolute;
+    left: 15.94%;
+    right: 22.88%;
+    top: 60.87%;
+    bottom: 33.29%;
+    
+   
+    width: 252.68px;
+    height: 43px;
+}
+
+.registerPasswordForm{
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: absolute;
+left: 15.98%;
+right: 22.84%;
+top: 68.21%;
+bottom: 25.95%;
+
+    width: 252.68px;
+    height: 43px;
+
 }

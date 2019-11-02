@@ -16,8 +16,7 @@ class Logo extends Component {
 
         return(
 
-
-            <div><img alt="LogoIMG">logo</img></div>
+            <button type="button" onClick={() => { this.props.history.push(`/home/`) }}>Logo</button>
 
         
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom"
 import APIManager from "../../modules/APIManager";
-import { Col, Form, FormGroup, Button, Input } from 'reactstrap';
+import { Form, FormGroup, Button, Input } from 'reactstrap';
 import '../auth/Login.css'
 class Login extends Component {
   // Set initial state  
@@ -33,7 +33,7 @@ class Login extends Component {
         if (result.length > 0) {
           //this returns an array - we only need object
           this.props.setUser(result[0]);
-          this.props.history.push("/");
+          this.props.history.push("/home");
         } 
       })
   }
@@ -42,6 +42,7 @@ class Login extends Component {
     return (
       <> 
      <div className="mainContainer">
+     <button type="button" onClick={() => { this.props.history.push(`/home/`) }}>Go   Back</button>
       <Form className='loginForm'  onSubmit={this.handleLogin}>
         <div className="signInText">SignIn</div>
       <FormGroup row>

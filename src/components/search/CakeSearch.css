@@ -115,3 +115,8 @@ line-height: 140.62%;
 
 color: rgba(0, 0, 0, 0.5);
 }
+
+.donutButton{
+    background-image:url(../../Images/donut-image.jpeg);
+ 
+}

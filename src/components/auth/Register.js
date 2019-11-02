@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router-dom"
 import '../auth/Register.css'
 import APIManager from '../../modules/APIManager'
-import { Col, Form, FormGroup, Button, Input} from 'reactstrap';
+import { Form, FormGroup, Button, Input} from 'reactstrap';
 class Register extends Component {
     // Set initial state
     state = {
@@ -44,7 +44,7 @@ class Register extends Component {
                             console.log("result is", result);
                             this.props.setUser(result);
                         })
-                    this.props.history.push("/");
+                    this.props.history.push("/home");
                 }
             })
     }
@@ -53,23 +53,26 @@ class Register extends Component {
         return (
             <>
                <div className="mainContainer">
+               <button type="button" onClick={() => { this.props.history.push(`/home/`) }}>Go Back</button>
                 <Form className="registerForm" onSubmit={this.handleLogin}>
                     <div>Sign up</div>
                     <FormGroup row>
-                        <Col sm={10}>
-                            <Input onChange={this.handleFieldChange} type="email" name="email" id="email" placeholder="Email" bsSize="lg" />
-                        </Col>
+                     
+                            <Input className="registerEmailForm" onChange={this.handleFieldChange} type="email" name="email" id="email" placeholder="Email" bsSize="lg" />
+                       
                     </FormGroup>
                     <FormGroup row>
-                        <Col sm={10}>
-                            <Input onChange={this.handleFieldChange} type="username" name="username" id="username" placeholder="username" bsSize="lg" />
-                        </Col>
+                       
+                            
+                            <Input className="registerUserNameForm" onChange={this.handleFieldChange} type="username" name="username" id="username" placeholder="username" bsSize="lg" />
+                    
                     </FormGroup>
                     <FormGroup row>
 
-                        <Col sm={10}>
-                            <Input onChange={this.handleFieldChange} type="password" name="password" id="password" placeholder="Password" />
-                        </Col>
+                        
+                           
+                            <Input className="registerPasswordForm" onChange={this.handleFieldChange} type="password" name="password" id="password" placeholder="Password" />
+                     
                         <Button type="submit">
                             Register
           </Button>
