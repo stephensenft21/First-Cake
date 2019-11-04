@@ -4,6 +4,7 @@ import APIManager from '../../modules/APIManager'
 import AuthButtons from '../auth/AuthButtons'
 import CakeCard from '../../components/search/CakeCard';
 import '../search/CakeSearch.css'
+import Navi from '../nav/Navi'
 
 // import { relativeTimeRounding } from 'moment';
 
@@ -102,7 +103,7 @@ export default class CakeSearch extends Component {
         return (
             <div className="mainContainer">
               
-                
+                <Navi/>
                 <AuthButtons />
                 <div>{this.state.searchResults.map(result=> 
                     
