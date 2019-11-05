@@ -31,25 +31,36 @@ class CakeCard extends Component {
     //     };
 
 
+
+
+
+
+
     //renders
     render() {
         // let timeStamp = Moment(this.props.comment.date).fromNow();
+        console.log("this is the phoneNmbers",this.props.restaurant.phone_numbers)
+        
         return (
             <div>
                 <Card className="mainCard">
                     <CardBody>
-                        <CardTitle>{this.props.name}</CardTitle>
-                        <CardSubtitle>{this.props.address}</CardSubtitle>
-                        {/* <CardText>{this.props.location.address}  </CardText > */}
-                        {/* <CardText>{this.props.restuarant}  </CardText >
-                        <CardText>{this.props.restuarant}  </CardText > */}
-                        {/* <CardText>Posted: {timeStamp}  </CardText > */}
+                        <CardTitle>{`${this.props.restaurant.name}`}</CardTitle>
+                        <CardSubtitle>{this.props.restaurant.location.address}</CardSubtitle> 
+                  
+
+                            <CardText> {`Cost for Two:   $${this.props.restaurant.average_cost_for_two}`}  </CardText >
+                            <CardText>{`Phone#:${this.props.restaurant.phone_numbers}`}  </CardText > 
+                            <CardText>{`City:${this.props.restaurant.location.city}`}  </CardText >
+                            <CardText>{`Rating:${this.props.restaurant.user_rating.aggregate_rating}`}  </CardText>
+                            <CardText>{`Other user votes: ${this.props.restaurant.user_rating.votes}`}</CardText> 
+                      
 
 
-                        <Row className="buttonFlex">
+                        {/* <Row className="buttonFlex">
                             <Button className="button" type="text-box" onClick={() => { this.props.history.push(`/comments/${this.props.comment.id}/edit`) }}><FaRegEdit /></Button>
                             <Button className="button" type="button" onClick={() => this.handleDelete(this.props.comment.id)}><FaRegTrashAlt /></Button>
-                        </Row>
+                        </Row> */}
                     </CardBody>
                 </Card>
             </div>

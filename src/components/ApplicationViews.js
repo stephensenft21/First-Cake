@@ -3,11 +3,12 @@ import { Route } from "react-router-dom";
 import CommentList from "./comments/CommentList";
 import CommentForm from "./comments/CommentForm";
 import EditCommentForm from "./comments/EditCommentForm";
-import CakeSearch from ".//search/CakeSearch";
+import CakeHome from ".//search/CakeHome";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import FavoriteList from './favorites/FavoriteList'
 import Logo from './logo/Logo'
+import CakeList from './search/CakeList'
 // import FavoriteDetails from './favorites/FavoriteDetails'
 
 // import Login from ''
@@ -20,7 +21,7 @@ class ApplicationViews extends Component {
                     exact
                     path="/home"
                     render={props => {
-                        return <CakeSearch {...props} />
+                        return <CakeHome {...props} />
                     }}/>
                 {/* Comment Routes */}
                 <Route exact path="/comments" render={props => {
@@ -59,8 +60,12 @@ class ApplicationViews extends Component {
                  
                  
                  <Route exact path="/" render={props =>{
-                    return <Logo
+                    return <Logo    
                     {...props} />
+                }} />
+                     <Route path="/home/:cuisineId(\d+)" render={(props) => {
+                    // Pass the animalId to the AnimalDetailComponent
+                 return < CakeList cuisineId={parseInt(props.match.params.cuisineId)} {...props} />
                 }} />
 
                
