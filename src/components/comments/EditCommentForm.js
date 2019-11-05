@@ -61,7 +61,7 @@ class CommentEditForm extends Component {
                         <div>Comment</div>
                         <FormGroup row>
                             <Col sm={10}>
-                                <Input onChange={this.handleFieldChange} type="textarea" name="comment" id="text" placeholder="Make changes..." bsSize="lg" />
+                                <Input onChange={this.handleFieldChange}  value={this.state.text}type="textarea" name="comment" id="text" placeholder="Make changes..." bsSize="lg" />
                             </Col>
                             <Button type="submit">
                                 Edit</Button>

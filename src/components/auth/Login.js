@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom"
 import APIManager from "../../modules/APIManager";
-import { Col, Form, FormGroup, Button, Input } from 'reactstrap';
+import { Form, FormGroup, Button, Input } from 'reactstrap';
+import '../auth/Login.css'
 class Login extends Component {
-  // Set initial state
+  // Set initial state  
   state = {
-    usernames: "",
+    email: "",
     passwords: ""
   }
 
@@ -26,13 +27,13 @@ class Login extends Component {
     //   username: this.state.username, 
     //   password: this.state.password }
    
-    APIManager.searchUsername(this.state.username)
+    APIManager.searchUsername(this.state.email)
       .then(result => {
         console.log("what is the result of search", result)
         if (result.length > 0) {
           //this returns an array - we only need object
           this.props.setUser(result[0]);
-          this.props.history.push("/");
+          this.props.history.push("/home");
         } 
       })
   }
@@ -40,24 +41,26 @@ class Login extends Component {
   render() {
     return (
       <> 
-      
-      <Form onSubmit={this.handleLogin}>
-        <div>Sign In</div>
+     <div className="mainContainer">
+     <button type="button" onClick={() => { this.props.history.push(`/home/`) }}>Go   Back</button>
+      <Form className='loginForm'  onSubmit={this.handleLogin}>
+        <div className="signInText">SignIn</div>
       <FormGroup row>
-        <Col sm={10}>
-          <Input  onChange={this.handleFieldChange} type="username" name="username" id="usernames" placeholder="Username" bsSize="lg" />
-        </Col>
+       
+          <Input className="emailInput"  onChange={this.handleFieldChange} type="email" name="email" id="email" placeholder="Username" bsSize="lg" />
+      
       </FormGroup>
       <FormGroup row>
        
-        <Col sm={10}>
-          <Input onChange={this.handleFieldChange}type="password" name="password" id="passwords" placeholder="Password" />
-        </Col>
-        <Button type="submit">
+        
+          <Input  className="passwordInput" onChange={this.handleFieldChange}type="password" name="password" id="passwords" placeholder="Password" />
+        
+        <Button className="loginButton" type="submit">
             Sign in
           </Button>
       </FormGroup>
     </Form>
+    </div>
     
     </>
     )
