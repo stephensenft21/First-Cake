@@ -1,0 +1,8 @@
+.mainContainer  {
+    position: relative;
+width: 413px;
+height: 736px;
+background: #E9B5B5;
+backdrop-filter: blur(4px);
+
+}

@@ -42,7 +42,7 @@ class Login extends Component {
     return (
       <> 
      <div className="mainContainer">
-     <button type="button" onClick={() => { this.props.history.push(`/home/`) }}>Go   Back</button>
+     <button type="button" onClick={() => { this.props.history.goBack(`/home/`) }}>Go   Back</button>
       <Form className='loginForm'  onSubmit={this.handleLogin}>
         <div className="signInText">SignIn</div>
       <FormGroup row>

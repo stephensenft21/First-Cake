@@ -39,6 +39,7 @@ class ApplicationViews extends Component {
                 />
                 <Route path="/comments/:commentId(\d+)/edit" render={props => {
                         return <EditCommentForm 
+                        commentId={parseInt(props.match.params.commentId)}
                         {...props} />;
                     }}
                 />
