@@ -21,14 +21,15 @@ class ApplicationViews extends Component {
                     exact
                     path="/home"
                     render={props => {
-                        return <CakeHome {...props} />
+                        return <CakeHome
+                        setUser={this.props.setUser} {...props} />
                     }}/>
                 {/* Comment Routes */}
                 <Route exact path="/comments" render={props => {
                         return (
                             <CommentList 
                             {...props} 
-                            activeUser={this.props.activeUser} />
+                            setUser={this.props.setUser} />
                         );
                     }}
                 />

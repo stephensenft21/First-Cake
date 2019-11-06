@@ -5,8 +5,8 @@ import moment from 'moment';
 class CommentEditForm extends Component {
     //set the initial state
     state = {
-        userId: parseInt(sessionStorage.getItem("userId")),
-        text: "",
+        userId: parseInt(localStorage.getItem("userId")),
+        text: "fffff",
         date: "",
         collapse: false
     };
@@ -38,11 +38,13 @@ class CommentEditForm extends Component {
 
     componentDidMount() {
         API.get( this.props.match.params.commentId,"comments")
+        
             .then(comment => {
+            console.log(comment)
                 this.setState({
                     userId: comment.userId,
                     favoriteCakeId: comment.favoriteCakeId,
-                    text: this.state.text,
+                    text: comment.text,
                     date: this.state.date,
                     loadingStatus: false
 

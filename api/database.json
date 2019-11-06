@@ -5,28 +5,33 @@
       "email": "stephensenft21@gmail.com",
       "password": "1234",
       "id": 1
+    },
+    {
+      "username": "hey",
+      "email": "Hello@hello.com",
+      "password": "1111",
+      "id": 2
     }
   ],
   "comments": [
     {
       "id": 2,
       "userId": 1,
-      "editTimeStamp": "2019-11-01T22:56:08.896Z",
-      "text": "gggg"
+      "editTimeStamp": "2019-11-06T02:14:28.943Z",
+      "text": "sssssss"
     }
   ],
   "favoriteCakes": [
-  
     {
-      "userId": 1,
-      "name": "The Pharmacy Burger Parlor & Beer Garden",
-      "address": "731 McFerrin Ave, Nashville 37206",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 712-9517",
+      "userId": 2,
+      "name": "Loveless Cafe",
+      "address": "8400 State Highway 100, Nashville 37221",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 646-9700",
       "rating": "4.9",
       "city": "Nashville",
-      "votes": "1018",
-      "id": 7
+      "votes": "851",
+      "id": 3
     }
   ]
 }

@@ -8,13 +8,13 @@ import './App.css';
 
 class App extends Component {
   state = {
-    user: sessionStorage.getItem("credentials") !== null,
-    userId: sessionStorage.getItem("credentials") !== null ? JSON.parse(sessionStorage.getItem("credentials")).id : false
+    user: localStorage.getItem("credentials") !== null,
+    userId: localStorage.getItem("credentials") !== null ? JSON.parse(localStorage.getItem("credentials")).id : false
   }
 
   // Check if credentials are in local storage
   //returns true/false
-  isAuthenticated = () => sessionStorage.getItem("credentials") !== null
+  isAuthenticated = () => localStorage.getItem("credentials") !== null
   
   clearUser = () => {
     localStorage.clear()
@@ -36,7 +36,7 @@ class App extends Component {
       For now, just store the email and password that
       the customer enters into local storage.
     */
-    sessionStorage.setItem(
+    localStorage.setItem(
       "credentials",
       JSON.stringify(authObj)
     )
@@ -57,7 +57,8 @@ class App extends Component {
             <ApplicationViews
             isAuthenticated={this.isAuthenticated} 
             setUser={this.setUser}
-            userId={this.state.userId} /> 
+            userId={this.state.userId}
+            clearUser={this.clearUser} /> 
           
          
         

@@ -29,7 +29,7 @@ class CommentForm extends Component {
         if (this.state.text === '') {
             window.alert('Please add comment');
         } else {
-            let userId = parseInt(sessionStorage.getItem('credentials'));
+            let userId = parseInt(localStorage.getItem('credentials'));
             const newComment = {
                 userId: userId,
                 text: this.state.text,

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 // import Rating from 'react-rating'
 import APIManager from '../../modules/APIManager'
-import { Card, Row, CardTitle, CardText, Button, CardBody, CardHeader, CardFooter, CardImg, CardSubtitle } from "reactstrap";
+import { Card, Row, CardTitle, CardText, Button, CardBody, CardHeader, CardFooter, CardSubtitle } from "reactstrap";
 import { FaRegTrashAlt, FaRegEdit } from "react-icons/fa";
-import Moment from 'moment';
+import Navi from '../nav/Navi'
+import AuthButtons from '../auth/AuthButtons'
+// import Moment from 'moment';
 
 // import "./CommentCard.css"
 
@@ -36,7 +38,7 @@ class CakeCard extends Component {
 
 
         window.alert("Your selection has has been saved to MyFaves");
-let userCoin = JSON.parse(sessionStorage.getItem("credentials")).id
+let userCoin = JSON.parse(localStorage.getItem("credentials")).id
         console.log(blue)
        
         const favorite = {
@@ -60,10 +62,6 @@ let userCoin = JSON.parse(sessionStorage.getItem("credentials")).id
     }
 
 
-handleCheckboxChange = event => {
-    console.log("patadsgsgrs")
-    this.setState({ checked: event.target.checked })
-}
 
 
 
@@ -73,7 +71,16 @@ render() {
    
 
     return (
-        <div className="mainContainer">
+
+         <div className="mainContainer">
+        <CardHeader>
+           <Navi />
+                    <AuthButtons />
+
+           </CardHeader>
+        <div >
+           
+
             {(this.props.user) ?
                 <>
                     <Card className="mainCard">
@@ -112,8 +119,10 @@ render() {
 
                          
                         </CardBody>
+                        <CardFooter></CardFooter>
                     </Card>
                 </>}
+        </div>
         </div>
     );
 }

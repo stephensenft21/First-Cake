@@ -9,9 +9,10 @@ class FavoriteList extends Component {
     }
 
     getData = () => {
-        API.getAll("favorites").then((favorites) => {
+        API.getAll("favoriteCakes").then((allFavorites) => {
+            console.log("getData",allFavorites)
             this.setState({
-                favorites: favorites
+                favorites: allFavorites
             })
         })
     }
@@ -28,7 +29,7 @@ class FavoriteList extends Component {
 
 
             <div className='sectionHeader'>
-                <h1>List of Favortites</h1>
+                <h1>List of Favorites</h1>
                 <div className='mainContainer'>
                 </div>
                 {this.state.favorites.map(favorite => (

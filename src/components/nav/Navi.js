@@ -21,7 +21,12 @@ class Navi extends React.Component {
       dropdownOpen: !prevState.dropdownOpen
     }));
   }
+  logout = () => {
+    localStorage.removeItem("credentials")
+   
+  }
 
+  isAuthenticated = () => localStorage.getItem("credentials") !== null
   render() {
     return (
       <>
@@ -31,12 +36,12 @@ class Navi extends React.Component {
 
             </DropdownToggle>
             <DropdownMenu>
-              {this.props.user ? (
+              {this.isAuthenticated()? (
                 <>
                   <DropdownItem><Link className="nav-link" to="/about">About</Link></DropdownItem>
                   <DropdownItem><Link className="nav-link" to="/favorites">My First Cakes</Link></DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem><Link className="nav-link" onClick={this.props.logout} to="/login">Logout</Link></DropdownItem>
+                  <DropdownItem><Link className="nav-link" onClick={this.logout} to="/">Logout</Link></DropdownItem>
                 </>
               ) : (
                   <>
