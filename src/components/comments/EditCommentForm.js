@@ -33,11 +33,11 @@ class CommentEditForm extends Component {
         };
         // push edited task
         API.update(editedComment,"comments")
-            .then(() => this.props.history.push("/favorites"))
+            .then(() => this.props.history.push(""))
     }
 
     componentDidMount() {
-        API.get( this.props.match.params.commentId,"comments")
+        API.get( this.props.favoriteId,"comments")
         
             .then(comment => {
             console.log(comment)

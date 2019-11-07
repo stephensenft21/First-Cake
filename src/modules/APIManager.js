@@ -16,8 +16,18 @@ let APIManager = {
         return fetch(`${remoteURL}/${database}/${id}?_expand=${expanded}`).then(e => e.json())
     },
     getAll(database) {
-        return fetch(`${remoteURL}/${database}`).then(e => e.json())
+        //http://localhost:5002/favorites/1/comments?userId=1
+        //http://localhost:5002/favorites/1/comments?userId=1 this one works
     },
+        getCommentsFromOneFaveAndSingleUser(firstResource,id,secondResource,userId) {
+            return fetch(`${remoteURL}/${firstResource}/${id}/${secondResource}?userId=${userId}`)
+            .then(result => result.json())
+        },
+
+    getAllWithUserId(database,userId,secondResource) {
+        return fetch(`${remoteURL}/${database}/?userId=${userId}&_embed=${secondResource}`).then(e => e.json())
+    },
+    
     delete(id, database) {
         return fetch(`${remoteURL}/${database}/${id}`, {
                 method: "DELETE"
@@ -42,7 +52,7 @@ let APIManager = {
             body: JSON.stringify(editedObject)
         }).then(data => data.json());
     },
-    getObjectWithDatabase(id, firstdata, seconddata) {
+    getObjectWithDatabase(firstdata,id, seconddata) {
         return fetch(`${remoteURL}/${firstdata}/${id}?_embed=${seconddata}`)
             .then(result => result.json())
     },

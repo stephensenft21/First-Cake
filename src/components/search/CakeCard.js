@@ -55,7 +55,7 @@ let userCoin = JSON.parse(localStorage.getItem("credentials")).id
 
         };
         // Create the animal and redirect user to animal list
-        APIManager.post(favorite,"favoriteCakes")
+        APIManager.post(favorite,"favorites")
             .then(() => this.props.history.push(this.props.match.params.cuisineId))
 
 
@@ -73,11 +73,7 @@ render() {
     return (
 
          <div className="mainContainer">
-        <CardHeader>
-           <Navi />
-                    <AuthButtons />
-
-           </CardHeader>
+       
         <div >
            
 
@@ -96,8 +92,6 @@ render() {
                             <CardText>{`Other user votes: ${this.props.restaurant.user_rating.votes}`}</CardText>
 
                             <Row className="buttonFlex">
-                                <Button className="button" type="text-box" onClick={() => { this.props.history.push(`/comments/${this.props.comment.id}/edit`) }}><FaRegEdit /></Button>
-                                <Button className="button" type="button" onClick={() => this.handleDelete(this.props.comment.id)}><FaRegTrashAlt /></Button>
                             </Row>
                         </CardBody>
                     </Card>
@@ -115,7 +109,7 @@ render() {
                             <CardText>{`City:${this.props.restaurant.location.city}`}  </CardText >
                             <CardText>{`Rating:${this.props.restaurant.user_rating.aggregate_rating}`}  </CardText>
                             <CardText>{`Other user votes: ${this.props.restaurant.user_rating.votes}`}</CardText>
-                            <Button className="button" type="button" disabled={this.props.loadingStatus} onClick={() => this.constructNewFave()}><FaRegTrashAlt /></Button>
+                            <Button className="button" type="button" disabled={this.props.loadingStatus} onClick={() => this.constructNewFave()}>Save button</Button>
 
                          
                         </CardBody>

@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import ApplicationViews from './components/ApplicationViews';
-import Navi from './components/nav/Navi'
-
+import {withRouter} from 'react-router'
 // import Nav from './components/nav/Nav';
 import './App.css';
 
@@ -48,6 +47,7 @@ class App extends Component {
   }
 
   render() {
+    // console.log(this.props)
     return(
       <>
        
@@ -58,7 +58,8 @@ class App extends Component {
             isAuthenticated={this.isAuthenticated} 
             setUser={this.setUser}
             userId={this.state.userId}
-            clearUser={this.clearUser} /> 
+            clearUser={this.clearUser}
+            {...this.props} /> 
           
          
         
@@ -68,4 +69,4 @@ class App extends Component {
   
       }}
 
-export default App;     
+export default withRouter(App);     

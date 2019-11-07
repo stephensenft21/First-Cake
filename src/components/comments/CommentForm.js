@@ -31,6 +31,7 @@ class CommentForm extends Component {
         } else {
             let userId = parseInt(localStorage.getItem('credentials'));
             const newComment = {
+                favoriteCakeId: this.state.favoriteCakeId,
                 userId: userId,
                 text: this.state.text,
                 editTimeStamp: '',

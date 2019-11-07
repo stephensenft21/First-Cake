@@ -6,7 +6,7 @@ import { FaRegTrashAlt, } from "react-icons/fa";
 class FavoriteCard extends Component {
 
     handleDelete = (id) => {
-        API.delete(id, "favoriteCakes")
+        API.delete(id, "favorites")
             .then(() => this.props.getData());
     }
 

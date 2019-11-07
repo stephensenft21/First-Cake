@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FavoriteCard from './FavoriteCard'
 import API from '../../modules/APIManager'
+import CommentList from '../../components/comments/CommentList'
 
 class FavoriteList extends Component {
 
@@ -9,7 +10,7 @@ class FavoriteList extends Component {
     }
 
     getData = () => {
-        API.getAll("favoriteCakes").then((allFavorites) => {
+        API.getAllWithUserId("favorites",this.props.userId,"comments").then((allFavorites) => {
             console.log("getData",allFavorites)
             this.setState({
                 favorites: allFavorites
@@ -23,6 +24,8 @@ class FavoriteList extends Component {
     }
 
 
+    
+
 
     render() {
         return (
@@ -32,14 +35,15 @@ class FavoriteList extends Component {
                 <h1>List of Favorites</h1>
                 <div className='mainContainer'>
                 </div>
-                {this.state.favorites.map(favorite => (
+                {this.state.favorites.map((favorite,id) => (
                     <FavoriteCard
-                        key={favorite.id}
+                        key={id}
                         favorite={favorite}
                         {...this.props}
                         getData={this.getData}
                     />
                 ))}
+                <CommentList/>
             </div>
 
 
