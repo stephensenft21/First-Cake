@@ -7,16 +7,16 @@ import './App.css';
 
 class App extends Component {
   state = {
-    user: localStorage.getItem("credentials") !== null,
-    userId: localStorage.getItem("credentials") !== null ? JSON.parse(localStorage.getItem("credentials")).id : false
+    user: sessionStorage.getItem("credentials") !== null,
+    userId: sessionStorage.getItem("credentials") !== null ? JSON.parse(sessionStorage.getItem("credentials")).id : false
   }
 
   // Check if credentials are in local storage
   //returns true/false
-  isAuthenticated = () => localStorage.getItem("credentials") !== null
+  isAuthenticated = () => sessionStorage.getItem("credentials") !== null
   
   clearUser = () => {
-    localStorage.clear()
+    sessionStorage.clear()
 
     this.setState({
       user: this.isAuthenticated()
@@ -25,8 +25,8 @@ class App extends Component {
   }
 
   logout = () => {
-    localStorage.removeItem("credentials")
-    this.setState({ user: localStorage.getItem("credentials") !== null })
+    sessionStorage.removeItem("credentials")
+    this.setState({ user: sessionStorage.getItem("credentials") !== null })
   }
 
   setUser = (authObj) => {
@@ -35,7 +35,7 @@ class App extends Component {
       For now, just store the email and password that
       the customer enters into local storage.
     */
-    localStorage.setItem(
+    sessionStorage.setItem(
       "credentials",
       JSON.stringify(authObj)
     )

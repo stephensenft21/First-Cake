@@ -1,19 +1,141 @@
 {
   "users": [
     {
-      "username": "stephen ",
-      "email": "stephensenft21@gmail.com",
+      "id": 1,
+      "username": "Teddie",
+      "email": "Billy@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "username": "Read",
+      "email": "remlen1@amazon.co.uk",
+      "password": "UhYnUpV9"
+    },
+    {
+      "id": 3,
+      "username": "Bren",
+      "email": "bslot2@weather.com",
+      "password": "M7LoArXbD"
+    },
+    {
+      "id": 4,
+      "username": "Sheff",
+      "email": "sorrill3@bloglines.com",
+      "password": "HuYYXov"
+    },
+    {
+      "id": 5,
+      "username": "Walden",
+      "email": "wmosby4@prlog.org",
+      "password": "cJCOHzr7"
+    },
+    {
+      "id": 6,
+      "username": "Andreana",
+      "email": "amcgarvey5@histats.com",
+      "password": "yBoitrXyiM"
+    },
+    {
+      "id": 7,
+      "username": "Irwin",
+      "email": "iarens6@phoca.cz",
+      "password": "FdLZMQdkNVU"
+    },
+    {
+      "id": 8,
+      "username": "Ivonne",
+      "email": "ihuddart7@xinhuanet.com",
+      "password": "i2g1D0g"
+    },
+    {
+      "id": 9,
+      "username": "Aliza",
+      "email": "afermer8@fc2.com",
+      "password": "dvCC2uo"
+    },
+    {
+      "id": 10,
+      "username": "Kelley",
+      "email": "kphilippou9@washingtonpost.com",
+      "password": "JvYB6u6Y"
+    },
+    {
+      "id": 11,
+      "username": "Cullin",
+      "email": "cairda@columbia.edu",
+      "password": "fZ28Bs0L5u"
+    },
+    {
+      "id": 12,
+      "username": "Sissy",
+      "email": "sgentyb@noaa.gov",
+      "password": "jwasvODoqJM"
+    },
+    {
+      "id": 13,
+      "username": "Stirling",
+      "email": "srogeonc@uol.com.br",
+      "password": "8j9vBDAXB1"
+    },
+    {
+      "id": 14,
+      "username": "Alford",
+      "email": "awheaterd@t.co",
+      "password": "KORsyUtMLh"
+    },
+    {
+      "id": 15,
+      "username": "Farlay",
+      "email": "fcosense@comcast.net",
+      "password": "9MYLzy"
+    },
+    {
+      "username": "Teddie",
+      "email": "Billy@gmail.com",
       "password": "1234",
+      "id": 16
+    },
+    {
+      "username": "Teddie",
+      "email": "Billy@gmail.com",
+      "password": "1234",
+      "id": 17
+    }
+  ],
+  "comments": [
+    {
+      "favoriteId": 1,
+      "userId": 1,
+      "text": "SHe ate my cake!!",
+      "editTimeStamp": "2019-11-08T20:39:43.217Z",
+      "date": "2019-11-08T19:46:49.243Z",
       "id": 1
     },
     {
-      "username": "hey",
-      "email": "Hello@hello.com",
-      "password": "1111",
-      "id": 2
+      "favoriteId": 1,
+      "id": 2,
+      "userId": 1,
+      "editTimeStamp": "2019-11-08T20:34:35.932Z",
+      "text": "I Hate this place! And She Ate my cake",
+      "date": ""
+    },
+    {
+      "favoriteId": 1,
+      "id": 3,
+      "userId": 1,
+      "editTimeStamp": "2019-11-08T20:25:37.792Z",
+      "text": "This place was horrible!!"
+    },
+    {
+      "favoriteId": 1,
+      "userId": 1,
+      "text": "dfdgsdfgsgsgsddrg",
+      "editTimeStamp": "",
+      "date": "2019-11-08T19:46:49.243Z",
+      "id": 4
     }
   ],
-  "comments": [],
   "favorites": [
     {
       "userId": 1,
@@ -24,7 +146,7 @@
       "rating": "4.9",
       "city": "Nashville",
       "votes": "1018",
-      "id": 5
+      "id": 1
     },
     {
       "userId": 1,
@@ -35,7 +157,7 @@
       "rating": "4.9",
       "city": "Nashville",
       "votes": "1018",
-      "id": 6
+      "id": 2
     },
     {
       "userId": 1,
@@ -46,51 +168,7 @@
       "rating": "4.9",
       "city": "Nashville",
       "votes": "1018",
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "name": "The Pharmacy Burger Parlor & Beer Garden",
-      "address": "731 McFerrin Ave, Nashville 37206",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 712-9517",
-      "rating": "4.9",
-      "city": "Nashville",
-      "votes": "1018",
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "name": "The Pharmacy Burger Parlor & Beer Garden",
-      "address": "731 McFerrin Ave, Nashville 37206",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 712-9517",
-      "rating": "4.9",
-      "city": "Nashville",
-      "votes": "1018",
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "name": "The Pharmacy Burger Parlor & Beer Garden",
-      "address": "731 McFerrin Ave, Nashville 37206",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 712-9517",
-      "rating": "4.9",
-      "city": "Nashville",
-      "votes": "1018",
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "name": "The Pharmacy Burger Parlor & Beer Garden",
-      "address": "731 McFerrin Ave, Nashville 37206",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 712-9517",
-      "rating": "4.9",
-      "city": "Nashville",
-      "votes": "1018",
-      "id": 11
+      "id": 3
     }
   ]
 }

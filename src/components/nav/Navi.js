@@ -2,6 +2,8 @@
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Link, withRouter } from "react-router-dom"
+
+import  {TiThMenuOutline} from "react-icons/ti"
 import '../nav/Navi.css'
 // import './Navbar.css'
 
@@ -22,22 +24,25 @@ class Navi extends React.Component {
     }));
   }
   logout = () => {
-    localStorage.removeItem("credentials")
+    sessionStorage.removeItem("credentials")
    
   }
 
-  isAuthenticated = () => localStorage.getItem("credentials") !== null
+  isAuthenticated = () => sessionStorage.getItem("credentials") !== null
   render() {
     return (
       <>
         <div className="nav-container navBarContainer">
-          <Dropdown group isOpen={this.state.dropdownOpen} size="lg" toggle={this.toggle}>
-            <DropdownToggle caret>
+          
+         <Dropdown group isOpen={this.state.dropdownOpen} size="lg" toggle={this.toggle}>
+     <DropdownToggle><TiThMenuOutline/>
 
             </DropdownToggle>
+        
             <DropdownMenu>
               {this.isAuthenticated()? (
                 <>
+                  <DropdownItem><Link className="nav-link" to="/home">Home</Link></DropdownItem>
                   <DropdownItem><Link className="nav-link" to="/about">About</Link></DropdownItem>
                   <DropdownItem><Link className="nav-link" to="/favorites">My First Cakes</Link></DropdownItem>
                   <DropdownItem divider />

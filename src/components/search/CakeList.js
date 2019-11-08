@@ -4,13 +4,13 @@ import Navi from "../nav/Navi"
 import AuthButtons from "../auth/AuthButtons"
 import CakeCard from "../search/CakeCard"
 import '../search/CakeList.css'
-import { Spinner} from 'reactstrap'
+import { Spinner, Form } from 'reactstrap'
 
 class CakeList extends React.Component {
     state = {
         searchResults: [],
         loadingStatus: true,
-      
+
     }
 
 
@@ -29,7 +29,7 @@ class CakeList extends React.Component {
     componentDidMount() {
         console.log("CakeList: ComponentDidMount");
         //get(id) from AnimalManager and hang on to the data; put it into state
-        APIManager.searchZomato(    )
+        APIManager.searchZomato()
             .then((allResults) => {
                 console.log(allResults)
                 this.setState({
@@ -46,27 +46,48 @@ class CakeList extends React.Component {
 
     render() {
 
-        if (this.state.loadingStatus) { return <Spinner type="grow" color="dark" /> }
+        if (this.state.loadingStatus) {
+            return  <div className="mainContainer">           
+                    <div className="loader">
+                    <div className="bubble"></div>
+                    <div className="bubble"></div>
+                    <div className="bubble"></div>
+                    <div className="bubble"></div>
+                </div>
+                </div>
+            
+
+        }
         else {
 
             return (
+                <>
+                    <header>
 
-                <div className="mainContainer">
-
-                    <Navi />
-                    <AuthButtons />
-
-                    <div>{this.state.searchResults.map((result, i) =>
-
-                        <CakeCard key={i} restaurant={result.restaurant}
-                           
-                            {...this.props} />
+                        <Navi />
+                        <AuthButtons />
+                    </header>
 
 
 
-                    )}</div>
-                </div>
 
+
+                    <div className="wrapper">
+                        <Form>
+                            <div>
+
+                                {this.state.searchResults.map((result, i) =>
+                                    <CakeCard key={i}
+                                        restaurant={result.restaurant}
+                                        {...this.props} />
+
+
+
+                                )}</div>
+
+                        </Form>
+                    </div>
+                </>
 
             );
         }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
 import App from '../style/SpringHooks'
 import '../logo/Logo.css'
+import styles from '../../Style'
 
 
 
@@ -28,13 +29,13 @@ class Logo extends Component {
 
 
         return (
-            <div className="mainContainer">
+            <div className="mainContainer" style={styles.mainContainer}>
 
                 <button className="logoButton" type="button" onClick={() => { this.props.history.push(`/home/`) }}>Logo</button>
                  
                 <form className="logoForm">
                     
-                    <div className="firstDateText">Your First Date Awaits... <App /></div>
+                    <div className="firstDateText">Your First Date Awaits... </div>
                 </form>
             </div>
 

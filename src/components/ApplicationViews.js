@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import CommentList from "./comments/CommentList";
 import CommentForm from "./comments/CommentForm";
-import EditCommentForm from "./comments/EditCommentForm";
+import EditCommentForm from './comments/EditCommentForm';
 import CakeHome from ".//search/CakeHome";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
@@ -22,47 +22,66 @@ class ApplicationViews extends Component {
     render() {
         return (
             <>
+            {/* This Route takes you home   */}
                 <Route exact path="/home" render={props => {
                     return <CakeHome
-                        setUser={this.props.setUser} {...props}
-                        userId={this.props.userId} />
+                    isAuthenticated={this.isAuthenticated}
+                    setUser={this.setUser}
+                    userId={this.props.userId}
+                    clearUser={this.props.clearUser}
+                    {...this.props}
+                    favoriteId={parseInt(props.match.params.favoriteId)}
+
+                    {...props} />
                 }} />
                 {/* Comment Routes */}
                 <Route exact path="/comments" render={props => {
 
                     return (
                         <CommentList
+                        isAuthenticated={this.props.isAuthenticated}
+                        setUser={this.props.setUser}
+                        userId={this.props.userId}
+                        clearUser={this.props.clearUser}
+                        {...this.props}
+                        favoriteId={parseInt(props.match.params.favoriteId)}
 
-                            userId={this.props.userId}
-                            setUser={this.props.setUser}
-                            {...props} />
+                        {...props} />
                     );
                 }}
                 />
-                <Route path="/comments/new" render={props => {
+                {/* This Route takes you to the comment form that is specific to the favorited Id */}
+                <Route exact path="/comments/:favoriteId(\d+)" render={props => {
                     return <CommentForm
+                        isAuthenticated={this.isAuthenticated}
+                        setUser={this.setUser}
+                        userId={this.props.userId}
+                        clearUser={this.props.clearUser}
+                        {...this.props}
+                        favoriteId={parseInt(props.match.params.favoriteId)}
+
+                        {...props} />;  
+                }}
+                />
+                {/* This Route takes you to the edit form of the specific favorite */}
+                <Route path="/comments/:commentId(\d+)/edit" render={props => {
+                    return <EditCommentForm
+                        commentId={parseInt(props.match.params.commentId)}
                         userId={this.props.userId}
                         {...props} />;
                 }}
                 />
-                <Route path="/comments/:favoriteId(\d+)/edit" render={props => {
-                    return <EditCommentForm
-                        favoriteId={parseInt(props.match.params.favoriteId)}
-                        userId={this.props.userId}
-                        {...props} />;
-                }}
-                />       
-                 {/* <Route path="/favorites" render={props => {
+                {/* <Route path="/favorites" render={props => {
 
-                    return <FavoriteList
-                        userId={this.props.userId}
-                        // favoriteId={parseInt(props.match.params.favoriteId)}
+                     return <FavoriteList
+                         userId={this.props.userId}
+                         favoriteId={parseInt(props.match.params.favoriteId)}
 
-                        {...props}
+                         {...props}
 
-                        setUser={this.props.setUser} /> */}
-                {/* }} />
-                 */}
+                        setUser={this.props.setUser} /> }
+                 }/> */}
+
                 <Route path="/favorites/:favoriteId(\d+)" render={props => {
 
                     return <FavoriteList

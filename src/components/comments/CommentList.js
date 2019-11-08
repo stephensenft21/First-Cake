@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CommentCard from './CommentCard'
-import API from '../../modules/APIManager'
+import APIManager from '../../modules/APIManager'
 import "./CommentList.css"
 import { withRouter } from 'react-router'
 class CommentList extends Component {
@@ -10,10 +10,10 @@ class CommentList extends Component {
 		comments: []
 	}
 
-
+	
 
 	getData = () => {
-		API.getAll("comments").then((comments) => {
+		APIManager.getAll("comments").then((comments) => {
 			this.setState({
 				comments: comments
 			})
@@ -21,33 +21,38 @@ class CommentList extends Component {
 	}
   
 
-	// HTML Example!!!!
-//<div "first Prop"=(className)   "second Prop"=(type) ="button"  ='sectionHeader'>   Hey Matthew    <div/>
+// 	// HTML Example!!!!
+// //<div "first Prop"=(className)   "second Prop"=(type) ="button"  ='sectionHeader'>   Hey Matthew    <div/>
 
-element = {
-	type: "div, button",
-	props: "className",
-	props2: "type",
-	children: 'sectionHeader' 
-	//text content <div>Hey mathhew</div>
+// element = {
+// 	type: "div, button",
+// 	props: "className",
+// 	props2: "type",
+// 	children: 'sectionHeader' 
+// 	//text content <div>Hey mathhew</div>
+// }
+
+dostuff =() => {
+	let userToken = JSON.parse(sessionStorage.getItem("credentials")).id
+	console.log("this is in the component on comment list", this.props)
+	//got here now make call to get employee with animal
+	//http://localhost:5002/favorites/1/comments?userId=1
+	APIManager.getCommentsFromOneFaveAndSingleUser("favorites", this.props.match.params.favoriteId, "comments", userToken)
+		.then((APIManagerResult) => {
+			console.log("Hey this is APIManager Result", APIManagerResult)
+			// let filteredResult = APIManagerResult.filter(comment => {return  comment.userId = JSON.parse(sessionStorage.getItem("credentials")).id  })
+			// console.log( "this is filtered result", filteredResult)
+			this.setState({
+				favorites: APIManagerResult,
+				comments: APIManagerResult
+			})
+		})
+
 }
 
 
 	componentDidMount() {
-		let userToken = JSON.parse(localStorage.getItem("credentials")).id
-		console.log("this is in the component on comment list", this.props)
-		//got here now make call to get employee with animal
-		//http://localhost:5002/favorites/1/comments?userId=1
-		API.getCommentsFromOneFaveAndSingleUser("favorites", this.props.match.params.favoriteId, "comments", userToken)
-			.then((APIResult) => {
-				console.log("Hey this is API Result", APIResult)
-				// let filteredResult = APIResult.filter(comment => {return  comment.userId = JSON.parse(localStorage.getItem("credentials")).id  })
-				// console.log( "this is filtered result", filteredResult)
-				this.setState({
-					favorites: APIResult,
-					comments: APIResult
-				})
-			})
+		this.dostuff()
 	}
 
 	render() {
@@ -62,7 +67,7 @@ element = {
 						key={id}
 						comment={comment}
 						{...this.props}
-						getData={this.getData}
+						getComments={this.dostuff}
 					/>
 				))}
 			</div>

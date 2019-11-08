@@ -26,7 +26,7 @@ let APIManager = {
 
     getAllWithUserId(database,userId,secondResource) {
         return fetch(`${remoteURL}/${database}/?userId=${userId}&_embed=${secondResource}`).then(e => e.json())
-    },
+    },                  //http://localhost:5002/favorites?_sort=votes&_order=asc&userId=1&_embed=comments this one works
     
     delete(id, database) {
         return fetch(`${remoteURL}/${database}/${id}`, {
@@ -35,6 +35,7 @@ let APIManager = {
             .then(result => result.json())
     },
     post(newObject, database) {
+        console.log(newObject)
         return fetch(`${remoteURL}/${database}`, {
             method: "POST",
             headers: {
@@ -46,6 +47,15 @@ let APIManager = {
     update(editedObject, database) {
         return fetch(`${remoteURL}/${database}/${editedObject.id}`, {
             method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedObject)
+        }).then(data => data.json());
+    },
+    updateComment(editedObject, database,id) {
+        return fetch(`${remoteURL}/${database}/${id}`, {
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -71,7 +81,7 @@ let APIManager = {
             body: JSON.stringify(newUser)
         }).then(data => data.json())
     },
-    searchUsername(email) {
+    searchEmail(email) {
         return fetch(`${remoteURL}/users?email=${email}`)
             .then(e => e.json())
     },

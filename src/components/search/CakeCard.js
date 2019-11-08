@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import APIManager from '../../modules/APIManager'
 import { Card, Row, CardTitle, CardText, Button, CardBody, CardHeader, CardFooter, CardSubtitle } from "reactstrap";
 import { FaRegTrashAlt, FaRegEdit } from "react-icons/fa";
-import Navi from '../nav/Navi'
-import AuthButtons from '../auth/AuthButtons'
 // import Moment from 'moment';
 
 // import "./CommentCard.css"
@@ -12,10 +10,7 @@ import AuthButtons from '../auth/AuthButtons'
 class CakeCard extends Component {
     state = { checked: false }
 
-    handleDelete = (id) => {
-        APIManager.delete(id, "comments")
-            .then(() => this.props.getData());
-    }
+   
     //     <h2>Rate Product:</h2>
     //                         <Rating
     //                             id="condition"
@@ -38,7 +33,7 @@ class CakeCard extends Component {
 
 
         window.alert("Your selection has has been saved to MyFaves");
-let userCoin = JSON.parse(localStorage.getItem("credentials")).id
+let userCoin = JSON.parse(sessionStorage.getItem("credentials")).id
         console.log(blue)
        
         const favorite = {
@@ -65,14 +60,14 @@ let userCoin = JSON.parse(localStorage.getItem("credentials")).id
 
 
 
-//renders
+
 render() {
-    // let timeStamp = Moment(this.props.comment.date).fromNow();
+    
    
 
     return (
 
-         <div className="mainContainer">
+      
        
         <div >
            
@@ -117,7 +112,7 @@ render() {
                     </Card>
                 </>}
         </div>
-        </div>
+       
     );
 }
 }

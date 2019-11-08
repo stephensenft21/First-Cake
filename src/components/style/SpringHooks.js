@@ -1,16 +1,36 @@
-import React from 'react'
-import {Transition, show} from 'react-spring/renderprops'
-// import { config } from 'react-spring'
+import React from 'react';
+import style from '../../Style'
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+import Button from '@material-ui/core/Button';
+// import Fab from '@material-ui/core/Fab';
+// import { makeStyles } from '@material-ui/core/styles'; 
 
-class App extends React.Component {
-render() {
-    return (
-<Transition
-items={show}
-from={{ opacity: 0 }}
-enter={{ opacity: 1 }}
-leave={{ opacity: 0 }}>
-{show => show && (props => <div style={props}>heyyyy</div>)}
-</Transition>
-    ) } }
-     export default App      
+ export default function MaterialButton(){
+  return (
+    <Button style={style.loginButton} type='submit' variant="contained" color="primary">
+      Sign in
+    </Button>
+  );
+}
+// const useStyles = makeStyles(theme => ({
+//     fab: {
+//       margin: theme.spacing(1),
+//     },
+//     extendedIcon: {
+//       marginRight: theme.spacing(1),
+//     },
+//   }));
+
+// export function FloatingActionButtons() {
+//     const classes = useStyles();
+  
+//     return (
+//       <div>
+       
+//         <Fab  aria-label="like" className={classes.fab}>
+//           <FavoriteIcon />
+//         </Fab>
+//       </div>
+//     );
+//   }
+  

@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { Col, Form, FormGroup, Button, Input, Collapse } from 'reactstrap';
-import API from '../../modules/APIManager'
+import Navi from '../nav/Navi'
+import APIManager from '../../modules/APIManager'
 import Moment from 'moment';
+import AuthButtons  from '../auth/AuthButtons'
 
 
 class CommentForm extends Component {
 
     state = {
-        favoriteCakeId: "",
+        favoriteId: "",
         userId: null,
         collapse: false,
         text: "",
@@ -29,25 +31,26 @@ class CommentForm extends Component {
         if (this.state.text === '') {
             window.alert('Please add comment');
         } else {
-            let userId = parseInt(localStorage.getItem('credentials'));
+          
             const newComment = {
-                favoriteCakeId: this.state.favoriteCakeId,
-                userId: userId,
+                favoriteId: this.props.favoriteId,
+                userId: this.props.userId,
                 text: this.state.text,
                 editTimeStamp: '',
                 date: Moment(new Date()),
             }
-            API.post(newComment,"comments")
-                .then(() => this.props.history.push("/favorites"));
+            APIManager.post(newComment,"comments")
+                .then(() => this.props.history.push("/"));
         }
     }
 
     render() {
         return (
             <>
+              <Navi/>
             
                 <div>Collapse Form was put here</div>
-                <Collapse key={this.toggle}>
+               
                     <Form onSubmit={this.constructNewMessage}>
                         <div>Add comment</div>
                         <FormGroup row>
@@ -58,7 +61,7 @@ class CommentForm extends Component {
                                 Post</Button>
                         </FormGroup>
                     </Form>
-                </Collapse>
+               
 
             </>
         )

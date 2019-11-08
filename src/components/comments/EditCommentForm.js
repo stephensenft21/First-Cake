@@ -1,14 +1,16 @@
 import React, { Component } from "react"
-import { Button, Form, FormGroup, Input,Col } from "reactstrap";
-import API from "../../modules/APIManager";
+import { Button, Form, FormGroup, Input, Col } from "reactstrap";
+import APIManager from "../../modules/APIManager";
 import moment from 'moment';
-class CommentEditForm extends Component {
+class EditCommentForm extends Component {
     //set the initial state
     state = {
-        userId: parseInt(localStorage.getItem("userId")),
+        userId: parseInt(sessionStorage.getItem("userId")),
+        commentId: "",
         text: "fffff",
         date: "",
-        collapse: false
+        collapse: false,
+        favoriteId: ""
     };
 
     toggle = () => this.setState({ collapse: !this.state.collapse });
@@ -24,29 +26,27 @@ class CommentEditForm extends Component {
         event.preventDefault()
         this.setState({ loadingStatus: true });
         const editedComment = {
-            id: this.props.match.params.commentId,
-            userId: this.state.userId,
-            favoriteCakeId: this.state.favoriteCakeId,
             editTimeStamp: moment(new Date()),
-            text: this.state.text,
-            date: this.props.date,
+            text: this.state.text
+
         };
         // push edited task
-        API.update(editedComment,"comments")
-            .then(() => this.props.history.push(""))
+        APIManager.updateComment(editedComment, "comments",this.props.match.params.commentId)
+            .then(() => this.props.history.push(`/favorites/${this.state.favoriteId}`))
     }
 
     componentDidMount() {
-        API.get( this.props.favoriteId,"comments")
-        
+        APIManager.get(this.props.commentId, "comments")
+
             .then(comment => {
-            console.log(comment)
+                console.log(comment)
                 this.setState({
+                    favoriteId: comment.favoriteId,
                     userId: comment.userId,
-                    favoriteCakeId: comment.favoriteCakeId,
                     text: comment.text,
-                    date: this.state.date,
-                    loadingStatus: false
+                    editTimeStamp: moment(new Date()),
+                    loadingStatus: false,
+                    commentId: comment.commentId,
 
                 });
             });
@@ -59,20 +59,20 @@ class CommentEditForm extends Component {
         return (
             <>
                 {/* <Collapse toggle={this.toggle}> */}
-                    <Form onSubmit={this.updateExistingComment}>
-                        <div>Comment</div>
-                        <FormGroup row>
-                            <Col sm={10}>
-                                <Input onChange={this.handleFieldChange}  value={this.state.text}type="textarea" name="comment" id="text" placeholder="Make changes..." bsSize="lg" />
-                            </Col>
-                            <Button type="submit">
-                                Edit</Button>
-                        </FormGroup>
-                    </Form>
+                <Form onSubmit={this.updateExistingComment}>
+                    <div>Comment</div>
+                    <FormGroup row>
+                        <Col sm={10}>
+                            <Input onChange={this.handleFieldChange} value={this.state.text} type="text" name="comment" id="text" placeholder="Make changes..." bsSize="lg" />
+                        </Col>
+                        <Button type="submit">
+                            Edit</Button>
+                    </FormGroup>
+                </Form>
                 {/* </Collapse> */}
             </>
         );
     }
 
 }
-export default CommentEditForm
+export default EditCommentForm

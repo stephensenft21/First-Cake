@@ -3,6 +3,12 @@ import { withRouter } from "react-router-dom"
 import APIManager from "../../modules/APIManager";
 import { Form, FormGroup, Button, Input } from 'reactstrap';
 import '../auth/Login.css'
+import style from '../../Style'
+import MatButton from '../style/SpringHooks'
+import { makeStyles } from '@material-ui/core/styles';
+  import TextField from '@material-ui/core/TextField';
+  import '../../index.css'
+
 class Login extends Component {
   // Set initial state  
   state = {
@@ -27,7 +33,7 @@ class Login extends Component {
     //   username: this.state.username, 
     //   password: this.state.password }
    
-    APIManager.searchUsername(this.state.email)
+    APIManager.searchEmail(this.state.email)
       .then(result => {
         console.log("what is the result of search", result)
         if (result.length > 0) {
@@ -41,23 +47,22 @@ class Login extends Component {
   render() {
     return (
       <> 
-     <div className="mainContainer">
-     <button type="button" onClick={() => { this.props.history.goBack(`/home/`) }}>Go   Back</button>
-      <Form className='loginForm'  onSubmit={this.handleLogin}>
-        <div className="signInText">SignIn</div>
+     <div style={style.mainContainer}>
+     <Button type="button" onClick={() => { this.props.history.goBack(`/home/`) }}>Go   Back</Button>
+      <Form style={style.Form}  onSubmit={this.handleLogin}>
+        <div style={style.signInText}>Sign In</div>
       <FormGroup row>
        
-          <Input className="emailInput"  onChange={this.handleFieldChange} type="email" name="email" id="email" placeholder="Username" bsSize="lg" />
+          <TextField style={(style.emailInput)} onChange={this.handleFieldChange} type="email" name="email" id="email" placeholder="Email" />
       
       </FormGroup>
       <FormGroup row>
        
         
-          <Input  className="passwordInput" onChange={this.handleFieldChange}type="password" name="password" id="passwords" placeholder="Password" />
+          <TextField style={style.passwordInput}  onChange={this.handleFieldChange}type="password" name="password" id="passwords" placeholder="Password" />
         
-        <Button className="loginButton" type="submit">
-            Sign in
-          </Button>
+         <MatButton  style={(style.loginButton)}  >Sign in </MatButton>
+
       </FormGroup>
     </Form>
     </div>

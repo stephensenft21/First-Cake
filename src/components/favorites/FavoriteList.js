@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FavoriteCard from './FavoriteCard'
-import API from '../../modules/APIManager'
+import APIManager from '../../modules/APIManager'
 import CommentList from '../../components/comments/CommentList'
 
 class FavoriteList extends Component {
@@ -10,7 +10,7 @@ class FavoriteList extends Component {
     }
 
     getData = () => {
-        API.getAllWithUserId("favorites",this.props.userId,"comments").then((allFavorites) => {
+        APIManager.getAllWithUserId("favorites",this.props.userId,"comments").then((allFavorites) => {
             console.log("getData",allFavorites)
             this.setState({
                 favorites: allFavorites
