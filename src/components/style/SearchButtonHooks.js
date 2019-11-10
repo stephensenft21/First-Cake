@@ -9,10 +9,9 @@ const useStyles = makeStyles(theme => ({
    
   root: {
     display: 'flex',
-    alignSelf: "center",    
-    flexDirection: 'row',
-    flexWrap: "column",
-    minWidth: "100px",
+  height: "10%",
+  flexWrap: 'wrap',
+  alignContent: 'flex-start',
    
   },
   second: {

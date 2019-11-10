@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FavoriteCard from './FavoriteCard'
 import APIManager from '../../modules/APIManager'
 import CommentList from '../../components/comments/CommentList'
-
+import Navi from '../nav/Navi'
 class FavoriteList extends Component {
 
     state = {
@@ -31,10 +31,10 @@ class FavoriteList extends Component {
         return (
 
 
-            <div className='sectionHeader'>
-                <h1>List of Favorites</h1>
+           <>
+                  <Navi/>
                 <div className='mainContainer'>
-                </div>
+              
                 {this.state.favorites.map((favorite,id) => (
                     <FavoriteCard
                         key={id}
@@ -43,9 +43,12 @@ class FavoriteList extends Component {
                         getData={this.getData}
                     />
                 ))}
-                <CommentList/>
-            </div>
-
+                <CommentList 
+                />
+                </div>
+               
+            
+</>
 
         )
     }

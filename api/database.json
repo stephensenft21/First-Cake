@@ -103,72 +103,19 @@
       "id": 17
     }
   ],
-  "comments": [
-    {
-      "favoriteId": 1,
-      "userId": 1,
-      "text": "SHe ate my cake!!",
-      "editTimeStamp": "2019-11-08T20:39:43.217Z",
-      "date": "2019-11-08T19:46:49.243Z",
-      "id": 1
-    },
-    {
-      "favoriteId": 1,
-      "id": 2,
-      "userId": 1,
-      "editTimeStamp": "2019-11-08T20:34:35.932Z",
-      "text": "I Hate this place! And She Ate my cake",
-      "date": ""
-    },
-    {
-      "favoriteId": 1,
-      "id": 3,
-      "userId": 1,
-      "editTimeStamp": "2019-11-08T20:25:37.792Z",
-      "text": "This place was horrible!!"
-    },
-    {
-      "favoriteId": 1,
-      "userId": 1,
-      "text": "dfdgsdfgsgsgsddrg",
-      "editTimeStamp": "",
-      "date": "2019-11-08T19:46:49.243Z",
-      "id": 4
-    }
-  ],
+  "comments": [],
   "favorites": [
     {
       "userId": 1,
-      "name": "The Pharmacy Burger Parlor & Beer Garden",
-      "address": "731 McFerrin Ave, Nashville 37206",
+      "uniqueId": "17195175",
+      "name": "Jeni's Splendid Ice Cream",
+      "address": "1892 Eastland Avenue 37206",
       "average_cost_for_two": 10,
-      "phone_numbers": "(615) 712-9517",
-      "rating": "4.9",
+      "phone_numbers": "(615) 262-8611, (615) 262-8611",
+      "rating": "4.7",
       "city": "Nashville",
-      "votes": "1018",
+      "votes": "281",
       "id": 1
-    },
-    {
-      "userId": 1,
-      "name": "The Pharmacy Burger Parlor & Beer Garden",
-      "address": "731 McFerrin Ave, Nashville 37206",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 712-9517",
-      "rating": "4.9",
-      "city": "Nashville",
-      "votes": "1018",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "name": "The Pharmacy Burger Parlor & Beer Garden",
-      "address": "731 McFerrin Ave, Nashville 37206",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 712-9517",
-      "rating": "4.9",
-      "city": "Nashville",
-      "votes": "1018",
-      "id": 3
     }
   ]
 }

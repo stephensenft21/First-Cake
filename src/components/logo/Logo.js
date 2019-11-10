@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom"
-
-import App from '../style/SpringHooks'
 import '../logo/Logo.css'
 import styles from '../../Style'
 

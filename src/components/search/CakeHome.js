@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, } from 'reactstrap';
+import { Form} from 'reactstrap';
 import AuthButtons from '../auth/AuthButtons'
 // import '../search/CakeHome.css'
 import Navi from '../nav/Navi'
@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 import ButtonBase from '../style/SearchButtonHooks'
 import Typography from '../style/SearchButtonHooks';
 import style from '../../Style'
+import SimpleBottomNavigation from '../nav/MaterialNavigation'
 
 
 
@@ -23,14 +24,17 @@ export default class CakeHome extends Component {
 
     render() {
         return (
+            <>
+            <SimpleBottomNavigation/>
+                                    
             <div className="mainContainer">
 
-                <Navi />
+             
                 <AuthButtons />
-            
+           
                 <Form >
                 
-                    <div className="SearchFormGroup ">
+                    <div  className="SearchFormGroup ">
 
                         {/*searchDesserts*/}
                         <div>
@@ -63,9 +67,11 @@ export default class CakeHome extends Component {
                         </div>
 
                     </div>
-                   
+                    
                 </Form>
+              
             </div>
+            </>
         )
     }
 }

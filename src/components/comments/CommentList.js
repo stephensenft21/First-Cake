@@ -58,10 +58,8 @@ dostuff =() => {
 	render() {
 		console.log(this.state.comments)
 		return (
-			<div className='sectionHeader'>
-				<h4>: {this.state.favorite.name}</h4>
-				<div className='mainContainer'>
-				</div>
+			<div>
+				<h4> {this.state.favorite.name}</h4>
 				{this.state.comments.map((comment, id) => (
 					<CommentCard
 						key={id}

@@ -4,13 +4,13 @@ import Navi from "../nav/Navi"
 import AuthButtons from "../auth/AuthButtons"
 import CakeCard from "../search/CakeCard"
 import '../search/CakeList.css'
-import { Spinner, Form } from 'reactstrap'
+import { Form } from 'reactstrap'
 
 class CakeList extends React.Component {
     state = {
         searchResults: [],
         loadingStatus: true,
-
+        uniqueIds: []
     }
 
 
@@ -25,11 +25,24 @@ class CakeList extends React.Component {
 
 
 
+getUniqueIds = () => {
+    APIManager.getAllWithUserId("favorites",this.props.userId,"comments").then(results => {
+        let uniqueIdArray = []
+         console.log(results)
+             results.forEach(result => {
+                 uniqueIdArray.push(result.uniqueId)
+             })
+             this.setState({
+                uniqueIds: uniqueIdArray
+             })
+      })
+      console.log("this is the unique id function")
+}
 
     componentDidMount() {
         console.log("CakeList: ComponentDidMount");
         //get(id) from AnimalManager and hang on to the data; put it into state
-        APIManager.searchZomato()
+        APIManager.searchZomato(this.props.match.params.cuisineId)
             .then((allResults) => {
                 console.log(allResults)
                 this.setState({
@@ -37,8 +50,13 @@ class CakeList extends React.Component {
                     loadingStatus: false,
                 });
             });
-    }
 
+           this.getUniqueIds()
+    }
+    //  getAllWithUserId(database,userId,secondResource) {
+  //      return fetch(`${remoteURL}/${database}/?userId=${userId}&_embed=${secondResource}`).then(e => e.json())
+   // },                  //http://localhost:5002/favorites?_sort=votes&_order=asc&userId=1&_embed=comments this one works
+    
 
 
 
@@ -78,6 +96,9 @@ class CakeList extends React.Component {
 
                                 {this.state.searchResults.map((result, i) =>
                                     <CakeCard key={i}
+                                    getUniqueIds={this.getUniqueIds}
+                                    uniqueIds={this.state.uniqueIds}
+                                    userId={this.props.userId}
                                         restaurant={result.restaurant}
                                         {...this.props} />
 

@@ -3,7 +3,7 @@ import { Col, Form, FormGroup, Button, Input, Collapse } from 'reactstrap';
 import Navi from '../nav/Navi'
 import APIManager from '../../modules/APIManager'
 import Moment from 'moment';
-import AuthButtons  from '../auth/AuthButtons'
+
 
 
 class CommentForm extends Component {
@@ -40,7 +40,7 @@ class CommentForm extends Component {
                 date: Moment(new Date()),
             }
             APIManager.post(newComment,"comments")
-                .then(() => this.props.history.push("/"));
+                .then(() => this.props.history.push(`/favorites/${this.props.favoriteId}`));
         }
     }
 
@@ -55,10 +55,10 @@ class CommentForm extends Component {
                         <div>Add comment</div>
                         <FormGroup row>
                             <Col sm={10}>
-                                <Input onChange={this.handleFieldChange} type="textarea" name="comment" id="text" placeholder="Write a comment..." bsSize="lg" />
+                                <Input onChange={this.handleFieldChange} type="text" name="comment" id="text" placeholder="Write a comment..." bsSize="lg" />
                             </Col>
                             <Button type="submit">
-                                Post</Button>
+                            Submit</Button>
                         </FormGroup>
                     </Form>
                

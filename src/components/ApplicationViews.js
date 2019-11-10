@@ -9,6 +9,7 @@ import Register from "./auth/Register";
 import FavoriteList from './favorites/FavoriteList'
 import Logo from './logo/Logo'
 import CakeList from './search/CakeList'
+import FavoriteDetails from './favorites/FavoriteDetails'
 // import FavoriteDetails from './favorites/FavoriteDetails'
 
 // import Login from ''
@@ -22,31 +23,31 @@ class ApplicationViews extends Component {
     render() {
         return (
             <>
-            {/* This Route takes you home   */}
+                {/* This Route takes you home   */}
                 <Route exact path="/home" render={props => {
                     return <CakeHome
-                    isAuthenticated={this.isAuthenticated}
-                    setUser={this.setUser}
-                    userId={this.props.userId}
-                    clearUser={this.props.clearUser}
-                    {...this.props}
-                    favoriteId={parseInt(props.match.params.favoriteId)}
-
-                    {...props} />
-                }} />
-                {/* Comment Routes */}
-                <Route exact path="/comments" render={props => {
-
-                    return (
-                        <CommentList
-                        isAuthenticated={this.props.isAuthenticated}
-                        setUser={this.props.setUser}
+                        isAuthenticated={this.isAuthenticated}
+                        setUser={this.setUser}
                         userId={this.props.userId}
                         clearUser={this.props.clearUser}
                         {...this.props}
                         favoriteId={parseInt(props.match.params.favoriteId)}
 
                         {...props} />
+                }} />
+                {/* Comment Routes */}
+                <Route exact path="/comments" render={props => {
+
+                    return (
+                        <CommentList
+                            isAuthenticated={this.props.isAuthenticated}
+                            setUser={this.props.setUser}
+                            userId={this.props.userId}
+                            clearUser={this.props.clearUser}
+                            {...this.props}
+                            favoriteId={parseInt(props.match.params.favoriteId)}
+
+                            {...props} />
                     );
                 }}
                 />
@@ -60,7 +61,7 @@ class ApplicationViews extends Component {
                         {...this.props}
                         favoriteId={parseInt(props.match.params.favoriteId)}
 
-                        {...props} />;  
+                        {...props} />;
                 }}
                 />
                 {/* This Route takes you to the edit form of the specific favorite */}
@@ -84,13 +85,22 @@ class ApplicationViews extends Component {
 
                 <Route path="/favorites/:favoriteId(\d+)" render={props => {
 
-                    return <FavoriteList
-                        userId={this.props.userId}
-                        favoriteId={parseInt(props.match.params.favoriteId)}
+                    return <>
+                        <FavoriteDetails
+                            userId={this.props.userId}
+                            favoriteId={parseInt(props.match.params.favoriteId)}
 
-                        {...props}
+                            {...props}
 
-                        setUser={this.props.setUser} />
+                            setUser={this.props.setUser} />
+                        <CommentList
+                            userId={this.props.userId}
+                            favoriteId={parseInt(props.match.params.favoriteId)}
+
+                            {...props}
+
+                            setUser={this.props.setUser} />
+                    </>
                 }} />
 
 

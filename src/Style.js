@@ -1,4 +1,3 @@
-
 export default {
   //This is a style sheet for my app.
 
@@ -36,9 +35,43 @@ export default {
         *   Login Component Start
        
 
-        ! Login Button Style
+        ! First Cake Logo Button Style
        
         */
+  logoButton: {
+    borderRadius: '50%',
+    marginLeft: "30%",
+    width: 175,
+    height: 183,
+    display: 'flex',
+    left: '0%',
+    right: '0%',
+    top: '0%',
+    bottom: '0%',
+    backgroundPositionX: '219%',
+
+  },
+
+
+  clearInputButton:{
+    backgroundColor: 'Transparent',
+
+
+  },
+
+
+
+  backButton:{
+
+  },
+
+  /*
+  
+
+   ! Login Button
+  
+   */
+
 
   loginButton: {
     position: "absolute",
@@ -79,7 +112,7 @@ export default {
     bottom: "62.75%",
     width: 252.68,
     height: 43,
-  
+
     boxSizing: "border-box",
     borderRadius: 5,
     backgroundPositionY: 49,
@@ -144,14 +177,14 @@ export default {
   },
 
 
-  
-/*
 
-    ! Authorization Link Button Style
-   
-    */
+  /*
+* Auth Button Component
 
 
+! Authorization Link Button Style
+     
+      */
   authButtonsRight: {
     position: 'absolute',
     left: '72.64%',
@@ -159,9 +192,9 @@ export default {
     top: '0.68%',
     bottom: '95.11%',
 
-},
+  },
 
-authButtonsLeft: {
+  authButtonsLeft: {
     position: 'absolute',
     left: '2.91%',
     right: '72.64%',
@@ -169,18 +202,20 @@ authButtonsLeft: {
     bottom: '95.24%',
 
 
-}
+  }
+
+
+
+
   
-} 
+  
 
 
 
-
-/*
-
-    ! Register Button Style
-   
-    */
-
- 
-
+  
+  /*
+  * Register Component Start
+  ! Register Button Style
+  
+  */
+}
