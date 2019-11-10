@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from "react-router-dom"
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import LocationCitySharpIcon from '@material-ui/icons/LocationCitySharp';
 import Typography from '@material-ui/core/Typography';
-import IconButtonsDelete, {IconButtonsDetails} from '../material/MaterialButtons'
+import IconButtonsDelete, { IconButtonsDetails } from '../material/MaterialButtons'
+import PhoneSharpIcon from '@material-ui/icons/PhoneSharp';
+import TextField from '@material-ui/core/TextField';
+import style from '../../Style'
+import { IconButtonsSignIn } from '../material/MaterialButtons'
 
 const useStyles = makeStyles({
   card: {
@@ -19,34 +22,122 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard(props) {
+function MediaCard(props) {
   const classes = useStyles();
 
   return (
     <Card className={classes.card}>
+        <div onClick={() => props.handleDelete(props.favorite.id)}><IconButtonsDelete /></div>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image=""
-          title="Contemplative Reptile"
-        />
+      
         <CardContent>
-          <Typography align="left" gutterBottom variant="h5" component="h2">
-          {`${props.favorite.name}`}
+          <Typography align="left" gutterBottom variant="h4" component="h2">
+            {`${props.favorite.name}`}
           </Typography>
-          <Typography align="left" variant="button" color="textSecondary" component="p">
-          {`${props.favorite.address}`}
+          <LocationCitySharpIcon /> <Typography align="justify" variant="overline" color="textPrimary" component="p">
+            {`${props.favorite.address}`}
           </Typography>
-          <Typography align="left" variant="button" color="textSecondary" component="p">
-          {`${props.favorite.phone_numbers}`}
+          <Typography align="justify" variant="overline" color="textPrimary" component="p">
+            {`${props.favorite.city}`}
           </Typography>
+          <PhoneSharpIcon /><Typography align="justify" variant="overline" color="textPrimary" component="p">
+            {`${props.favorite.phone_numbers}`}
+          </Typography>
+
+
         </CardContent>
-        <IconButtonsDelete/>
-        <IconButtonsDetails/>
+
+
+
       </CardActionArea>
-      <CardActions>
-        
-      </CardActions>
+      <Link to={`/favorites/${(props.favorite.id)}`}><IconButtonsDetails /></Link>
+
     </Card>
   );
-}
+} export default MediaCard
+
+
+
+
+
+
+
+
+function LoginCard(props) {
+  const classes = useStyles();
+
+  return (
+
+    <>
+   
+
+<Card className={classes.card}>
+      <CardContent>
+
+        <Typography align="justify" variant="overline" color="textPrimary" component="div">
+          <TextField style={(style.emailInput)} onChange={props.handleFieldChange} type="email" name="email" id="email" placeholder="Email" />
+        </Typography>
+        <Typography align="justify" variant="overline" color="textPrimary" component="div">
+          <TextField style={style.passwordInput} onChange={props.handleFieldChange} type="password" name="password" id="passwords" placeholder="Password" />
+        </Typography>
+        <Typography align="justify" variant="overline" color="primary" component="div">
+
+          <div style={(style.loginButton)}><IconButtonsSignIn /></div>
+
+        </Typography>
+
+
+      </CardContent>
+      </Card>
+</>
+
+
+
+
+   
+  )
+  }
+
+  export {
+
+    LoginCard,
+    RegisterCard
+  
+  }
+  
+  function RegisterCard(props) {
+    const classes = useStyles();
+  
+    return (
+  
+      <>
+     
+  
+  
+        <CardContent>
+  
+          <Typography align="justify" variant="overline" color="textPrimary" component="div">
+            <TextField style={(style.emailInput)} onChange={props.handleFieldChange} type="email" name="email" id="email" placeholder="Email" />
+          </Typography>
+          <Typography align="justify" variant="overline" color="textPrimary" component="div">
+            <TextField style={style.passwordInput} onChange={props.handleFieldChange} type="password" name="password" id="passwords" placeholder="Password" />
+          </Typography>
+          <Typography align="justify" variant="overline" color="primary" component="div">
+  
+            <div style={(style.loginButton)}><IconButtonsSignIn /></div>
+  
+          </Typography>
+  
+  
+        </CardContent>
+  </>
+  
+  
+  
+  
+     
+   ) 
+    }
+
+
+

@@ -28,7 +28,8 @@ class Logo extends Component {
         return (
             <div className="mainContainer" style={styles.mainContainer}>
 
-                <button className="logoButton" type="button" onClick={() => { this.props.history.push(`/home/`) }}>Logo</button>
+              {/* <img src={require(`Images/Project-Logo-Capstone`)} alt="My Dog" ></img>  */}
+               <button className="logoButton" type="button" onClick={() => { this.props.history.push(`/home/`) }}>Logo</button>
                  
                 <form className="logoForm">
                     

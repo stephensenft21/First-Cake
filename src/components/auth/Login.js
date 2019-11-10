@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom"
 import APIManager from "../../modules/APIManager";
-import { Form, FormGroup, Button} from 'reactstrap';
+import { Form } from 'reactstrap';
 import '../auth/Login.css'
 import style from '../../Style'
-import MatButton from '../style/SpringHooks'
-import { makeStyles } from '@material-ui/core/styles';
-  import TextField from '@material-ui/core/TextField';
-  import '../../index.css'
-  
-  import {MdArrowBack } from "react-icons/md";  
+import  {IconButtonsBack} from '../material/MaterialButtons'
+
+import '../../index.css'
+
+import {LoginCard} from '../material/MaterialCards'
+
 
 class Login extends Component {
   // Set initial state  
@@ -34,48 +34,50 @@ class Login extends Component {
     // let credentials = { 
     //   username: this.state.username, 
     //   password: this.state.password }
-   
+
     APIManager.searchEmail(this.state.email)
       .then(result => {
-         if (this.state.email === ''|| this.state.password ==="") {
-            window.alert('please fill out fields');
+        if (this.state.email === '' || this.state.password === "") {
+          window.alert('please fill out fields');
         } else
-        console.log("what is the result of search", result)
+          console.log("what is the result of search", result)
         if (result.length > 0) {
           //this returns an array - we only need object
           this.props.setUser(result[0]);
           this.props.history.push("/home");
-        } 
+        }
       })
   }
 
-  
+
   render() {
     return (
-      <> 
-     <div style={style.mainContainer}>
-     <Button style={style}type="button" onClick={() => { this.props.history.goBack(`/home/`) }}> <MdArrowBack/></Button>
-     <div><button style={style.logoButton} type="button" onClick={() => { this.props.history.push(`/home/`) }}></button></div>
-      <Form style={style.Form}  onSubmit={this.handleLogin}>
-        <div style={style.signInText}>Sign In</div>
-      <FormGroup row>
-       
-          <TextField style={(style.emailInput)} onChange={this.handleFieldChange} type="email" name="email" id="email" placeholder="Email" />
-      
-      </FormGroup>
-     
-      <FormGroup row>
-       
-        
-       <TextField style={style.passwordInput}  onChange={this.handleFieldChange}type="password" name="password" id="passwords" placeholder="Password" />
-        
-         <MatButton  style={(style.loginButton)}  >Sign in </MatButton>
+      <>
+        <div style={style.mainContainer}>
+        <div  onClick={() => { this.props.history.goBack(`/home/`) }}> <IconButtonsBack/></div>
+          
+          <div><button style={style.logoButton} type="button" onClick={() => { this.props.history.push(`/home/`) }}></button></div>
+          <Form style={style.Form} onSubmit={this.handleLogin}>
+            <div style={style.signInText}>Sign In</div>
+          
 
-      </FormGroup>
-    </Form>
-    </div>
-    
-    </>
+             
+
+            
+            <LoginCard
+        
+        handleLogin={this.handleLogin}
+        handleFieldChange={this.handleFieldChange}  
+      
+        {...this.props} />
+      
+           
+
+          
+          </Form>
+        </div>
+
+      </>
     )
   }
 }

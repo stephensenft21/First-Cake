@@ -7,7 +7,7 @@ export default {
        
         */
   mainContainer: {
-    position: "relative",
+    display: "flex",
     width: 413,
     height: 736,
     background: " #E9B5B5",
@@ -20,14 +20,13 @@ export default {
         */
 
   Form: {
+    
     position: "absolute",
     left: "4.84%",
     right: "4.84%",
     top: "41.03%",
     bottom: "23.37%",
-
-    background: "#F2F2F2",
-    borderRadius: "3px"
+    borderRadius: "5px"
   },
 
   /*
@@ -79,8 +78,7 @@ export default {
     right: "37.79%",
     top: "68.02%",
     bottom: "15.79%",
-    background: "#000000",
-    borderRadius: 25,
+ 
     width: 122.1,
     height: 50,
     fontFamily: "Goudy Bookletter 1911",
@@ -95,7 +93,7 @@ export default {
     alignItems: "center",
     textAlign: "center",
 
-    color: "#FFFFFF"
+    
   },
 
   /*

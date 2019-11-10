@@ -116,6 +116,30 @@
       "city": "Nashville",
       "votes": "281",
       "id": 1
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17195456",
+      "name": "Burger Republic",
+      "address": "6900 Lenox Village Dr, Nashville 37211",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 499-4428",
+      "rating": "4.3",
+      "city": "Nashville",
+      "votes": "138",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17194343",
+      "name": "The Cupcake Collection",
+      "address": "1213 6th Ave. N, Nashville 37208",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 244-2900",
+      "rating": "4.4",
+      "city": "Nashville",
+      "votes": "143",
+      "id": 3
     }
   ]
 }
