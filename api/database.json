@@ -106,9 +106,31 @@
       "email": "stephensenft21@gmail.com",
       "password": "",
       "id": 18
+    },
+    {
+      "email": "sefdsf@comcast.com",
+      "password": "",
+      "id": 19
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "favoriteId": 1,
+      "userId": 19,
+      "text": "bbbbvvvcbcvnnc",
+      "editTimeStamp": "2019-11-11T14:38:31.920Z",
+      "date": "2019-11-11T14:38:20.122Z",
+      "id": 1
+    },
+    {
+      "favoriteId": 1,
+      "userId": 19,
+      "text": "hhcgmcgmcgm",
+      "editTimeStamp": "",
+      "date": "2019-11-11T14:38:26.732Z",
+      "id": 2
+    }
+  ],
   "favorites": [
     {
       "userId": 1,
