@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import APIManager from '../../modules/APIManager'
 import { Card, CardSubtitle, Row, CardTitle, CardText, Button, CardBody } from "reactstrap";
-import { FaRegTrashAlt, } from "react-icons/fa";
+
 import { Link } from "react-router-dom"
 import style from '../../Style'
 import  {IconButtonsBack} from '../material/MaterialButtons'

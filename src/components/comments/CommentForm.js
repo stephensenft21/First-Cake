@@ -46,7 +46,8 @@ class CommentForm extends Component {
     return (
       <div style={style.mainContainer}>
         <div  onClick={() => { this.props.history.goBack(`/home/`) }}> <IconButtonsBack/></div>
-       <div><button style={style.logoButton} type="button" onClick={() => { this.props.history.push(`/home/`) }}></button></div>
+       
+        <img src={require(`../../Images/Project-Logo-Capstone.png`)} alt="My Logo" style={style.logoButton} onClick={() => { this.props.history.push(`/home/`) }}></img>
       
         
          

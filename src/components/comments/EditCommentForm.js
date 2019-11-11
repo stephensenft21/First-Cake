@@ -2,12 +2,13 @@ import React, { Component } from "react"
 import { Button, Form, FormGroup, Input, Col } from "reactstrap";
 import APIManager from "../../modules/APIManager";
 import moment from 'moment';
+import MaterialEditForm from '../material/MaterialCards'
 class EditCommentForm extends Component {
     //set the initial state
     state = {
         userId: parseInt(sessionStorage.getItem("userId")),
         commentId: "",
-        text: "fffff",
+        text: "",
         date: "",
         collapse: false,
         favoriteId: ""
@@ -51,25 +52,29 @@ class EditCommentForm extends Component {
                 });
             });
     }
-
-
+   /* </Collapse> */
+/* <Collapse toggle={this.toggle}> */
 
     // render JSX to be displayed on the DOM
     render() {
         return (
             <>
-                {/* <Collapse toggle={this.toggle}> */}
+                
                 <Form onSubmit={this.updateExistingComment}>
                     <div>Change your mind?</div>
-                    <FormGroup row>
-                        <Col sm={10}>
-                            <Input onChange={this.handleFieldChange} value={this.state.text} type="text" name="comment" id="text" placeholder="Make changes..." bsSize="lg" />
-                        </Col>
-                        <Button type="submit">
-                            Edit</Button>
-                    </FormGroup>
+            
+                     
+                        <MaterialEditForm
+                      
+                        handleFieldChange={this.handleFieldChange}  
+            
+                        {...this.props} 
+                        value={this.state.text}/>
+                           
+    
+                   
                 </Form>
-                {/* </Collapse> */}
+             
             </>
         );
     }

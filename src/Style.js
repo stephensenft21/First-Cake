@@ -13,6 +13,22 @@ export default {
     background: " #E9B5B5",
     backdropFilter: "blur(4px)"
   },
+
+  mainBody: {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "row",
+    marginBottom: "75",
+  },
+
+  cardContainer: {
+
+
+  },
+
+  mainCard: {
+
+  },
   /*
 
         ! Form Style
@@ -219,6 +235,11 @@ export default {
     right: '72.64%',
     top: '0.54%',
     bottom: '95.24%',
+
+
+  },
+
+  logobutton:{
 
 
   }

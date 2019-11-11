@@ -5,6 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { withStyles } from '@material-ui/core/styles';
 import Rating from 'material-ui-rating';
 import EditIcon from '@material-ui/icons/Edit';
+import EditRoundedIcon from '@material-ui/icons/EditRounded';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -247,7 +248,7 @@ function IconButtonsDetails() {
     
     return (
       <div >
-        <IconButton type="submit" color="primary" className={classes.button4} aria-label="delete">
+        <IconButton type="submit" color="primary" className={classes.button4  } aria-label="delete">
         <Typography variant="h5"color="textSecondary" component="p"> <RateReviewIcon/> </Typography>
         </IconButton>
         
@@ -262,7 +263,7 @@ function IconButtonsDetails() {
     return (
       <div >
         <IconButton type="submit" color="primary" className={classes.button4} aria-label="delete">
-        <Typography variant="h5"color="textSecondary" component="p">Sign Up</Typography>
+        <Typography variant="h5"color="textSecondary" component="p"><EditRoundedIcon/></Typography>
         </IconButton>
         
       </div>

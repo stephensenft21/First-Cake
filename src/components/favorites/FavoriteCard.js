@@ -9,13 +9,14 @@ class FavoriteCard extends Component {
             .then(() => this.props.getData());
     }
     render() {
-        console.log("this is favew card", this.props)
+        console.log("this is fave card", this.props)
+        debugger
         return (
             <>
             <MediaCard 
             {...this.props}
             handleDelete={this.handleDelete}
-            favorite={this.props.favorite}/>
+           />
             </>
 
         )

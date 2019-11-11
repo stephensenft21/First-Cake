@@ -81,7 +81,7 @@ getUniqueIds = () => {
 
             return (
                 <>
-            <div className="maincontainer">
+            <div>
                     <header>
 
                     

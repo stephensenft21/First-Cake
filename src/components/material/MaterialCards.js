@@ -6,6 +6,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import LocationCitySharpIcon from "@material-ui/icons/LocationCitySharp";
 import Typography from "@material-ui/core/Typography";
+import IconButtonsEditComment from '../material/MaterialButtons'
 import IconButtonsDelete, {
   IconButtonsDetails,
   IconButtonsSignUp
@@ -26,6 +27,7 @@ const useStyles = makeStyles({
 });
 
 function MediaCard(props) {
+  console.log("this is in media card", props)
   const classes = useStyles();
 
   return (
@@ -236,6 +238,58 @@ function MaterialCommentForm(props) {
                
     </>
   );
+  }
+
+
+  function MaterialEditForm(props) {
+    const classes = useStyles();
+  
+    return (
+      <>
+    
+       
+            <Typography
+              align="justify"
+              variant="overline"
+              color="textPrimary"
+              component="div"
+            >
+              {/* Add new comment... */}
+            </Typography>
+  
+            <Typography
+              align="justify"
+              variant="overline"
+              color="textPrimary"
+              component="div"
+            >
+             
+              <TextField
+                style={style.passwordInput}
+                onChange={props.handleFieldChange}
+                type="text"
+                name="text"
+                id="text"
+                placeholder="Write a comment..."
+             
+          
+              />
+          
+            </Typography>
+            <Typography
+              align="justify"
+              variant="overline"
+              color="primary"
+              component="div"
+            ></Typography>
+            <div>
+           <IconButtonsEditComment/>
+              </div>
+                 
+      </>
+    )
+
+
 }
 
-export { LoginCard, RegisterCard, MaterialCommentForm };
+export { LoginCard, RegisterCard, MaterialCommentForm, MaterialEditForm};

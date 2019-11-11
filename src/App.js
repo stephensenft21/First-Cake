@@ -3,6 +3,8 @@ import ApplicationViews from './components/ApplicationViews';
 import {withRouter} from 'react-router'
 // import Nav from './components/nav/Nav';
 import './App.css';
+import SimpleBottomNavigation from './components/nav/MaterialNavigation'
+import Navi from './components/nav/Navi';
 
 
 class App extends Component {
@@ -60,11 +62,11 @@ class App extends Component {
             userId={this.state.userId}
             clearUser={this.clearUser}
             {...this.props} /> 
-          
-         
+  
+          </>
         
         
-      </>
+      
     )
   
       }}
