@@ -231,7 +231,7 @@ function IconButtonsDetails() {
     
     return (
       <div >
-        <IconButton type="submit" className={classes.button4} aria-label="delete">
+        <IconButton type="submit" color="primary" className={classes.button4} aria-label="delete">
         <Typography variant="h5"color="textSecondary" component="p">Sign Up</Typography>
         </IconButton>
         

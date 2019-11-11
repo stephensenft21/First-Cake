@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router-dom"
 import '../auth/Register.css'
 import APIManager from '../../modules/APIManager'
-import { Form, FormGroup, Button, Input} from 'reactstrap';
-import {RegisterCard} from '../material/MaterialCards'
+import { Form } from 'reactstrap';
+import style from '../../Style'
+import { RegisterCard } from '../material/MaterialCards'
+import  {IconButtonsBack} from '../material/MaterialButtons'
+
+
 class Register extends Component {
     // Set initial state
     state = {
         email: "",
-        username: "",
         password: ""
     }
 
@@ -26,14 +29,14 @@ class Register extends Component {
             the customer enters into local storage.
         */
         let credentials = {
-            username: this.state.username,
+    
             email: this.state.email,
             password: this.state.password
         }
 
-        APIManager.searchUsername(this.state.username)
+        APIManager.searchEmail(this.state.email)
             .then(result => {
-                console.log("what is the result of search", result)
+              
                 if (result.length > 0) {
                     //this returns an array - we only need object
                     this.props.setUser(result[0]);
@@ -42,7 +45,7 @@ class Register extends Component {
                     APIManager.addUser(credentials)
                         .then(result => {
                             //this returns an object
-                            console.log("result is", result);
+                         
                             this.props.setUser(result);
                         })
                     this.props.history.push("/home");
@@ -53,39 +56,23 @@ class Register extends Component {
     render() {
         return (
             <>
-          
-               <div className="mainContainer">
-                   <RegisterCard
-                    handleLogin={this.handleLogin}
-                    handleFieldChange={this.handleFieldChange}  
-                  
-                    {...this.props} />
 
-               <button type="button" onClick={() => { this.props.history.push(`/home/`) }}>Go Back</button>
-                <Form className="registerForm" onSubmit={this.handleLogin}>
-                    <div>Sign up</div>
-                    <FormGroup row>
-                     
-                            <Input className="registerEmailForm" onChange={this.handleFieldChange} type="email" name="email" id="email" placeholder="Email" bsSize="lg" />
-                       
-                    </FormGroup>
-                    <FormGroup row>
-                       
-                            
-                            <Input className="registerUserNameForm" onChange={props.handleFieldChange} type="username" name="username" id="username" placeholder="username" bsSize="lg" />
+                <div style={style.mainContainer}>
+
+
+                    <div onClick={() => { this.props.history.goBack(`/home/`) }}><IconButtonsBack/></div>
+                    <div><button style={style.logoButton} type="button" onClick={() => { this.props.history.push(`/home/`) }}></button></div>
+                    <Form style={style.Form} onSubmit={this.handleLogin}>
+                        <div style={style.signInText}>SignUp</div>
+
+    
+                        <RegisterCard
+                            handleLogin={this.handleLogin}
+                            handleFieldChange={this.handleFieldChange}
+
+                            {...this.props} />
+                    </Form>
                     
-                    </FormGroup>
-                    <FormGroup row>
-
-                        
-                           
-                            <Input className="registerPasswordForm" onChange={props.handleFieldChange} type="password" name="password" id="password" placeholder="Password" />
-                     
-                        <Button type="submit">
-                            Register
-          </Button>
-                    </FormGroup>
-                </Form>
                 </div>
             </>
         )

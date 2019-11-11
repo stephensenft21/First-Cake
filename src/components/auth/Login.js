@@ -5,11 +5,10 @@ import { Form } from 'reactstrap';
 import '../auth/Login.css'
 import style from '../../Style'
 import  {IconButtonsBack} from '../material/MaterialButtons'
-
 import '../../index.css'
-
 import {LoginCard} from '../material/MaterialCards'
-
+// import {Link} from 'react-router-dom'
+// import Typography from '@material-ui/core/Typography';
 
 class Login extends Component {
   // Set initial state  
@@ -27,21 +26,13 @@ class Login extends Component {
 
   handleLogin = (e) => {
     e.preventDefault()
-    /*
-        For now, just store the email and password that
-        the customer enters into local storage.
-    */
-    // let credentials = { 
-    //   username: this.state.username, 
-    //   password: this.state.password }
+    
 
     APIManager.searchEmail(this.state.email)
       .then(result => {
         if (this.state.email === '' || this.state.password === "") {
           window.alert('please fill out fields');
-        } else
-          console.log("what is the result of search", result)
-        if (result.length > 0) {
+        } else if (result.length > 0) {
           //this returns an array - we only need object
           this.props.setUser(result[0]);
           this.props.history.push("/home");
@@ -70,11 +61,12 @@ class Login extends Component {
         handleFieldChange={this.handleFieldChange}  
       
         {...this.props} />
-      
+     
            
 
           
           </Form>
+     
         </div>
 
       </>
@@ -83,3 +75,13 @@ class Login extends Component {
 }
 
 export default withRouter(Login);
+
+
+/* <Typography variant="body2" color="textSecondary" align="center">
+{'Copyright © '}
+<Link color="inherit" to="https://https://github.com/stephensenft21/c35-React-Capstone-First-Cake-/blob/master/README.md">
+  First Cake
+</Link>{' '}
+{new Date().getFullYear()}
+{'.'}
+</Typography> */

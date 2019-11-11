@@ -6,7 +6,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import LocationCitySharpIcon from '@material-ui/icons/LocationCitySharp';
 import Typography from '@material-ui/core/Typography';
-import IconButtonsDelete, { IconButtonsDetails } from '../material/MaterialButtons'
+import IconButtonsDelete, { IconButtonsDetails, IconButtonsSignUp } from '../material/MaterialButtons'
 import PhoneSharpIcon from '@material-ui/icons/PhoneSharp';
 import TextField from '@material-ui/core/TextField';
 import style from '../../Style'
@@ -21,6 +21,7 @@ const useStyles = makeStyles({
     height: 140,
   },
 });
+
 
 function MediaCard(props) {
   const classes = useStyles();
@@ -61,6 +62,8 @@ function MediaCard(props) {
 
 
 
+ 
+
 
 
 function LoginCard(props) {
@@ -75,9 +78,9 @@ function LoginCard(props) {
       <CardContent>
 
         <Typography align="justify" variant="overline" color="textPrimary" component="div">
-          <TextField style={(style.emailInput)} onChange={props.handleFieldChange} type="email" name="email" id="email" placeholder="Email" />
+        <TextField style={(style.emailInput)} onChange={props.handleFieldChange} type="email" name="email" id="email" placeholder="Email" />
         </Typography>
-        <Typography align="justify" variant="overline" color="textPrimary" component="div">
+        <Typography align="justify" variant="overline" color="textPrimary" component="div">                   
           <TextField style={style.passwordInput} onChange={props.handleFieldChange} type="password" name="password" id="passwords" placeholder="Password" />
         </Typography>
         <Typography align="justify" variant="overline" color="primary" component="div">
@@ -89,6 +92,7 @@ function LoginCard(props) {
 
       </CardContent>
       </Card>
+  
 </>
 
 
@@ -101,35 +105,43 @@ function LoginCard(props) {
   export {
 
     LoginCard,
-    RegisterCard
+    RegisterCard,
+
   
   }
   
   function RegisterCard(props) {
     const classes = useStyles();
-  
+   //className="registerForm" 
+  //className="registerEmailForm"
+  //className="registerUserNameForm"
+  //className="registerPasswordForm"
     return (
   
       <>
      
   
-  
+  <Card className={classes.card}>
         <CardContent>
   
+          <Typography align="justify" variant="overline" color="textPrimary" component="div"> 
+            <TextField style={(style.emailInput)} onChange={props.handleFieldChange} type="email" name="email" id="email" placeholder="Email" />  
+          </Typography> 
+          
           <Typography align="justify" variant="overline" color="textPrimary" component="div">
-            <TextField style={(style.emailInput)} onChange={props.handleFieldChange} type="email" name="email" id="email" placeholder="Email" />
-          </Typography>
-          <Typography align="justify" variant="overline" color="textPrimary" component="div">
-            <TextField style={style.passwordInput} onChange={props.handleFieldChange} type="password" name="password" id="passwords" placeholder="Password" />
+            <TextField style={style.passwordInput} onChange={props.handleFieldChange} type="password" name="password" id="passwords" placeholder="Password" />    
+       
           </Typography>
           <Typography align="justify" variant="overline" color="primary" component="div">
   
-            <div style={(style.loginButton)}><IconButtonsSignIn /></div>
+            <div style={(style.loginButton)}><IconButtonsSignUp /></div>
   
           </Typography>
   
   
         </CardContent>
+        
+        </Card>
   </>
   
   
