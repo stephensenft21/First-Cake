@@ -3,6 +3,8 @@ import APIManager from '../../modules/APIManager'
 import { Card, CardSubtitle, Row, CardTitle, CardText, Button, CardBody } from "reactstrap";
 import { FaRegTrashAlt, } from "react-icons/fa";
 import { Link } from "react-router-dom"
+import style from '../../Style'
+import  {IconButtonsBack} from '../material/MaterialButtons'
 class FavoriteDetails extends Component {
 
  
@@ -26,6 +28,10 @@ APIManager.get(this.props.favoriteId,"favorites").then((response) => {
     render() {
         return (
             <>
+            <div style={style.mainContainer}>
+            <div  onClick={() => { this.props.history.goBack(`/home/`) }}> <IconButtonsBack/></div>
+       <div><button style={style.logoButton} type="button" onClick={() => { this.props.history.push(`/home/`) }}></button></div>
+      
                 <div> <Card className="mainCard">
                     <CardBody>
                         <CardTitle>{`${this.state.favorite.name}`}</CardTitle>
@@ -49,7 +55,7 @@ APIManager.get(this.props.favoriteId,"favorites").then((response) => {
         
                 </div>
 
-
+                </div>
             </>
 
         )

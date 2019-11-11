@@ -10,7 +10,7 @@ import InfoIcon from '@material-ui/icons/Info';
 
 const useStyles = makeStyles({
   root: {
-    width: 413,
+    width: 413,   
   },
 });
  const isAuthenticated = () => sessionStorage.getItem("credentials") !== null
@@ -28,22 +28,23 @@ const useStyles = makeStyles({
     }
 
   return (
-   
-    <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
+     <>
         {isAuthenticated()? (
-      <><Link className="nav-link" to="/home"><BottomNavigationAction label="Home" icons={HomeIcon} /></Link>
-       <Link className="nav-link" to="/favorites"><BottomNavigationAction label="Favorites" icons={FavoriteIcon}/></Link>
-       <Link className="nav-link" to="/about"><BottomNavigationAction label="About" icons={InfoIcon} />  </Link>                                    
-       <Link className="nav-link" onClick={logout} to="/"><BottomNavigationAction label="Logout" icons={ExitToAppIcon} /></Link>
-  
-       </>
+    <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
+    <Link className="nav-link" to="/home"><BottomNavigationAction label="Home" icons={<HomeIcon/>} /></Link>
+       <Link className="nav-link" to="/favorites"><BottomNavigationAction label="Favorites" icons={<FavoriteIcon/>}/></Link>
+       <Link className="nav-link" to="/about"><BottomNavigationAction label="About" icons={<InfoIcon/>} />  </Link>                                    
+       <Link className="nav-link" onClick={logout} to="/"><BottomNavigationAction label="Logout" icons={<ExitToAppIcon/>} /></Link>
+       </BottomNavigation>
+    
        ) : (
-      <>
-      <Link className="nav-link" to="/home"><BottomNavigationAction label="Home" icons={HomeIcon} /></Link>
-       <Link className="nav-link" to="/about"><BottomNavigationAction label="About" icons={InfoIcon} />  </Link>                                    
-       <Link className="nav-link" onClick={logout} to="/"><BottomNavigationAction label="Logout" icons={ExitToAppIcon} /></Link>
-       </> )}        
+         <>
+        <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
+        <Link className="nav-link" to="/home"> <BottomNavigationAction label="Home" icons={<HomeIcon/>} /></Link>
+       <Link className="nav-link" to="/about"><BottomNavigationAction label="About" icons={<InfoIcon/>} />  </Link>                                    
     </BottomNavigation>
-
+     </>
+        )}        
+    </>
   );
 } export default withRouter(SimpleBottomNavigation)

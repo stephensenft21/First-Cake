@@ -5,6 +5,7 @@ import AuthButtons from "../auth/AuthButtons"
 import CakeCard from "../search/CakeCard"
 import '../search/CakeList.css'
 import { Form } from 'reactstrap'
+import { style } from '@material-ui/system'
 
 class CakeList extends React.Component {
     state = {
@@ -80,10 +81,10 @@ getUniqueIds = () => {
 
             return (
                 <>
+            <div className="maincontainer">
                     <header>
 
-                        <Navi />
-                        <AuthButtons />
+                    
                     </header>
 
 
@@ -91,7 +92,7 @@ getUniqueIds = () => {
 
 
                     <div className="wrapper">
-                        <Form>
+                        <Form style={style.Form}>
                             <div>
 
                                 {this.state.searchResults.map((result, i) =>
@@ -107,6 +108,7 @@ getUniqueIds = () => {
                                 )}</div>
 
                         </Form>
+                    </div>
                     </div>
                 </>
 

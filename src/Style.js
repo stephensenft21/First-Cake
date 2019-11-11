@@ -173,6 +173,27 @@ export default {
 
     color: "rgba(0, 0, 0, 0.75)"
   },
+  CommentLabels: {
+
+    marginTop:"20px",
+    left: "34.87%",
+    right: "41.89%",
+    top: "0%",
+    bottom: "80.16%",
+
+    fontFamily: "Goudy Bookletter 1911",
+    fontStyle: "normal",
+    fontWeight: "normal",
+    fontSize: 26,
+    /* identical to box height */
+
+    display: "flex",
+    flexDirection: "row",
+    alignContent: "space-around",
+    textAlign: "center",
+
+    color: "rgba(0, 0, 0, 0.75)"
+  },
 
 
 

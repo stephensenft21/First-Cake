@@ -10,6 +10,8 @@ import FavoriteList from './favorites/FavoriteList'
 import Logo from './logo/Logo'
 import CakeList from './search/CakeList'
 import FavoriteDetails from './favorites/FavoriteDetails'
+import  {IconButtonsBack} from './material/MaterialButtons'
+import style from '../Style'
 // import FavoriteDetails from './favorites/FavoriteDetails'
 
 // import Login from ''
@@ -84,9 +86,8 @@ class ApplicationViews extends Component {
                  }/> */}
 
                 <Route path="/favorites/:favoriteId(\d+)" render={props => {
-
-                    return <>
-                        <FavoriteDetails
+                       
+                    return <> <FavoriteDetails
                             userId={this.props.userId}
                             favoriteId={parseInt(props.match.params.favoriteId)}
 
@@ -100,8 +101,10 @@ class ApplicationViews extends Component {
                             {...props}
 
                             setUser={this.props.setUser} />
-                    </>
-                }} />
+                        <div/>
+                        </>
+                    
+                    }} />
 
 
 

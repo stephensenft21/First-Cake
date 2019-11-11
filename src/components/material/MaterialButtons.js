@@ -9,6 +9,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
+import RateReviewIcon from '@material-ui/icons/RateReview';
 import 'typeface-roboto';
 const useStyles = makeStyles(theme => ({
   button: {
@@ -68,10 +69,10 @@ const useStyles = makeStyles(theme => ({
   },
   button5:{
     display: "flex",
-    marginTop: "25%",
+    marginTop: "50%",
     marginLeft: theme.spacing(1),
     marginBottom: "4%",
-    width: "100%",
+    width: "",
     borderRadius: "5%",
     color: "black",
     boxShadow: ("5px 5px 5px grey"),
@@ -232,10 +233,51 @@ function IconButtonsDetails() {
     return (
       <div >
         <IconButton type="submit" color="primary" className={classes.button4} aria-label="delete">
+        <Typography variant="h5"color="textSecondary" component="p"></Typography>
+        </IconButton>
+        
+      </div>
+  
+  
+    );
+  }
+
+  function IconButtonsComment(props) {
+    const classes = useStyles()
+    
+    return (
+      <div >
+        <IconButton type="submit" color="primary" className={classes.button4} aria-label="delete">
+        <Typography variant="h5"color="textSecondary" component="p"> <RateReviewIcon/> </Typography>
+        </IconButton>
+        
+      </div>
+  
+  
+    );
+  }
+  function IconButtonsEditComment(props) {
+    const classes = useStyles()
+    
+    return (
+      <div >
+        <IconButton type="submit" color="primary" className={classes.button4} aria-label="delete">
         <Typography variant="h5"color="textSecondary" component="p">Sign Up</Typography>
         </IconButton>
         
       </div>
+    )}
+
+function IconButtonsSubmit(props) {
+  const classes = useStyles()
+  
+  return (
+    <div >
+      <IconButton type="submit" color="primary" className={classes.button4} aria-label="delete">
+      <Typography variant="h5"color="textSecondary" value={this.props.text} component="p">Sign Up</Typography>
+      </IconButton>
+      
+    </div>
   
   
     );
@@ -258,9 +300,9 @@ export {
     getLabelText,
     IconButtonsBack,
     IconButtonsSignIn,
-    IconButtonsSignUp
-
-
-
+    IconButtonsSignUp,
+    IconButtonsComment,
+    IconButtonsEditComment,
+    IconButtonsSubmit,
 
 }

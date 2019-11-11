@@ -3,6 +3,8 @@ import FavoriteCard from './FavoriteCard'
 import APIManager from '../../modules/APIManager'
 import CommentList from '../../components/comments/CommentList'
 import Navi from '../nav/Navi'
+import style from '../../Style'
+import  {IconButtonsBack} from '../material/MaterialButtons'
 class FavoriteList extends Component {
 
     state = {
@@ -31,10 +33,12 @@ class FavoriteList extends Component {
         return (
 
 
-           <>
-                  <Navi/>
-                <div className='mainContainer'>
-              
+           
+                 
+                <div style={style.mainContainer}>
+               <div  onClick={() => { this.props.history.goBack(`/home/`) }}> <IconButtonsBack/></div>
+                   
+
                 {this.state.favorites.map((favorite,id) => (
                     <FavoriteCard
                         key={id}
@@ -48,7 +52,7 @@ class FavoriteList extends Component {
                 </div>
                
             
-</>
+
 
         )
     }

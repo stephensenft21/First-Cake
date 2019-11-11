@@ -60,7 +60,7 @@ class EditCommentForm extends Component {
             <>
                 {/* <Collapse toggle={this.toggle}> */}
                 <Form onSubmit={this.updateExistingComment}>
-                    <div>Comment</div>
+                    <div>Change your mind?</div>
                     <FormGroup row>
                         <Col sm={10}>
                             <Input onChange={this.handleFieldChange} value={this.state.text} type="text" name="comment" id="text" placeholder="Make changes..." bsSize="lg" />
