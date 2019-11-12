@@ -10,7 +10,7 @@ class FavoriteCard extends Component {
     }
     render() {
         console.log("this is fave card", this.props)
-        debugger
+       
         return (
             <>
             <MediaCard 

@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Button, Form, FormGroup, Input, Col } from "reactstrap";
 import APIManager from "../../modules/APIManager";
 import moment from 'moment';
-import MaterialEditForm from '../material/MaterialCards'
+import {MaterialEditForm} from '../material/MaterialCards'
 class EditCommentForm extends Component {
     //set the initial state
     state = {

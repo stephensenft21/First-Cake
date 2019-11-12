@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom"
 import '../auth/AuthButtons.css'
-import {Button} from 'reactstrap';
-import ButtonBase from '../style/SearchButtonHooks'
+    
+import  {AuthMaterialButton1} from '../style/SearchHamburgerHook'
+import  {AuthMaterialButton2} from '../style/SearchHamburgerHook'
 import style from '../../Style'
+
 
 class AuthButtons extends Component {
 
@@ -12,16 +14,14 @@ class AuthButtons extends Component {
        
             return (
                 
+               
                <>
-                <div>
-                    <Link to={`/login`} ><ButtonBase style={style.authButtonsLeft} text={"Sign In"}/></Link>
+                    <Link to={`/login`} ><AuthMaterialButton1  text={"Sign In"}/></Link>
                     
-                </div>
-                <div>
-                    <Link to={`/register`} ><ButtonBase style={style.authButtonsRight} text={"Sign Up"}/></Link>
-                </div>
-              </>       
-
+                
+                    <Link to={`/register`} ><AuthMaterialButton2 text={"Sign Up"}/></Link>
+               </>
+            
             )
 
         

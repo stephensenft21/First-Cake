@@ -6,7 +6,7 @@ import CakeCard from "../search/CakeCard"
 import '../search/CakeList.css'
 import { Form } from 'reactstrap'
 import { style } from '@material-ui/system'
-
+import SimpleBottomNavigation from '../nav/MaterialNavigation'
 class CakeList extends React.Component {
     state = {
         searchResults: [],
@@ -66,7 +66,11 @@ getUniqueIds = () => {
     render() {
 
         if (this.state.loadingStatus) {
-            return  <div className="mainContainer">           
+            
+            return ( 
+                
+                <div className="mainContainer">  
+                 <SimpleBottomNavigation/>         
                     <div className="loader">
                     <div className="bubble"></div>
                     <div className="bubble"></div>
@@ -74,7 +78,7 @@ getUniqueIds = () => {
                     <div className="bubble"></div>
                 </div>
                 </div>
-            
+            )
 
         }
         else {
@@ -82,11 +86,10 @@ getUniqueIds = () => {
             return (
                 <>
             <div>
-                    <header>
+                   
 
-                    
-                    </header>
-
+                    <SimpleBottomNavigation/>
+                
 
 
 

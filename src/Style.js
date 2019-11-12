@@ -242,9 +242,13 @@ export default {
   logobutton:{
 
 
-  }
+  },
 
-
+authButtongroup: {
+  display: 'flex',
+  flexDirection: "",
+  justifyContent: '',
+}
 
 
   

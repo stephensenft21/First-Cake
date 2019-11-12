@@ -5,6 +5,7 @@ import CommentList from "../../components/comments/CommentList";
 import Navi from "../nav/Navi";
 import style from "../../Style";
 import { IconButtonsBack } from "../material/MaterialButtons";
+import SimpleBottomNavigation from '../nav/MaterialNavigation'
 class FavoriteList extends Component {
   state = {
     favorites: []
@@ -30,8 +31,10 @@ class FavoriteList extends Component {
   render() {
     return (
       <>
+        <SimpleBottomNavigation/>
         <div style={style.mainCard}>
-        <IconButtonsBack />
+      
+        <div  onClick={() => { this.props.history.goBack(`/home/`) }}> <IconButtonsBack/></div>
         <div>
           {this.state.favorites.map((favorite, id) => (
               <FavoriteCard

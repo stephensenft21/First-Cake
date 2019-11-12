@@ -111,6 +111,11 @@
       "email": "sefdsf@comcast.com",
       "password": "",
       "id": 19
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 20
     }
   ],
   "comments": [
@@ -121,6 +126,14 @@
       "editTimeStamp": "",
       "date": "2019-11-11T20:17:42.414Z",
       "id": 2
+    },
+    {
+      "favoriteId": 1,
+      "userId": 1,
+      "text": "sfdgsgwgw",
+      "editTimeStamp": "",
+      "date": "2019-11-11T22:26:16.296Z",
+      "id": 3
     }
   ],
   "favorites": [
@@ -148,18 +161,7 @@
       "votes": "281",
       "id": 2
     },
-    {
-      "userId": 1,
-      "uniqueId": "17195175",
-      "name": "Jeni's Splendid Ice Cream",
-      "address": "1892 Eastland Avenue 37206",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 262-8611, (615) 262-8611",
-      "rating": "4.7",
-      "city": "Nashville",
-      "votes": "281",
-      "id": 3
-    },
+  
     {
       "userId": 1,
       "uniqueId": "17195456",
@@ -195,6 +197,90 @@
       "city": "Nashville",
       "votes": "97",
       "id": 6
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17195460",
+      "name": "Puckett's Boat House",
+      "address": "94 East Main St, Franklin 37064",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 790-2309",
+      "rating": "4.0",
+      "city": "Nashville",
+      "votes": "101",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17194608",
+      "name": "Sweet CeCe's",
+      "address": "500 W Main St, Franklin 37064",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 807-1412",
+      "rating": "4.3",
+      "city": "Nashville",
+      "votes": "117",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17192096",
+      "name": "City Limits Bakery & Cafe",
+      "address": "361 Clofton Dr, Nashville 37221",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 646-0062",
+      "rating": "4.1",
+      "city": "Nashville",
+      "votes": "86",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17192853",
+      "name": "Mike's Ice Cream and Coffee Bar",
+      "address": "208 Broadway, Nashville 37201",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 742-6453",
+      "rating": "4.3",
+      "city": "Nashville",
+      "votes": "77",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17195175",
+      "name": "Jeni's Splendid Ice Cream",
+      "address": "1892 Eastland Avenue 37206",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 262-8611, (615) 262-8611",
+      "rating": "4.7",
+      "city": "Nashville",
+      "votes": "281",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17195456",
+      "name": "Burger Republic",
+      "address": "6900 Lenox Village Dr, Nashville 37211",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 499-4428",
+      "rating": "4.3",
+      "city": "Nashville",
+      "votes": "138",
+      "id": 12
+    },
+    {
+      "userId": 20,
+      "uniqueId": "17194019",
+      "name": "Liquid Smoke",
+      "address": "2 N Public Square, Murfreesbor0 37130",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 217-7822",
+      "rating": "3.3",
+      "city": "Nashville",
+      "votes": "6",
+      "id": 13
     }
   ]
 }

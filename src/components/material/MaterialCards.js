@@ -15,7 +15,7 @@ import PhoneSharpIcon from "@material-ui/icons/PhoneSharp";
 import TextField from "@material-ui/core/TextField";
 import style from "../../Style";
 import { IconButtonsSignIn } from "../material/MaterialButtons";
-import {IconButtonsComment} from '../material/MaterialButtons'
+import { IconButtonsComment } from '../material/MaterialButtons'
 const useStyles = makeStyles({
   card: {
     maxWidth: "345px"
@@ -25,6 +25,7 @@ const useStyles = makeStyles({
     height: 140
   }
 });
+let isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
 function MediaCard(props) {
   console.log("this is in media card", props)
@@ -120,7 +121,7 @@ function LoginCard(props) {
             variant="overline"
             color="primary"
             component="div"
-            
+
           >
             <div style={style.loginButton}>
               <IconButtonsSignIn />
@@ -196,100 +197,187 @@ function MaterialCommentForm(props) {
 
   return (
     <>
-  
-     
-          <Typography
-            align="justify"
-            variant="overline"
-            color="textPrimary"
-            component="div"
-          >
-            {/* Add new comment... */}
-          </Typography>
 
-          <Typography
-            align="justify"
-            variant="overline"
-            color="textPrimary"
-            component="div"
-          >
-           
-            <TextField
-              style={style.passwordInput}
-              onChange={props.handleFieldChange}
-              type="text"
-              name="comment"
-              id="text"
-              placeholder="Write a comment..."
-           
-        
-            />
-        
-          </Typography>
-          <Typography
-            align="justify"
-            variant="overline"
-            color="primary"
-            component="div"
-          ></Typography>
-          <div>
-          <IconButtonsComment/>
-            </div>
-               
+
+      <Typography
+        align="justify"
+        variant="overline"
+        color="textPrimary"
+        component="div"
+      >
+        {/* Add new comment... */}
+      </Typography>
+
+      <Typography
+        align="justify"
+        variant="overline"
+        color="textPrimary"
+        component="div"
+      >
+
+        <TextField
+          style={style.passwordInput}
+          onChange={props.handleFieldChange}
+          type="text"
+          name="comment"
+          id="text"
+          placeholder="Write a comment..."
+
+
+        />
+
+      </Typography>
+      <Typography
+        align="justify"
+        variant="overline"
+        color="primary"
+        component="div"
+      ></Typography>
+      <div>
+        <IconButtonsComment />
+      </div>
+
     </>
   );
+}
+
+
+function MaterialEditForm(props) {
+  const classes = useStyles();
+
+  return (
+    <>
+
+
+      <Typography
+        align="justify"
+        variant="overline"
+        color="textPrimary"
+        component="div"
+      >
+        {/* Add new comment... */}
+      </Typography>
+
+      <Typography
+        align="justify"
+        variant="overline"
+        color="textPrimary"
+        component="div"
+      >
+
+        <TextField
+          style={style.passwordInput}
+          onChange={props.handleFieldChange}
+          type="text"
+          name="text"
+          id="text"
+          placeholder="Write a comment..."
+
+
+        />
+
+      </Typography>
+      <Typography
+        align="justify"
+        variant="overline"
+        color="primary"
+        component="div"
+      ></Typography>
+      <div>
+        <IconButtonsEditComment />
+      </div>
+
+    </>
+  )
   }
 
 
-  function MaterialEditForm(props) {
+
+  function SearchCardMaterialUI(props) {
+    console.log("this is in media card", props)
     const classes = useStyles();
-  
+
     return (
-      <>
-    
-       
+      <Card className={classes.card}>
+        <div onClick={() => props.handleDelete(props.favorite.id)}>
+          <IconButtonsDelete />
+        </div>
+        <CardActionArea>
+          <CardContent>
+            <Typography align="left" gutterBottom variant="h4" component="h2">
+              {`${this.props.restaurant.name}`}
+            </Typography>
+            <LocationCitySharpIcon />{" "}
             <Typography
               align="justify"
               variant="overline"
               color="textPrimary"
-              component="div"
+              component="p"
             >
-              {/* Add new comment... */}
+              {this.props.restaurant.location.address}
             </Typography>
-  
             <Typography
               align="justify"
               variant="overline"
               color="textPrimary"
-              component="div"
+              component="p"
             >
-             
-              <TextField
-                style={style.passwordInput}
-                onChange={props.handleFieldChange}
-                type="text"
-                name="text"
-                id="text"
-                placeholder="Write a comment..."
-             
-          
-              />
-          
+              {`City:${this.props.restaurant.location.city}`}
+            </Typography>
+            <PhoneSharpIcon />
+            <Typography
+              align="justify"
+              variant="overline"
+              color="textPrimary"
+              component="p"
+            >
+            {`Cost for Two:   $${this.props.restaurant.average_cost_for_two}`} 
+            </Typography>
+
+            <Typography
+              align="justify"
+              variant="overline"
+              color="textPrimary"
+              component="p"
+            >
+             {`Rating:${this.props.restaurant.user_rating.aggregate_rating}`} 
+            </Typography>
+
+            <Typography
+              align="justify"
+              variant="overline"
+              color="textPrimary"
+              component="p"
+            >
+             {`Other user votes: ${this.props.restaurant.user_rating.votes}`}
             </Typography>
             <Typography
               align="justify"
               variant="overline"
-              color="primary"
-              component="div"
-            ></Typography>
-            <div>
-           <IconButtonsEditComment/>
-              </div>
-                 
-      </>
-    )
+              color="textPrimary"
+              component="p"
+            >
+              {`Phone#:${this.props.restaurant.phone_numbers}`}
+            </Typography>
+            <Typography
+              align="justify"
+              variant="overline"
+              color="textPrimary"
+              component="p"
+            >
+             
+            </Typography>
+           
+          </CardContent>
+        </CardActionArea>
+          <Link to={`/register/`}>
+               Would You Like to Access All App Features? click (Here) to Register
+        </Link>
+      </Card>
+    );
+  }
 
 
 }
 
-export { LoginCard, RegisterCard, MaterialCommentForm, MaterialEditForm};
+export { LoginCard, RegisterCard, MaterialCommentForm, MaterialEditForm, SearchCardMaterialUI };
