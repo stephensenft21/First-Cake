@@ -6,11 +6,26 @@ export default {
         ! mainContainer Style
        
         */
+
+       wrapper:{
+        marginTop: "48px; ",/* place it under navbar */
+        height: '100vh',
+        overflow: 'scroll',
+        paddingBottom: "50%;", /* compensate margin top */
+        backGround: '#E9B5B5',
+    },
   mainContainer: {
     display: "flex",
     width: 413,
     height: 736,
-    background: " #E9B5B5",
+    background: " #717C89",
+    backdropFilter: "blur(4px)"
+  },
+  editMainContainer: {
+    display: "flex",
+    width: 413,
+    height: 736,
+    color: " #717C89",
     backdropFilter: "blur(4px)"
   },
 
@@ -64,6 +79,32 @@ export default {
     top: '0%',
     bottom: '0%',
     backgroundPositionX: '219%',
+  },
+    logoButtonLoginView: {
+    borderRadius: '50%',
+    marginRight: "0   %",
+    width: 275,
+    height: 183,
+    display: 'flex',
+    left: '0%',
+    right: '0%',
+    top: '0%',
+    bottom: '0%',
+    backgroundPositionX: '219%',
+
+  },
+  logoButtonEditView: {
+    borderRadius: ' ',
+    paddingBottom: "1000em",
+    width: "100%",
+    height: "50%",
+    display: 'flex',
+    left: '0%',
+    right: '0%',
+    top: '0%',
+    bottom: '0%',
+   
+    backgroundColor: "#acc18a "
 
   },
 
@@ -208,7 +249,7 @@ export default {
     alignContent: "space-around",
     textAlign: "center",
 
-    color: "rgba(0, 0, 0, 0.75)"
+    color: "#ACC18A"
   },
 
 
@@ -248,6 +289,11 @@ authButtongroup: {
   display: 'flex',
   flexDirection: "",
   justifyContent: '',
+},
+
+favoriteDetails:{
+  BackgroundColor: "#ACC18A",
+
 }
 
 

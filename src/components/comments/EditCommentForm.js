@@ -1,8 +1,10 @@
 import React, { Component } from "react"
-import { Button, Form, FormGroup, Input, Col } from "reactstrap";
+import { Form  } from "reactstrap";
+import style from '../../Style'
 import APIManager from "../../modules/APIManager";
 import moment from 'moment';
 import {MaterialEditForm} from '../material/MaterialCards'
+import color from "@material-ui/core/colors/amber";
 class EditCommentForm extends Component {
     //set the initial state
     state = {
@@ -58,10 +60,12 @@ class EditCommentForm extends Component {
     // render JSX to be displayed on the DOM
     render() {
         return (
-            <>
+            <article syle={style.editMainContainer}>
+                <img style={{backgroundColor: "DAFEB7"}} src={require(`../../Images/Project-Logo-Capstone.png`)} alt="My Logo" style={style.logoButtonEditView} onClick={() => { this.props.history.push(`/home/`) }}></img>
+            <div style={style.CommentLabels}>
                 
-                <Form onSubmit={this.updateExistingComment}>
-                    <div>Change your mind?</div>
+                <Form style={style.Form}    onSubmit={this.updateExistingComment}>
+                    <div>Change your mind..?</div>
             
                      
                         <MaterialEditForm
@@ -74,8 +78,9 @@ class EditCommentForm extends Component {
     
                    
                 </Form>
-             
-            </>
+           
+            </div>
+            </article>
         );
     }
 

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {searchCardMaterialUI} from '../search/MaterialSearchCard'
 import APIManager from '../../modules/APIManager'
-import { SearchCardMaterialUI } from '../material/MaterialCards';
-
+import { SearchCardMaterialUI, UserLoggedINSearchCardMaterialUI } from '../material/MaterialCards';
+import style from '../../Style'
 
 
 class CakeCard extends Component {
@@ -83,17 +82,27 @@ class CakeCard extends Component {
 
                 {(this.isAuthenticated()) ?
                     <>
-
-                       <SearchCardMaterialUI/>
-                 
+<div style={style.wrapper}>
+                       <SearchCardMaterialUI
+                       {...this.props}
+                       isAuthenticated={this.isAuthenticated}
+                       handle
+                       />
+                 </div>
 
                                 { !buttonActive ? (<button className="button" type="button" disabled={this.props.loadingStatus} onClick={() => this.constructNewFave()}></button>
                                 ) : (<div> </div>)}
                                
                       
                     </>
-                    :
+                    : 
                     <>
+                    <div style={style.wrapper}><UserLoggedINSearchCardMaterialUI
+                     {...this.props}
+                     isAuthenticated={this.isAuthenticated}
+                     handle/>
+                     </div>
+                  
                      
                     </>}
             </div>

@@ -3,11 +3,14 @@ import CommentCard from './CommentCard'
 import APIManager from '../../modules/APIManager'
 import "./CommentList.css"
 import { withRouter } from 'react-router'
+import { Collapse } from '@material-ui/core';
+import style from '../../Style'
 class CommentList extends Component {
 
 	state = {
 		favorite: {},
-		comments: []
+		comments: [],
+		Collapse: false,
 	}
 
 	
@@ -58,7 +61,7 @@ dostuff =() => {
 	render() {
 		console.log(this.state.comments)
 		return (
-			<div>
+			<div style={style.wrapper} >
 				<h4> {this.state.favorite.name}</h4>
 				{this.state.comments.map((comment, id) => (
 					<CommentCard

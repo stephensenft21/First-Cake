@@ -26,7 +26,7 @@ class Logo extends Component {
 
 
         return (
-            <div className="mainContainer" style={styles.mainContainer}>
+            <div style={styles.mainContainer}>
 
 
 <img src={require(`../../Images/Project-Logo-Capstone.png`)} alt="My Logo" style={styles.logoButton} onClick={() => { this.props.history.push(`/home/`) }}></img>

@@ -122,8 +122,8 @@
     {
       "favoriteId": 1,
       "userId": 1,
-      "text": "efefwef",
-      "editTimeStamp": "",
+      "text": "",
+      "editTimeStamp": "2019-11-12T09:51:22.673Z",
       "date": "2019-11-11T20:17:42.414Z",
       "id": 2
     },
@@ -134,6 +134,22 @@
       "editTimeStamp": "",
       "date": "2019-11-11T22:26:16.296Z",
       "id": 3
+    },
+    {
+      "favoriteId": 1,
+      "userId": 1,
+      "text": "ffffffff",
+      "editTimeStamp": "",
+      "date": "2019-11-12T09:59:11.568Z",
+      "id": 4
+    },
+    {
+      "favoriteId": 1,
+      "userId": 1,
+      "text": "d",
+      "editTimeStamp": "",
+      "date": "2019-11-12T12:13:08.269Z",
+      "id": 5
     }
   ],
   "favorites": [
@@ -161,7 +177,6 @@
       "votes": "281",
       "id": 2
     },
-  
     {
       "userId": 1,
       "uniqueId": "17195456",
@@ -281,6 +296,18 @@
       "city": "Nashville",
       "votes": "6",
       "id": 13
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17192772",
+      "name": "MAFIAoZA'S (Nashville)",
+      "address": "2400 12th Avenue South 37204",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 269-4646",
+      "rating": "4.5",
+      "city": "Nashville",
+      "votes": "431",
+      "id": 14
     }
   ]
 }

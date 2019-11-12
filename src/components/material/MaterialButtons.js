@@ -220,7 +220,7 @@ function IconButtonsDetails() {
     return (
       <div >
         <IconButton  type="submit" color="primary" className={classes.button4} aria-label="delete">
-        <Typography variant="h5" color="textSecondary" component="p">Sign In<PersonRoundedIcon/> </Typography>
+        <Typography variant="h5" color="textSecondary" component="p"><PersonRoundedIcon/>>> </Typography>
         </IconButton>
         
       </div>
@@ -276,7 +276,7 @@ function IconButtonsSubmit(props) {
   return (
     <div >
       <IconButton type="submit" color="primary" className={classes.button4} aria-label="delete">
-      <Typography variant="h5"color="textSecondary" value={this.props.text} component="p">Sign Up</Typography>
+      <Typography variant="h5"color="textSecondary" value={this.props.text} component="p"></Typography>
       </IconButton>
       
     </div>

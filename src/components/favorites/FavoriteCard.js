@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import APIManager from '../../modules/APIManager'
-import MediaCard from '..//material/MaterialCards'
+import {MediaCard} from '..//material/MaterialCards'
 
 class FavoriteCard extends Component {
 

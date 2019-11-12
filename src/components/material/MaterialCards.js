@@ -5,8 +5,12 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import LocationCitySharpIcon from "@material-ui/icons/LocationCitySharp";
+import Box from '@material-ui/core/Box';
+import Divider from '@material-ui/core/Divider';
 import Typography from "@material-ui/core/Typography";
-import IconButtonsEditComment from '../material/MaterialButtons'
+import { IconButtonsEditComment} from '../material/MaterialButtons'
+import ThumbUpAltRoundedIcon from '@material-ui/icons/ThumbUpAltRounded';
+import MonetizationOnRoundedIcon from '@material-ui/icons/MonetizationOnRounded';
 import IconButtonsDelete, {
   IconButtonsDetails,
   IconButtonsSignUp
@@ -25,44 +29,44 @@ const useStyles = makeStyles({
     height: 140
   }
 });
-let isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
-function MediaCard(props) {
-  console.log("this is in media card", props)
-  const classes = useStyles();
 
-  return (
-    <Card className={classes.card}>
-      <div onClick={() => props.handleDelete(props.favorite.id)}>
-        <IconButtonsDelete />
-      </div>
-      <CardActionArea>
-        <CardContent>
-          <Typography align="left" gutterBottom variant="h4" component="h2">
-            {`${props.favorite.name}`}
-          </Typography>
-          <LocationCitySharpIcon />{" "}
-          <Typography
-            align="justify"
-            variant="overline"
-            color="textPrimary"
-            component="p"
-          >
-            {`${props.favorite.address}`}
-          </Typography>
-          <Typography
-            align="justify"
-            variant="overline"
-            color="textPrimary"
-            component="p"
-          >
-            {`${props.favorite.city}`}
-          </Typography>
-          <PhoneSharpIcon />
-          <Typography
-            align="justify"
-            variant="overline"
-            color="textPrimary"
+  function MediaCard(props) {
+    console.log("is in media card", props)
+    const classes = useStyles();
+
+    return (
+      <Card className={classes.card}>
+        <div onClick={() => props.handleDelete(props.favorite.id)}>
+          <IconButtonsDelete />
+        </div>
+        <CardActionArea>
+          <CardContent>
+            <Typography align="left" gutterBottom variant="h4" component="h2">
+              {`${props.favorite.name}`}
+            </Typography>
+            <LocationCitySharpIcon />{" "}
+            <Typography
+              align="justify"
+              variant="subtitle2"
+              color="textPrimary"
+              component="p"
+            >
+              {`${props.favorite.address}`}
+            </Typography>
+            <Typography
+              align="justify"
+              variant="subtitle2"
+              color="textPrimary"
+              component="p"
+            >
+              {`${props.favorite.city}`}
+            </Typography>
+            <PhoneSharpIcon />
+            <Typography
+              align="justify"
+              variant="subtitle2"
+              color="textPrimary"
             component="p"
           >
             {`${props.favorite.phone_numbers}`}
@@ -75,7 +79,7 @@ function MediaCard(props) {
     </Card>
   );
 }
-export default MediaCard;
+ 
 
 function LoginCard(props) {
   const classes = useStyles();
@@ -86,7 +90,7 @@ function LoginCard(props) {
         <CardContent>
           <Typography
             align="justify"
-            variant="overline"
+            variant="subtitle2"
             color="textPrimary"
             component="div"
           >
@@ -102,7 +106,7 @@ function LoginCard(props) {
           </Typography>
           <Typography
             align="justify"
-            variant="overline"
+            variant="subtitle2"
             color="textPrimary"
             component="div"
           >
@@ -118,7 +122,7 @@ function LoginCard(props) {
           </Typography>
           <Typography
             align="justify"
-            variant="overline"
+            variant="subtitle2"
             color="primary"
             component="div"
 
@@ -145,7 +149,7 @@ function RegisterCard(props) {
         <CardContent>
           <Typography
             align="justify"
-            variant="overline"
+            variant="subtitle2"
             color="textPrimary"
             component="div"
           >
@@ -162,7 +166,7 @@ function RegisterCard(props) {
 
           <Typography
             align="justify"
-            variant="overline"
+            variant="subtitle2"
             color="textPrimary"
             component="div"
           >
@@ -178,7 +182,7 @@ function RegisterCard(props) {
           </Typography>
           <Typography
             align="justify"
-            variant="overline"
+            variant="subtitle2"
             color="primary"
             component="div"
           >
@@ -248,7 +252,15 @@ function MaterialEditForm(props) {
   return (
     <>
 
-
+<Box
+        boxShadow={1}
+        bgcolor="background.paper"
+        m={5}
+        p={5}
+        style={{ width: '8rem', height: '5rem' }}
+      >
+       
+      
       <Typography
         align="justify"
         variant="overline"
@@ -283,10 +295,11 @@ function MaterialEditForm(props) {
         color="primary"
         component="div"
       ></Typography>
+      </Box>
       <div>
         <IconButtonsEditComment />
       </div>
-
+      
     </>
   )
   }
@@ -294,78 +307,177 @@ function MaterialEditForm(props) {
 
 
   function SearchCardMaterialUI(props) {
-    console.log("this is in media card", props)
+    console.log("is in media card", props)
     const classes = useStyles();
 
     return (
+      <Box
+      boxShadow={3}
+      bgcolor="background.paper"
+      m={5}
+      p={5}
+     
+    >
       <Card className={classes.card}>
-        <div onClick={() => props.handleDelete(props.favorite.id)}>
-          <IconButtonsDelete />
-        </div>
+      
         <CardActionArea>
           <CardContent>
             <Typography align="left" gutterBottom variant="h4" component="h2">
-              {`${this.props.restaurant.name}`}
+              {`${props.restaurant.name}`}
             </Typography>
             <LocationCitySharpIcon />{" "}
             <Typography
-              align="justify"
-              variant="overline"
+              align="left "
+              variant="body1"
               color="textPrimary"
               component="p"
             >
-              {this.props.restaurant.location.address}
+              {props.restaurant.location.address}
             </Typography>
             <Typography
-              align="justify"
-              variant="overline"
+              align="left "
+              variant="body1"
               color="textPrimary"
               component="p"
             >
-              {`City:${this.props.restaurant.location.city}`}
+              {`City:${props.restaurant.location.city}`}
             </Typography>
-            <PhoneSharpIcon />
             <Typography
-              align="justify"
-              variant="overline"
+              align="left "
+              variant="body1"
+              color="textPrimary"
+              component="p">
+            <MonetizationOnRoundedIcon/></Typography> 
+            <Typography
+              align="left "
+              variant="body1"
               color="textPrimary"
               component="p"
             >
-            {`Cost for Two:   $${this.props.restaurant.average_cost_for_two}`} 
-            </Typography>
-
-            <Typography
-              align="justify"
-              variant="overline"
-              color="textPrimary"
-              component="p"
-            >
-             {`Rating:${this.props.restaurant.user_rating.aggregate_rating}`} 
+            {`Cost for Two: $${props.restaurant.average_cost_for_two}`} 
             </Typography>
 
             <Typography
-              align="justify"
-              variant="overline"
+              align="left "
+              variant="body1"
               color="textPrimary"
               component="p"
             >
-             {`Other user votes: ${this.props.restaurant.user_rating.votes}`}
+             {`${props.restaurant.user_rating.aggregate_rating}`} 
+            </Typography>
+            <ThumbUpAltRoundedIcon/>
+            <Typography
+              align="left "
+              variant="body1"
+              color="textPrimary"
+              component="p"
+            >
+             {`Other user votes: ${props.restaurant.user_rating.votes}`}
+            </Typography>
+            <PhoneSharpIcon/> 
+              <Typography
+              align="left "
+              variant="body1"
+              color="textPrimary"
+              component="p"
+            > 
+                    {`${props.restaurant.phone_numbers}`}
+            </Typography>
+
+            <Typography
+              align="left "
+              variant="body1"
+              color=" "
+              component="p"
+            >
+     
+            </Typography>
+           
+          </CardContent>
+        </CardActionArea>
+         
+      </Card>
+      </Box>
+    );
+  }
+  function UserLoggedINSearchCardMaterialUI(props) {
+    console.log("is in media card", props)
+    const classes = useStyles();
+
+    return (
+      <Box
+        boxShadow={3}
+        bgcolor="background.paper"
+        m={1}
+        p={1}
+        style={{ width: '8rem', height: '5rem' }}
+      >
+      <Card className={classes.card}>
+        
+        <CardActionArea>
+          <CardContent>
+            <Typography align="left" gutterBottom variant="body1" component="h2">
+              {`${props.restaurant.name}`}
+            </Typography>
+            <LocationCitySharpIcon />
+            <Typography
+              align="left "
+              variant="h5"
+              color="textPrimary"
+              component="p"
+            >
+              {props.restaurant.location.address}
             </Typography>
             <Typography
-              align="justify"
-              variant="overline"
+              align="left "
+              variant="h5"
               color="textPrimary"
               component="p"
             >
-              {`Phone#:${this.props.restaurant.phone_numbers}`}
+              {`City:${props.restaurant.location.city}`}
+            </Typography>
+            <MonetizationOnRoundedIcon/>
+            <Typography
+              align="left "
+              variant="h5"
+              color="textPrimary"
+              component="p"
+            >
+            {`Cost for Two:   $${props.restaurant.average_cost_for_two}`} 
+            </Typography>
+
+            <Typography
+              align="left "
+              variant="h5"
+              color="textPrimary"
+              component="p"
+            >
+              {`${props.restaurant.user_rating.aggregate_rating}`} 
+            </Typography>
+
+            <Typography
+              align="left "
+              variant="h5"
+              color="textPrimary"
+              component="p"
+            >
+             {`Other user votes: ${props.restaurant.user_rating.votes}`}
             </Typography>
             <Typography
-              align="justify"
-              variant="overline"
+              align="left "
+              variant="h5"
               color="textPrimary"
               component="p"
             >
-             
+              {`Phone#:${props.restaurant.phone_numbers}`}
+            </Typography>
+            <Typography
+              align="left "
+              variant="h5"
+              color="textPrimary"
+              component="p"
+            >
+              
             </Typography>
            
           </CardContent>
@@ -374,10 +486,94 @@ function MaterialEditForm(props) {
                Would You Like to Access All App Features? click (Here) to Register
         </Link>
       </Card>
+      </Box>
+    );
+  }
+  function UserLoggedINSearchCardWithDetailsMaterialUI(props) {
+    console.log("is in media card", props)
+    const classes = useStyles();
+
+    return (
+      
+      <Card className={classes.card}>
+        
+        <CardActionArea>
+          <CardContent> 
+            <Typography align="inherit" gutterBottom variant="body1" component="h5">
+              {`${props.favorite.name}`}
+            </Typography>
+              <LocationCitySharpIcon />
+            <Typography
+              align="inherit "
+              variant= "h6"
+              color="textPrimary"
+              component="p"
+            >
+              
+            <Divider/>
+              {props.favorite.address}
+            </Typography>
+            <Typography
+              align="inherit "
+              variant= "h6"
+              color="textPrimary"
+              component="p"
+            >
+              {`City:${props.favorite.city}`}
+            </Typography>
+            <MonetizationOnRoundedIcon/>
+            <Typography
+              align="inherit "
+              variant= "h6"
+              color="textPrimary"
+              component="p"
+            >
+            {`Cost for Two:   $${props.favorite.average_cost_for_two}`} 
+            </Typography>
+
+            <Typography
+              align="inherit "
+              variant= "h6"
+              color="textPrimary"
+              component="p"
+            >
+              {`${props.favorite.rating}`} 
+            </Typography>
+
+            <Typography
+              align="inherit "
+              variant= "h6"
+              color="textPrimary"
+              component="p"
+            >
+             {`Other user votes: ${props.favorite.votes}`}
+            </Typography>
+            <Typography
+              align="inherit "
+              variant= "h6"
+              color="textPrimary"
+              component="p"
+            >
+              {`Phone#:${props.favorite.phone_numbers}`}
+            </Typography>
+            <Typography
+              align="inherit "
+              variant= "h6"
+              color="textPrimary"
+              component="p"
+            >
+              
+            </Typography>
+           
+          </CardContent>
+        </CardActionArea>
+         
+      </Card>
+   
     );
   }
 
 
-}
 
-export { LoginCard, RegisterCard, MaterialCommentForm, MaterialEditForm, SearchCardMaterialUI };
+
+export { UserLoggedINSearchCardWithDetailsMaterialUI,LoginCard, MediaCard, RegisterCard, MaterialCommentForm, MaterialEditForm, SearchCardMaterialUI,UserLoggedINSearchCardMaterialUI };

@@ -32,7 +32,7 @@ class FavoriteList extends Component {
     return (
       <>
         <SimpleBottomNavigation/>
-        <div style={style.mainCard}>
+        <div style={style.wrapper}>
       
         <div  onClick={() => { this.props.history.goBack(`/home/`) }}> <IconButtonsBack/></div>
         <div>
