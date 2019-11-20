@@ -1,70 +1,68 @@
-import React, { Component } from 'react';
-import APIManager from '../../modules/APIManager'
-import {Button } from "reactstrap";
-import {UserLoggedINSearchCardWithDetailsMaterialUI} from '../material/MaterialCards'
-import {IconButtonsComment} from '../material/MaterialButtons'
-import { Link } from "react-router-dom"
-import style from '../../Style'
-import  {IconButtonsBack} from '../material/MaterialButtons'
+import React, { Component } from "react";
+import APIManager from "../../modules/APIManager";
+
+import { UserLoggedINSearchCardWithDetailsMaterialUI } from "../material/MaterialCards";
+import { IconButtonsComment } from "../material/MaterialButtons";
+import { Link } from "react-router-dom";
+import style from "../../Style";
+import { IconButtonsBack } from "../material/MaterialButtons";
+import { IconButtonsEdit } from "../material/MaterialButtons";
 class FavoriteDetails extends Component {
+  state = {
+    favorite: {}
+  };
 
- 
-state={
-   favorite: {}
+  componentDidMount() {
+    APIManager.get(this.props.favoriteId, "favorites").then(response => {
+      this.setState({
+        favorite: response
+      });
+    });
+  }
+
+  render() {
+    return (
+      <>
+        <div style={style.favoriteDetails}>
+          <div
+            onClick={() => {
+              this.props.history.goBack(`/home/`);
+            }}
+          >
+            {" "}
+            <IconButtonsBack />
+          </div>
+          <div style={style.wrapper}>
+            <img
+              src={require(`../../Images/Project-Logo-Capstone.png`)}
+              alt="My Logo"
+              style={style.logoButton}
+              onClick={() => {
+                this.props.history.push(`/home/`);
+              }}
+            ></img>
+            <UserLoggedINSearchCardWithDetailsMaterialUI
+              favorite={this.state.favorite}
+              {...this.props}
+            />
+          </div>
+          <Link to={`/comments/${this.props.favoriteId}`}>
+            {" "}
+            <IconButtonsComment className="button" type="button" />
+          </Link>
+          <Link to={`/favorites/${this.props.favoriteId}`}>
+            {" "}
+            <IconButtonsEdit className="button" type="button" />
+          </Link>
+        </div>
+      </>
+    );
+  }
 }
+export default FavoriteDetails;
 
-
-componentDidMount() {
-
-APIManager.get(this.props.favoriteId,"favorites").then((response) => {
-
-    this.setState({
-     favorite: response
-
-    })
-})
-}
-
-
-    render() {
-     
-        return (
-            <>
-            <div style={style.favoriteDetails}>
-            <div  onClick={() => { this.props.history.goBack(`/home/`) }}> <IconButtonsBack/></div>
-            <div style={style.wrapper}>
-            
-       <div><button style={style.logoButton} type="button" onClick={() => { this.props.history.push(`/home/`) }}></button></div>
-       <UserLoggedINSearchCardWithDetailsMaterialUI
-        favorite={this.state.favorite}
-       {...this.props}/>
-                   
-                   
-                    
-        
-                </div>
-                <Link to={`/comments/${(this.props.favoriteId)}`}>  <IconButtonsComment className="button" type="button"/></Link>
-                <Link to={`/favorites/${(this.props.favoriteId)}`}> <Button className="button" type="button" ></Button></Link>
-                </div>
-            </>
-
-        )
-    }
-
-} export default FavoriteDetails
-
-
-
-
-
-
-
-
-
-
-
-
- {/* <div> <Card className="mainCard">
+{
+  /* <div> <Card className="mainCard">
                         <CardBody>
                             <CardTitle>{`${this.state.favorite.name}`}</CardTitle>
                             <CardSubtitle>{this.state.favorite.address}</CardSubtitle>
@@ -81,4 +79,5 @@ APIManager.get(this.props.favoriteId,"favorites").then((response) => {
 
                             </Row>
                         </CardBody>
-                    </Card> */}
+                    </Card> */
+}

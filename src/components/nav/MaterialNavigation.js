@@ -30,7 +30,7 @@ const useStyles = makeStyles({
   return (
 
      <>
-     {console.log("this is in material nav")}
+
         {isAuthenticated()? (
     <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
     <Link className="nav-link" to="/home"><BottomNavigationAction showLabel={true} label="Home" icons={<HomeIcon/>} /></Link>

@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: "10%",
     width: "45%",
     borderRadius: "4%",
-    backgroundColor: ("#F39898"),
+    backgroundColor: ("#ACC18A"),
     color: ("black"),
     boxShadow: ("5px 5px 5px grey "),
     transitionDuration: ".3s",
@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: "4%",
     width: "15%",
     borderRadius: "4%",
-    backgroundColor: ("#F39898"),
+    backgroundColor: ("#F2FBE0"),
     color: ("black"),
     boxShadow: ("5px 5px 5px grey"),
     transitionDuration: ".3s",
@@ -190,7 +190,7 @@ function IconButtonsDetails() {
     return (
       <div>
         <IconButton   type="button"  className={classes.button2} aria-label="edit">
-       
+        <FavoriteIcon/>
         </IconButton>
         
       </div>

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import FavoriteCard from "./FavoriteCard";
 import APIManager from "../../modules/APIManager";
 import CommentList from "../../components/comments/CommentList";
-import Navi from "../nav/Navi";
 import style from "../../Style";
 import { IconButtonsBack } from "../material/MaterialButtons";
 import SimpleBottomNavigation from '../nav/MaterialNavigation'
@@ -17,7 +16,7 @@ class FavoriteList extends Component {
       this.props.userId,
       "comments"
     ).then(allFavorites => {
-      console.log("getData", allFavorites);
+   
       this.setState({
         favorites: allFavorites
       });

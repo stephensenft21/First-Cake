@@ -116,55 +116,40 @@
       "email": "",
       "password": "",
       "id": 20
+    },
+    {
+      "email": "BrendaLong@NSS.Com",
+      "password": "",
+      "id": 21
     }
   ],
   "comments": [
     {
-      "favoriteId": 1,
+      "favoriteId": 15,
       "userId": 1,
-      "text": "",
-      "editTimeStamp": "2019-11-12T09:51:22.673Z",
-      "date": "2019-11-11T20:17:42.414Z",
-      "id": 2
+      "text": "ddddd",
+      "editTimeStamp": "",
+      "date": "2019-11-12T22:45:28.410Z",
+      "id": 1
     },
     {
-      "favoriteId": 1,
+      "favoriteId": 9,
       "userId": 1,
-      "text": "sfdgsgwgw",
+      "text": "34G3RGWRG",
       "editTimeStamp": "",
-      "date": "2019-11-11T22:26:16.296Z",
+      "date": "2019-11-14T00:41:49.721Z",
       "id": 3
     },
     {
-      "favoriteId": 1,
+      "favoriteId": 9,
       "userId": 1,
-      "text": "ffffffff",
+      "text": "EFVEFVERF",
       "editTimeStamp": "",
-      "date": "2019-11-12T09:59:11.568Z",
+      "date": "2019-11-14T00:46:58.698Z",
       "id": 4
-    },
-    {
-      "favoriteId": 1,
-      "userId": 1,
-      "text": "d",
-      "editTimeStamp": "",
-      "date": "2019-11-12T12:13:08.269Z",
-      "id": 5
     }
   ],
   "favorites": [
-    {
-      "userId": 1,
-      "uniqueId": "17195752",
-      "name": "Juice Bar",
-      "address": "128 Pewitt Dr, Brentwood 37027",
-      "average_cost_for_two": 10,
-      "phone_numbers": "Not available for this place",
-      "rating": "3.4",
-      "city": "Nashville",
-      "votes": "12",
-      "id": 1
-    },
     {
       "userId": 18,
       "uniqueId": "17195175",
@@ -176,66 +161,6 @@
       "city": "Nashville",
       "votes": "281",
       "id": 2
-    },
-    {
-      "userId": 1,
-      "uniqueId": "17195456",
-      "name": "Burger Republic",
-      "address": "6900 Lenox Village Dr, Nashville 37211",
-      "average_cost_for_two": 25,
-      "phone_numbers": "(615) 499-4428",
-      "rating": "4.3",
-      "city": "Nashville",
-      "votes": "138",
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "uniqueId": "17194343",
-      "name": "The Cupcake Collection",
-      "address": "1213 6th Ave. N, Nashville 37208",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 244-2900",
-      "rating": "4.4",
-      "city": "Nashville",
-      "votes": "143",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "uniqueId": "17195233",
-      "name": "Papa Turney's Old Fashion BBQ",
-      "address": "3979 Bell Rd, Nashville 37076",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 866-8850",
-      "rating": "4.2",
-      "city": "Nashville",
-      "votes": "97",
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "uniqueId": "17195460",
-      "name": "Puckett's Boat House",
-      "address": "94 East Main St, Franklin 37064",
-      "average_cost_for_two": 25,
-      "phone_numbers": "(615) 790-2309",
-      "rating": "4.0",
-      "city": "Nashville",
-      "votes": "101",
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "uniqueId": "17194608",
-      "name": "Sweet CeCe's",
-      "address": "500 W Main St, Franklin 37064",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 807-1412",
-      "rating": "4.3",
-      "city": "Nashville",
-      "votes": "117",
-      "id": 8
     },
     {
       "userId": 1,
@@ -308,6 +233,186 @@
       "city": "Nashville",
       "votes": "431",
       "id": 14
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17193567",
+      "name": "Virago",
+      "address": "1126 McGavock St, Nashville 37203",
+      "average_cost_for_two": 40,
+      "phone_numbers": "(615) 254-1902",
+      "rating": "4.4",
+      "city": "Nashville",
+      "votes": "397",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17193076",
+      "name": "Peter's Sushi & Thai",
+      "address": "330 Franklin Road Ste 912D 37027",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 370-1493",
+      "rating": "4.4",
+      "city": "Nashville",
+      "votes": "262",
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17195509",
+      "name": "DeSano Pizza Bakery",
+      "address": "115 16th Ave S, Nashville 37203",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 953-1168",
+      "rating": "4.3",
+      "city": "Nashville",
+      "votes": "153",
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17196464",
+      "name": "Clawson's Pub & Deli",
+      "address": "1205 4th Avenue S, Nashville 37210",
+      "average_cost_for_two": 20,
+      "phone_numbers": "(615) 484-6069",
+      "rating": "3.3",
+      "city": "Nashville",
+      "votes": "5",
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17192371",
+      "name": "Germantown Cafe",
+      "address": "1200 5th Ave N, Nashville 37208",
+      "average_cost_for_two": 40,
+      "phone_numbers": "(615) 242-3226",
+      "rating": "4.5",
+      "city": "Nashville",
+      "votes": "404",
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17195506",
+      "name": "Hattie B's Hot Chicken",
+      "address": "112 19th Ave S, Nashville 37203",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 678-4794",
+      "rating": "4.9",
+      "city": "Nashville",
+      "votes": "449",
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17195220",
+      "name": "Five Points Pizza",
+      "address": "1012 Woodland Street, Nashville 37206",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 915-4174",
+      "rating": "4.3",
+      "city": "Nashville",
+      "votes": "201",
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17193741",
+      "name": "Samurai Sushi",
+      "address": "2209 Elliston Pl, Nashville 37203",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 320-5438",
+      "rating": "4.4",
+      "city": "Nashville",
+      "votes": "217",
+      "id": 22
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17756816",
+      "name": "Jeni's Splendid Ice Creams",
+      "address": "900 Rosa L Parks Blvd, Nashville 37208",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 928-8028",
+      "rating": "3.1",
+      "city": "Nashville",
+      "votes": "5",
+      "id": 23
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17194632",
+      "name": "Porta Via Italian Kitchen",
+      "address": "21 White Bridge Road, Nashville 37205",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 356-0001",
+      "rating": "4.2",
+      "city": "Nashville",
+      "votes": "141",
+      "id": 24
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17193977",
+      "name": "Donut Country",
+      "address": "1311 Memorial Blvd, Murfreesboro 37129",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 890-3129",
+      "rating": "3.9",
+      "city": "Nashville",
+      "votes": "43",
+      "id": 25
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17194276",
+      "name": "M.L. Rose Craft Beer & Burgers",
+      "address": "2535 Franklin Pike, Nashville 37204",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 712-8160",
+      "rating": "4.4",
+      "city": "Nashville",
+      "votes": "305",
+      "id": 26
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17191834",
+      "name": "Batter'd & Fried Boston Seafood House",
+      "address": "1008 Woodland St, Nashville 37206",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 226-9283",
+      "rating": "4.2",
+      "city": "Nashville",
+      "votes": "188",
+      "id": 27
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17194019",
+      "name": "Liquid Smoke",
+      "address": "2 N Public Square, Murfreesbor0 37130",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 217-7822",
+      "rating": "3.3",
+      "city": "Nashville",
+      "votes": "6",
+      "id": 28
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17194896",
+      "name": "Puckett's Grocery & Restaurant",
+      "address": "500 Church Street, Nashville 37219",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 770-2772",
+      "rating": "4.5",
+      "city": "Nashville",
+      "votes": "395",
+      "id": 29
     }
   ]
 }

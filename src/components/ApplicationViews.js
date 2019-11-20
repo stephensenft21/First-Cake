@@ -10,8 +10,8 @@ import FavoriteList from './favorites/FavoriteList'
 import Logo from './logo/Logo'
 import CakeList from './search/CakeList'
 import FavoriteDetails from './favorites/FavoriteDetails'
-import  {IconButtonsBack} from './material/MaterialButtons'
-import style from '../Style'
+// import  {IconButtonsBack} from './material/MaterialButtons'
+// import style from '../Style'
 
 // import FavoriteDetails from './favorites/FavoriteDetails'
 
@@ -20,7 +20,7 @@ import style from '../Style'
 class ApplicationViews extends Component {
 
     componentDidMount() {
-        console.log("this is appviews", this.props)
+    
     }
 
     render() {

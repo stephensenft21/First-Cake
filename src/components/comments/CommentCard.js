@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import APIManager from '../../modules/APIManager'
 import { Card, CardTitle, CardText, Button, CardBody } from "reactstrap";
-import {SimpleCard} from '../../components/material/MaterialCommentCard'
+
 import Moment from 'moment';
 import "./CommentCard.css"
 
@@ -36,8 +36,8 @@ class CommentCard extends Component {
             )}
 
       
-            <Button className="button" type="button" onClick={() => { this.props.history.push(`/comments/${this.props.comment.id}/edit`) }}></Button>
-            <Button className="button" type="button" onClick={() => this.handleDelete(this.props.comment.id)}></Button>
+            <Button className="button" type="button" onClick={() => { this.props.history.push(`/comments/${this.props.comment.id}/edit`) }}>Edit</Button>
+            <Button className="button" type="button" onClick={() => this.handleDelete(this.props.comment.id)}>Delete</Button>
       
     </CardBody>
 </Card>

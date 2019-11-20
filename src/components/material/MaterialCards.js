@@ -32,7 +32,7 @@ const useStyles = makeStyles({
 
 
   function MediaCard(props) {
-    console.log("is in media card", props)
+
     const classes = useStyles();
 
     return (
@@ -283,7 +283,7 @@ function MaterialEditForm(props) {
           type="text"
           name="text"
           id="text"
-          placeholder="Write a comment..."
+          placeholder="Edit a comment..."
 
 
         />
@@ -307,7 +307,7 @@ function MaterialEditForm(props) {
 
 
   function SearchCardMaterialUI(props) {
-    console.log("is in media card", props)
+
     const classes = useStyles();
 
     return (
@@ -401,7 +401,7 @@ function MaterialEditForm(props) {
     );
   }
   function UserLoggedINSearchCardMaterialUI(props) {
-    console.log("is in media card", props)
+
     const classes = useStyles();
 
     return (
@@ -490,7 +490,7 @@ function MaterialEditForm(props) {
     );
   }
   function UserLoggedINSearchCardWithDetailsMaterialUI(props) {
-    console.log("is in media card", props)
+  
     const classes = useStyles();
 
     return (

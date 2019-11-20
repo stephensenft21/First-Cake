@@ -8,6 +8,7 @@ let APIManager = {
           all of the more specialized ones, then the string
           of `animals` should not be hard coded here.
     */
+   
 
     get(id, database) {
         return fetch(`${remoteURL}/${database}/${id}`).then(e => e.json())
@@ -35,7 +36,7 @@ let APIManager = {
             .then(result => result.json())
     },
     post(newObject, database) {
-        console.log(newObject)
+      
         return fetch(`${remoteURL}/${database}`, {
             method: "POST",
             headers: {
@@ -89,7 +90,7 @@ let APIManager = {
 		return fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&cuisines=${searchTerm}&count=8&apikey=6e72e09f0a9e5501ab2d5645e8fac52d`)
 			.then(result => result.json())
 			// .then(parsedResult => {
-			// 	console.log(parsedResult.restaurants);
+			// 	(parsedResult.restaurants);
 			// 	return parsedResult.restaurants;
 			// });
 	}

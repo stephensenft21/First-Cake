@@ -9,7 +9,7 @@ class FavoriteCard extends Component {
             .then(() => this.props.getData());
     }
     render() {
-        console.log("this is fave card", this.props)
+     
        
         return (
             <>

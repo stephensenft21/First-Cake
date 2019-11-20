@@ -4,7 +4,7 @@ import style from '../../Style'
 import APIManager from "../../modules/APIManager";
 import moment from 'moment';
 import {MaterialEditForm} from '../material/MaterialCards'
-import color from "@material-ui/core/colors/amber";
+
 class EditCommentForm extends Component {
     //set the initial state
     state = {
@@ -42,7 +42,7 @@ class EditCommentForm extends Component {
         APIManager.get(this.props.commentId, "comments")
 
             .then(comment => {
-                console.log(comment)
+            
                 this.setState({
                     favoriteId: comment.favoriteId,
                     userId: comment.userId,

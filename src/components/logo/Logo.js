@@ -28,12 +28,12 @@ class Logo extends Component {
         return (
             <div style={styles.mainContainer}>
 
-
+            
 <img src={require(`../../Images/Project-Logo-Capstone.png`)} alt="My Logo" style={styles.logoButton} onClick={() => { this.props.history.push(`/home/`) }}></img>
                  
                 <form className="logoForm">
                     
-                    <div className="firstDateText">Your First Date Awaits... </div>
+                    <div className="firstDateText">Your Next First Date Awaits... </div>
                 </form>
             </div>
 

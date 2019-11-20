@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import APIManager from '../../modules/APIManager'
 import { SearchCardMaterialUI, UserLoggedINSearchCardMaterialUI } from '../material/MaterialCards';
 import style from '../../Style'
-
+import {IconButtonsFavorite} from '../material/MaterialButtons'
 
 class CakeCard extends Component {
     state = {
@@ -90,7 +90,7 @@ class CakeCard extends Component {
                        />
                  </div>
 
-                                { !buttonActive ? (<button className="button" type="button" disabled={this.props.loadingStatus} onClick={() => this.constructNewFave()}></button>
+                                { !buttonActive ? (<button className="button" type="button" disabled={this.props.loadingStatus} onClick={() => this.constructNewFave()}><IconButtonsFavorite/></button>
                                 ) : (<div> </div>)}
                                
                       
