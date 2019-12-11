@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+  import React,{Component} from 'react';
 import ApplicationViews from './components/ApplicationViews';
 import {withRouter} from 'react-router'
 // import Nav from './components/nav/Nav';
@@ -61,7 +61,7 @@ class App extends Component {
             setUser={this.setUser}
             userId={this.state.userId}
             clearUser={this.clearUser}
-            {...this.props} /> 
+            {...this.props} />
   
           </>
         

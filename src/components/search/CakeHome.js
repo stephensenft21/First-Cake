@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 import AuthButtons from '../auth/AuthButtons'
 // import '../search/CakeHome.css'
-import Navi from '../nav/Navi'
+
 import { Link } from "react-router-dom"
 
-import style from '../../Style'
+
 import SimpleBottomNavigation from '../nav/MaterialNavigation'
 import {PizzaButton, FondueButton, PubFoodButton, SushiButton, DessertsButton,DrinkButton,CafeButton,BarFoodButton, JuiceButton, IceCreamButton,BakeryButton,DonutsButton} from '../style/SearchHamburgerHook'
 

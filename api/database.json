@@ -131,22 +131,6 @@
       "editTimeStamp": "",
       "date": "2019-11-12T22:45:28.410Z",
       "id": 1
-    },
-    {
-      "favoriteId": 9,
-      "userId": 1,
-      "text": "34G3RGWRG",
-      "editTimeStamp": "",
-      "date": "2019-11-14T00:41:49.721Z",
-      "id": 3
-    },
-    {
-      "favoriteId": 9,
-      "userId": 1,
-      "text": "EFVEFVERF",
-      "editTimeStamp": "",
-      "date": "2019-11-14T00:46:58.698Z",
-      "id": 4
     }
   ],
   "favorites": [
@@ -161,18 +145,6 @@
       "city": "Nashville",
       "votes": "281",
       "id": 2
-    },
-    {
-      "userId": 1,
-      "uniqueId": "17192096",
-      "name": "City Limits Bakery & Cafe",
-      "address": "361 Clofton Dr, Nashville 37221",
-      "average_cost_for_two": 10,
-      "phone_numbers": "(615) 646-0062",
-      "rating": "4.1",
-      "city": "Nashville",
-      "votes": "86",
-      "id": 9
     },
     {
       "userId": 1,
@@ -413,6 +385,90 @@
       "city": "Nashville",
       "votes": "395",
       "id": 29
+    },
+    {
+      "userId": 20,
+      "uniqueId": "17192216",
+      "name": "Dunkin'",
+      "address": "9100A Carothers Parkway Ste 101 37067",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 778-0099",
+      "rating": "3.5",
+      "city": "Nashville",
+      "votes": "11",
+      "id": 30
+    },
+    {
+      "userId": 20,
+      "uniqueId": "17193297",
+      "name": "Gourmet Donuts and Cafe",
+      "address": "3993 N Mount Juliet Rd, Mt Juliet 37122",
+      "average_cost_for_two": 0,
+      "phone_numbers": "(615) 758-6559",
+      "rating": "3.7",
+      "city": "Nashville",
+      "votes": "23",
+      "id": 31
+    },
+    {
+      "userId": 20,
+      "uniqueId": "17192195",
+      "name": "Donut Den",
+      "address": "3900 Hillsboro Pike, Nashville 37215",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 385-1021",
+      "rating": "4.2",
+      "city": "Nashville",
+      "votes": "101",
+      "id": 32
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17195866",
+      "name": "Jeni's Splendid Ice Creams",
+      "address": "2312 12th Avenue S, Nashville 37204",
+      "average_cost_for_two": 10,
+      "phone_numbers": "(615) 292-7794",
+      "rating": "3.8",
+      "city": "Nashville",
+      "votes": "46",
+      "id": 33
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17191922",
+      "name": "Buca di Beppo Italian Restaurant",
+      "address": "1722 Galleria Boulevard 37067",
+      "average_cost_for_two": 40,
+      "phone_numbers": "(615) 778-1321",
+      "rating": "3.9",
+      "city": "Nashville",
+      "votes": "180",
+      "id": 34
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17194025",
+      "name": "Marina's on the Square",
+      "address": "125 N Maple Street, Murfreesboro 37130",
+      "average_cost_for_two": 25,
+      "phone_numbers": "(615) 849-8881",
+      "rating": "4.5",
+      "city": "Nashville",
+      "votes": "161",
+      "id": 35
+    },
+    {
+      "userId": 1,
+      "uniqueId": "17194811",
+      "name": "Bella Napoli Pizzeria",
+      "address": "1200 Villa Place Suite 206, Nashville 37212",
+      "average_cost_for_two": 40,
+      "phone_numbers": "(615) 891-1387",
+      "rating": "4.1",
+      "city": "Nashville",
+      "votes": "149",
+      "id": 36
     }
   ]
 }
