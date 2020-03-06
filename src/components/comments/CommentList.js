@@ -13,6 +13,46 @@ class CommentList extends Component {
 		Collapse: false,
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 	getData = () => {
@@ -61,6 +101,11 @@ dostuff =() => {
 	render() {
 		console.log(this.state.comments)
 		return (
+
+
+
+
+			
 			<div style={style.wrapper} >
 				<h4> {this.state.favorite.name}</h4>
 				{this.state.comments.map((comment, id) => (
