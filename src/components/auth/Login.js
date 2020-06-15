@@ -15,7 +15,7 @@ class Login extends Component {
   state = {
     email: "",
     passwords: ""
-  }
+          }
 
   // Update state whenever an input field is edited
   handleFieldChange = (evt) => {
@@ -26,8 +26,6 @@ class Login extends Component {
 
   handleLogin = (e) => {
     e.preventDefault()
-    
-
     APIManager.searchEmail(this.state.email)
       .then(result => {
         if (this.state.email === '' || this.state.password === "") {
@@ -77,11 +75,3 @@ class Login extends Component {
 export default withRouter(Login);
 
 
-/* <Typography variant="body2" color="textSecondary" align="center">
-{'Copyright © '}
-<Link color="inherit" to="https://https://github.com/stephensenft21/c35-React-Capstone-First-Cake-/blob/master/README.md">
-  First Cake
-</Link>{' '}
-{new Date().getFullYear()}
-{'.'}
-</Typography> */
