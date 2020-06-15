@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-// import Rating from 'react-rating'
 import APIManager from '../../modules/APIManager'
-import { Card, Row, CardTitle, CardText, Button, CardBody, CardHeader, CardFooter, CardImg, CardSubtitle } from "reactstrap";
-import { FaRegTrashAlt, FaRegEdit } from "react-icons/fa";
-import Moment from 'moment';
-// import "./CommentCard.css"
+import { SearchCardMaterialUI, UserLoggedINSearchCardMaterialUI } from '../material/MaterialCards';
+import style from '../../Style'
+import {IconButtonsFavorite} from '../material/MaterialButtons'
 
 class CakeCard extends Component {
-
-
-    handleDelete = (id) => {
-        APIManager.delete(id, "comments")
-            .then(() => this.props.getData());
+    state = {
+        checked: false,
+        saved: false
     }
+
+
     //     <h2>Rate Product:</h2>
     //                         <Rating
     //                             id="condition"
@@ -31,39 +29,84 @@ class CakeCard extends Component {
     //     };
 
 
+    constructNewFave = (blue) => {
+
+
+        window.alert("Your selection has has been saved to MyFaves");
+        let userCoin = JSON.parse(sessionStorage.getItem("credentials")).id
+
+
+        const favorite = {
+            userId: userCoin,
+            uniqueId: this.props.restaurant.id,
+            name: this.props.restaurant.name,
+            address: this.props.restaurant.location.address,
+            average_cost_for_two: this.props.restaurant.average_cost_for_two,
+            phone_numbers: this.props.restaurant.phone_numbers,
+            rating: this.props.restaurant.user_rating.aggregate_rating,
+            city: this.props.restaurant.location.city,
+            votes: this.props.restaurant.user_rating.votes
 
 
 
+        };
+        // Create the animal and redirect user to animal list
+        APIManager.post(favorite, "favorites")
+            .then(() => this.props.getUniqueIds())
 
-
-    //renders
-    render() {
-        // let timeStamp = Moment(this.props.comment.date).fromNow();
-        console.log("this is the phoneNmbers",this.props.restaurant.phone_numbers)
         
+       
+    }
+   
+
+
+    isAuthenticated = () => sessionStorage.getItem("credentials") !== null
+
+    
+    
+    
+        
+      
+
+    render() {
+
+       const buttonActive = this.props.uniqueIds.includes(this.props.restaurant.id)
+       console.log("this is button active ", buttonActive)
+
         return (
-            <div>
-                <Card className="mainCard">
-                    <CardBody>
-                        <CardTitle>{`${this.props.restaurant.name}`}</CardTitle>
-                        <CardSubtitle>{this.props.restaurant.location.address}</CardSubtitle> 
-                  
 
-                            <CardText> {`Cost for Two:   $${this.props.restaurant.average_cost_for_two}`}  </CardText >
-                            <CardText>{`Phone#:${this.props.restaurant.phone_numbers}`}  </CardText > 
-                            <CardText>{`City:${this.props.restaurant.location.city}`}  </CardText >
-                            <CardText>{`Rating:${this.props.restaurant.user_rating.aggregate_rating}`}  </CardText>
-                            <CardText>{`Other user votes: ${this.props.restaurant.user_rating.votes}`}</CardText> 
+
+
+            <div >
+
+
+                {(this.isAuthenticated()) ?
+                    <>
+<div style={style.wrapper}>
+                       <SearchCardMaterialUI
+                       {...this.props}
+                       isAuthenticated={this.isAuthenticated}
+                       handle
+                       />
+                 </div>
+
+                                { !buttonActive ? (<button className="button" type="button" disabled={this.props.loadingStatus} onClick={() => this.constructNewFave()}><IconButtonsFavorite/></button>
+                                ) : (<div> </div>)}
+                               
                       
-
-
-                        {/* <Row className="buttonFlex">
-                            <Button className="button" type="text-box" onClick={() => { this.props.history.push(`/comments/${this.props.comment.id}/edit`) }}><FaRegEdit /></Button>
-                            <Button className="button" type="button" onClick={() => this.handleDelete(this.props.comment.id)}><FaRegTrashAlt /></Button>
-                        </Row> */}
-                    </CardBody>
-                </Card>
+                    </>
+                    : 
+                    <>
+                    <div style={style.wrapper}><UserLoggedINSearchCardMaterialUI
+                     {...this.props}
+                     isAuthenticated={this.isAuthenticated}
+                     handle/>
+                     </div>
+                  
+                     
+                    </>}
             </div>
+
         );
     }
 }

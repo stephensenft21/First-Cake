@@ -1,48 +1,53 @@
-import React, { Component } from 'react';
-import FavoriteCard from './FavoriteCard'
-import API from '../../modules/APIManager'
-
+import React, { Component } from "react";
+import FavoriteCard from "./FavoriteCard";
+import APIManager from "../../modules/APIManager";
+import CommentList from "../../components/comments/CommentList";
+import style from "../../Style";
+import { IconButtonsBack } from "../material/MaterialButtons";
+import SimpleBottomNavigation from '../nav/MaterialNavigation'
 class FavoriteList extends Component {
+  state = {
+    favorites: []
+  };
 
-    state = {
-        favorites: []
-    }
+  getData = () => {
+    APIManager.getAllWithUserId(
+      "favorites",
+      this.props.userId,
+      "comments"
+    ).then(allFavorites => {
+   
+      this.setState({
+        favorites: allFavorites
+      });
+    });
+  };
 
-    getData = () => {
-        API.getAll("favorites").then((favorites) => {
-            this.setState({
-                favorites: favorites
-            })
-        })
-    }
+  componentDidMount() {
+    this.getData();
+  }
 
-    componentDidMount() {
-
-        this.getData()
-    }
-
-
-
-    render() {
-        return (
-
-
-            <div className='sectionHeader'>
-                <h1>List of Favortites</h1>
-                <div className='mainContainer'>
-                </div>
-                {this.state.favorites.map(favorite => (
-                    <FavoriteCard
-                        key={favorite.id}
-                        favorite={favorite}
-                        {...this.props}
-                        getData={this.getData}
-                    />
-                ))}
-            </div>
-
-
-        )
-    }
-    
-} export default FavoriteList
+  render() {
+    return (
+      <>
+        <SimpleBottomNavigation/>
+        <div style={style.wrapper}>
+      
+        <div  onClick={() => { this.props.history.goBack(`/home/`) }}> <IconButtonsBack/></div>
+        <div>
+          {this.state.favorites.map((favorite, id) => (
+              <FavoriteCard
+              key={id}
+              favorite={favorite}
+              {...this.props}
+              getData={this.getData}
+              />
+              ))}
+          <CommentList />
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+export default FavoriteList;

@@ -1,12 +1,12 @@
-.mainContainer  {
+/* .mainContainer  {
     position: relative;
 width: 413px;
 height: 736px;
 background: #E9B5B5;
 backdrop-filter: blur(4px);
 
-}
-.loginForm {
+} */
+/* .loginForm {
     position: absolute;
 left: 4.84%;
 right: 4.84%;
@@ -15,9 +15,9 @@ bottom: 23.37%;
 
 background: #F2F2F2;
 border-radius: 29px;    
-}
+} */
 
-.emailInput{
+ /* .emailInput{
     position: absolute;
 left: 15.98%;
 right: 22.84%;
@@ -37,14 +37,12 @@ font-weight: normal;
 font-size: 18px;
 line-height: 140.62%;
 /* or 25px */
+/* color: rgba(0, 0, 0, 0.5);
 
 
-color: rgba(0, 0, 0, 0.5);
+}  */ 
 
-
-}
-
-.passwordInput{
+/* .passwordInput{
     position: absolute;
     left: 15.98%;
     right: 22.84%;
@@ -64,12 +62,12 @@ color: rgba(0, 0, 0, 0.5);
     /* or 25px */
     
     
-    color: rgba(0, 0, 0, 0.5);
+    /* color: rgba(0, 0, 0, 0.5);
     
 
-}
+} */ */
 
-.loginButton{
+/* .loginButton{
  position: absolute;
 left: 32.65%;
 right: 37.79%;
@@ -89,13 +87,13 @@ background-position-x: 25;
 background-position-y:8;
 /* identical to box height */
 
-display: flex;
+/* display: flex;
 align-items: center;
 text-align: center;
 
 color: #FFFFFF;
 
-}
+} */ */
 
 .signInText {
 

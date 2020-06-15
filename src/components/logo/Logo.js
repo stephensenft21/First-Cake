@@ -1,44 +1,47 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom"
 import '../logo/Logo.css'
+import styles from '../../Style'
 
 
 
 class Logo extends Component {
 
-state=
-{
-    status: "",
-}
-
-onEntering = () => {
-    this.setState({ status: 'Opening...' });
-}
-
-onEntered = () => {
-    this.setState({ status: 'Opened' });
-}
-
-    render(){
-        
+    state =
+        {
+            status: "",
+        }
 
 
+    onEntering = () => {
+        this.setState({ status: 'Opening...' });
+    }
 
-        return(
-            <div className="mainContainer">
+    onEntered = () => {
+        this.setState({ status: 'Opened' });
+    }
+
+    render() {
 
 
-                <button className="logoButton" type="button" onClick={() => { this.props.history.push(`/home/`) }}>Logo</button>
-            <form className="logoForm">  
-            <div className="firstDateText">Your First Date Awaits...</div>
-            </form>
+
+
+        return (
+            <div style={styles.mainContainer}>
+
+            
+<img src={require(`../../Images/Project-Logo-Capstone.png`)} alt="My Logo" style={styles.logoButton} onClick={() => { this.props.history.push(`/home/`) }}></img>
+                 
+                <form className="logoForm">
+                    
+                    <div className="firstDateText">Your Next First Date Awaits... </div>
+                </form>
             </div>
 
 
 
         )
     }
-    
+
 
 
 

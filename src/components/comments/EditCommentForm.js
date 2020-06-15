@@ -1,14 +1,19 @@
 import React, { Component } from "react"
-import { Button, Form, FormGroup, Input,Col } from "reactstrap";
-import API from "../../modules/APIManager";
+import { Form  } from "reactstrap";
+import style from '../../Style'
+import APIManager from "../../modules/APIManager";
 import moment from 'moment';
-class CommentEditForm extends Component {
+import {MaterialEditForm} from '../material/MaterialCards'
+
+class EditCommentForm extends Component {
     //set the initial state
     state = {
         userId: parseInt(sessionStorage.getItem("userId")),
+        commentId: "",
         text: "",
         date: "",
-        collapse: false
+        collapse: false,
+        favoriteId: ""
     };
 
     toggle = () => this.setState({ collapse: !this.state.collapse });
@@ -24,53 +29,60 @@ class CommentEditForm extends Component {
         event.preventDefault()
         this.setState({ loadingStatus: true });
         const editedComment = {
-            id: this.props.match.params.commentId,
-            userId: this.state.userId,
-            favoriteCakeId: this.state.favoriteCakeId,
             editTimeStamp: moment(new Date()),
-            text: this.state.text,
-            date: this.props.date,
+            text: this.state.text
+
         };
         // push edited task
-        API.update(editedComment,"comments")
-            .then(() => this.props.history.push("/favorites"))
+        APIManager.updateComment(editedComment, "comments",this.props.match.params.commentId)
+            .then(() => this.props.history.push(`/favorites/${this.state.favoriteId}`))
     }
 
     componentDidMount() {
-        API.get( this.props.match.params.commentId,"comments")
+        APIManager.get(this.props.commentId, "comments")
+
             .then(comment => {
+            
                 this.setState({
+                    favoriteId: comment.favoriteId,
                     userId: comment.userId,
-                    favoriteCakeId: comment.favoriteCakeId,
-                    text: this.state.text,
-                    date: this.state.date,
-                    loadingStatus: false
+                    text: comment.text,
+                    editTimeStamp: moment(new Date()),
+                    loadingStatus: false,
+                    commentId: comment.commentId,
 
                 });
             });
     }
-
-
+   /* </Collapse> */
+/* <Collapse toggle={this.toggle}> */
 
     // render JSX to be displayed on the DOM
     render() {
         return (
-            <>
-                {/* <Collapse toggle={this.toggle}> */}
-                    <Form onSubmit={this.updateExistingComment}>
-                        <div>Comment</div>
-                        <FormGroup row>
-                            <Col sm={10}>
-                                <Input onChange={this.handleFieldChange}  value={this.state.text}type="textarea" name="comment" id="text" placeholder="Make changes..." bsSize="lg" />
-                            </Col>
-                            <Button type="submit">
-                                Edit</Button>
-                        </FormGroup>
-                    </Form>
-                {/* </Collapse> */}
-            </>
+            <article syle={style.editMainContainer}>
+                <img style={{backgroundColor: "DAFEB7"}} src={require(`../../Images/Project-Logo-Capstone.png`)} alt="My Logo" style={style.logoButtonEditView} onClick={() => { this.props.history.push(`/home/`) }}></img>
+            <div style={style.CommentLabels}>
+                
+                <Form style={style.Form}    onSubmit={this.updateExistingComment}>
+                    <div>Change your mind..?</div>
+            
+                     
+                        <MaterialEditForm
+                      
+                        handleFieldChange={this.handleFieldChange}  
+            
+                        {...this.props} 
+                        value={this.state.text}/>
+                           
+    
+                   
+                </Form>
+           
+            </div>
+            </article>
         );
     }
 
 }
-export default CommentEditForm
+export default EditCommentForm

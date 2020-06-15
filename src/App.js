@@ -1,9 +1,10 @@
-import React,{Component} from 'react';
+  import React,{Component} from 'react';
 import ApplicationViews from './components/ApplicationViews';
-import Navi from './components/nav/Navi'
-
+import {withRouter} from 'react-router'
 // import Nav from './components/nav/Nav';
 import './App.css';
+import SimpleBottomNavigation from './components/nav/MaterialNavigation'
+import Navi from './components/nav/Navi';
 
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
   isAuthenticated = () => sessionStorage.getItem("credentials") !== null
   
   clearUser = () => {
-    localStorage.clear()
+    sessionStorage.clear()
 
     this.setState({
       user: this.isAuthenticated()
@@ -26,8 +27,8 @@ class App extends Component {
   }
 
   logout = () => {
-    localStorage.removeItem("credentials")
-    this.setState({ user: localStorage.getItem("credentials") !== null })
+    sessionStorage.removeItem("credentials")
+    this.setState({ user: sessionStorage.getItem("credentials") !== null })
   }
 
   setUser = (authObj) => {
@@ -48,6 +49,7 @@ class App extends Component {
   }
 
   render() {
+    // console.log(this.props)
     return(
       <>
        
@@ -57,14 +59,16 @@ class App extends Component {
             <ApplicationViews
             isAuthenticated={this.isAuthenticated} 
             setUser={this.setUser}
-            userId={this.state.userId} /> 
-          
-         
+            userId={this.state.userId}
+            clearUser={this.clearUser}
+            {...this.props} />
+  
+          </>
         
         
-      </>
+      
     )
   
       }}
 
-export default App;     
+export default withRouter(App);     

@@ -34,11 +34,10 @@ border-radius: 29px;
 }
 
 .SearchFormGroup {
-position: absolute;
-width: 260px;
-height: 211px;
-left: 77px;
-top: 325px;
+    display: flex;
+    height: 600px;
+    flex-wrap: wrap;
+    align-content: flex-start;
 
 }
 .firstDateText{
