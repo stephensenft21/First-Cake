@@ -4,9 +4,9 @@ import APIManager from "../../modules/APIManager";
 import { Form } from 'reactstrap';
 import '../auth/Login.css'
 import style from '../../Style'
-import  {IconButtonsBack} from '../material/MaterialButtons'
+import { IconButtonsBack } from '../material/MaterialButtons'
 import '../../index.css'
-import {LoginCard} from '../material/MaterialCards'
+import { LoginCard } from '../material/MaterialCards'
 // import {Link} from 'react-router-dom'
 // import Typography from '@material-ui/core/Typography';
 
@@ -15,7 +15,7 @@ class Login extends Component {
   state = {
     email: "",
     passwords: ""
-          }
+  }
 
   // Update state whenever an input field is edited
   handleFieldChange = (evt) => {
@@ -23,7 +23,6 @@ class Login extends Component {
     stateToChange[evt.target.id] = evt.target.value
     this.setState(stateToChange)
   }
-
   handleLogin = (e) => {
     e.preventDefault()
     APIManager.searchEmail(this.state.email)
@@ -38,40 +37,24 @@ class Login extends Component {
       })
   }
 
-
   render() {
     return (
       <>
         <div style={style.mainContainer}>
-        <div  onClick={() => { this.props.history.goBack(`/home/`) }}> <IconButtonsBack/></div>
-          
-        <img src={require(`../../Images/Project-Logo-Capstone.png`)} alt="My Logo" style={style.logoButton} onClick={() => { this.props.history.push(`/home/`) }}></img>
+          <div onClick={() => { this.props.history.goBack(`/home/`) }}> <IconButtonsBack /></div>
+          <img src={require(`../../Images/Project-Logo-Capstone.png`)} alt="My Logo" style={style.logoButton} onClick={() => { this.props.history.push(`/home/`) }}></img>
           <Form style={style.Form} onSubmit={this.handleLogin}>
             <div style={style.signInText}>Sign In</div>
-          
-
-             
-
-            
             <LoginCard
-        
-        handleLogin={this.handleLogin}
-        handleFieldChange={this.handleFieldChange}  
-      
-        {...this.props} />
-     
-           
-
-          
+              handleLogin={this.handleLogin}
+              handleFieldChange={this.handleFieldChange}
+              {...this.props} />
           </Form>
-     
         </div>
-
       </>
     )
   }
 }
-
 export default withRouter(Login);
 
 
