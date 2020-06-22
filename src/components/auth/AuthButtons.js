@@ -7,13 +7,11 @@ import style from '../../Style'
 class AuthButtons extends Component {
     render() {
         return (
-           <>
+            <>
                 <Link to={`/login`} ><AuthMaterialButton1 text={"Sign In"} /></Link>
-
-
                 <Link to={`/register`} ><AuthMaterialButton2 text={"Sign Up"} /></Link>
-        </>
+            </>
         )
     }
-} 
+}
 export default AuthButtons

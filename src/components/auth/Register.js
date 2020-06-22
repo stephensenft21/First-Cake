@@ -4,8 +4,8 @@ import '../auth/Register.css'
 import APIManager from '../../modules/APIManager'
 import { Form } from 'reactstrap';
 import style from '../../Style'
-import { RegisterCard } from '../material/MaterialCards'
-import  {IconButtonsBack} from '../material/MaterialButtons'
+import { RegisterInput } from '../material/MaterialCards'
+import { IconButtonsBack } from '../material/MaterialButtons'
 
 
 class Register extends Component {
@@ -21,7 +21,6 @@ class Register extends Component {
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
-
     handleLogin = (e) => {
         e.preventDefault()
         /*
@@ -29,14 +28,12 @@ class Register extends Component {
             the customer enters into local storage.
         */
         let credentials = {
-    
             email: this.state.email,
             password: this.state.password
         }
 
         APIManager.searchEmail(this.state.email)
             .then(result => {
-              
                 if (result.length > 0) {
                     //this returns an array - we only need object
                     this.props.setUser(result[0]);
@@ -45,7 +42,6 @@ class Register extends Component {
                     APIManager.addUser(credentials)
                         .then(result => {
                             //this returns an object
-                         
                             this.props.setUser(result);
                         })
                     this.props.history.push("/home");
@@ -56,28 +52,20 @@ class Register extends Component {
     render() {
         return (
             <>
-
                 <div style={style.mainContainer}>
-
-
-                    <div onClick={() => { this.props.history.goBack(`/home/`) }}><IconButtonsBack/></div>
+                    <div onClick={() => { this.props.history.goBack(`/home/`) }}><IconButtonsBack /></div>
                     <img src={require(`../../Images/Project-Logo-Capstone.png`)} alt="My Logo" style={style.logoButton} onClick={() => { this.props.history.push(`/home/`) }}></img>
                     <Form style={style.Form} onSubmit={this.handleLogin}>
                         <div style={style.signInText}>SignUp</div>
-
-    
-                        <RegisterCard
+                        <RegisterInput
                             handleLogin={this.handleLogin}
                             handleFieldChange={this.handleFieldChange}
-
                             {...this.props} />
                     </Form>
-                    
                 </div>
             </>
         )
     }
 }
-
 export default withRouter(Register);
 
